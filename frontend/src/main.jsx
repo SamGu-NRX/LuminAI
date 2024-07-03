@@ -6,6 +6,7 @@ import './styles/tailwind.scss';
 import './styles/App.scss';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthContextProvider } from './context/AuthContext';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const router = createRouter({
   routeTree,
@@ -18,9 +19,11 @@ if (!rootElement.innerHTML) {
   root.render(
     <React.StrictMode>
       <HelmetProvider>
-        <AuthContextProvider>
-        <RouterProvider router={router} />
-        </AuthContextProvider>
+        <ChakraProvider>
+          <AuthContextProvider>  
+            <RouterProvider router={router} />
+          </AuthContextProvider>
+        </ChakraProvider>
       </HelmetProvider>
     </React.StrictMode>,
   )

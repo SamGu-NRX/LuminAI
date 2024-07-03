@@ -3,11 +3,14 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet-async';
 import { getItems } from '../services/directus';
 
+import { createDirectus, rest, readItems } from '@directus/sdk';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import getMode from '../utils/getMode';
 import MovingGradient from '../components/DynamicGradient';
+import { BackgroundGradient } from '../components/ui/background-gradient';
 import '../styles/App.scss';
 import '../styles/Staff.scss';
 
@@ -32,6 +35,7 @@ function Staff() {
     fetchStaffMembers();
   }, []);
 
+  // temporary placeholder data
   const teamMembers = [
     { 
       name: 'John Doe', 
@@ -109,19 +113,13 @@ function Staff() {
             
             <div className="w-24 h-24 mx-auto mb-4 relative">
               {member.photo ? (
-                <div
-                  className="w-24 h-24 rounded-full border-4"
-                  style={{
-                    borderImage: generateRandomGradient(),
-                    borderImageSlice: 1,
-                  }}
-                >
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                </div>
+                  <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  </BackgroundGradient>
               ) : (
                 <MovingGradient />
               )}

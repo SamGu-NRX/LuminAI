@@ -8,7 +8,7 @@ const ContactSection = () => {
     <AOSInit />
 
     return (
-      <div className="flex flex-col items-start p-4 bg-black text-white space-y-4 shadow-lg">
+      <div data-scroll-section className="flex flex-col items-start p-4 bg-black text-white space-y-4 shadow-lg">
         <p className="text-lg text-left">
           <span data-aos="fade-up" data-aos-delay="0">We collaborate with all who </span><br /> 
           <span data-aos="fade-up" data-aos-delay="100">believes in the education of our next generation. </span><br />
