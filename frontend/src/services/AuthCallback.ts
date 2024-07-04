@@ -1,4 +1,5 @@
 // src/pages/AuthCallback.js
+/*
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
@@ -22,7 +23,9 @@ const AuthCallback = () => {
     }
   }, [location]);
 
-  return <Loading />;
+  return (<Loading />
+  );
 };
 
 export default AuthCallback;
+*/

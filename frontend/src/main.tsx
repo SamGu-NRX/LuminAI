@@ -14,8 +14,8 @@ const router = createRouter({
 })
 
 const rootElement = document.getElementById('app')
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
+if (!rootElement?.innerHTML) {
+  const root = ReactDOM.createRoot(rootElement as ReactDOM.Container)
   root.render(
     <React.StrictMode>
       <HelmetProvider>

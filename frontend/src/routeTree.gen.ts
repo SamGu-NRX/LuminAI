@@ -116,7 +116,7 @@ export const routeTree = rootRoute.addChildren({
 {
   "routes": {
     "__root__": {
-      "filePath": "__root.jsx",
+      "filePath": "__root.tsx",
       "children": [
         "/",
         "/Dashboard",
@@ -127,22 +127,22 @@ export const routeTree = rootRoute.addChildren({
       ]
     },
     "/": {
-      "filePath": "index.jsx"
+      "filePath": "index.tsx"
     },
     "/Dashboard": {
-      "filePath": "Dashboard.jsx"
+      "filePath": "Dashboard.tsx"
     },
     "/Inquiry": {
-      "filePath": "Inquiry.jsx"
+      "filePath": "Inquiry.tsx"
     },
     "/Login": {
-      "filePath": "Login.jsx"
+      "filePath": "Login.tsx"
     },
     "/Staff": {
-      "filePath": "Staff.jsx"
+      "filePath": "Staff.tsx"
     },
     "/Syllabus": {
-      "filePath": "Syllabus.jsx"
+      "filePath": "Syllabus.tsx"
     }
   }
 }
