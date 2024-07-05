@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.gradient-border:hover {
+    border-image: linear-gradient(to right, #6366f1, #a855f7) 1;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.custom-bg-gradient {
+    background: linear-gradient(110deg, #000103 45%, #1e2631 55%, #000103);
+}

@@ -2,10 +2,14 @@ import "../../styles/App.scss";
 import "./Header.scss";
 import getMode from "../../utils/getMode";
 import { Link } from "@tanstack/react-router";
+import { useBanner } from "@/context/BannerContext";
 
 const Header = () => {
   const mode = getMode();
-  const headerClass = ` p-4 ${mode === "dark" ? "header-dark text-white" : "header-light text-black"} hidden`;
+  const { isBannerVisible } = useBanner();
+
+  //TODO: remove this and change to dark:text-white, etc.
+  const headerClass = ` p-4 ${isBannerVisible ? 'mt-16' : ''} hidden `;
   const navClass = `mt-2 ${mode === "dark" ? "header-text-dark text-white" : "header-text-light text-black"}`; // add fonts
 
   return (

@@ -35,6 +35,8 @@ const ContactSection = () => {
           </svg>
         </a>
         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white group-hover:bg-transparent transition-all duration-300"></div>
+
+        {/* <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white group-hover:bg-transparent transition-all duration-300"></div> This is the white line that appears on the top of the page */}
       </div>
     );
   };

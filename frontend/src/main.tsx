@@ -7,6 +7,7 @@ import './styles/App.scss';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthContextProvider } from './context/AuthContext';
 import { ChakraProvider } from '@chakra-ui/react';
+import { BannerProvider } from './context/BannerContext';
 
 const router = createRouter({
   routeTree,
@@ -21,7 +22,9 @@ if (!rootElement?.innerHTML) {
       <HelmetProvider>
         <ChakraProvider>
           <AuthContextProvider>  
-            <RouterProvider router={router} />
+            <BannerProvider>
+              <RouterProvider router={router} />
+            </BannerProvider>
           </AuthContextProvider>
         </ChakraProvider>
       </HelmetProvider>

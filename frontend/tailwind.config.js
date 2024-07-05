@@ -21,11 +21,14 @@ module.exports = {
       fontFamily: {
         sans: ['"Bai Jamjuree"', "sans-serif"],
         slab: ['"Bebas Neue"', "sans-serif"],
-        serif: ['"Montserrat"', "serif"]
+        serif: ['"Montserrat"', "serif"],
+        spartan: ['"League Spartan"', "sans-serif"],
       },
       animation: {
         aurora: "aurora 60s linear infinite",
+        shimmer: "shimmer 2s linear infinite",
       },
+
       keyframes: {
         aurora: {
           from: {
@@ -35,6 +38,20 @@ module.exports = {
             backgroundPosition: "350% 50%, 350% 50%",
           },
         },
+
+        shimmer: {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
+          },
+        },
+      },
+      zIndex: {
+        "-1": "-1",
+        '50': '50',
+        '100': '100',
       },
     },
   },
