@@ -20,6 +20,7 @@ const Header = () => {
           <StyledLink address="/Staff" text="Meet Our Staff" />
           <StyledLink address="/Inquiry" text="Inquiry" />
           <StyledLink address="/Login" text="Login" />
+          <StyledLink address="/Dashboard" text="Dashboard" />
         </nav>
       </div>
     </header>

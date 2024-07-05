@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { AuroraBackground } from "../components/ui/aurora-background";
 
 import 'aos/dist/aos.css';
@@ -14,49 +14,97 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async';
 import ExploreAI from '../components/ExploreAI';
 import ContactUs from '../components/ContactUs';
+import { useEffect, useState } from "react";
+import { Typewriter } from "react-simple-typewriter";
+
 
 export const Route = createFileRoute('/')({
   component: Home
 })
 
-
 function Home() {
-  const colorMode = getMode();
+  const glowAnimation = useAnimation();
+  const [startTyping, setStartTyping] = useState(false);
+  const [showGlowText, setShowGlowText] = useState(false);
+
+
+
+  useEffect(() => {
+    const typingTimer = setTimeout(() => {
+      setStartTyping(true);
+    }, 700); // same time as BounceIn animation - 0.7 seconds
+
+    const glowTimer = setTimeout(() => {
+      setShowGlowText(true);
+
+      glowAnimation.start({
+        textShadow: ['0 0 0px #00ff00', '0 0 3px #00ff00'],
+        transition: {
+          duration: 0.3,
+          ease: 'easeInOut',
+        },
+
+      }).then(() => {
+        glowAnimation.start({
+          textShadow: ['0 0 3px #00ff00', '0 0 20px #00ff00', '0 0 3px #00ff00'],
+          transition: {
+            duration: 5,
+            repeat: Infinity,
+            repeatType: 'reverse',
+            ease: 'easeInOut',
+          },
+        });
+      });
+
+    }, 700); 
+
+    return () => {
+      clearTimeout(typingTimer);
+      clearTimeout(glowTimer);
+    };
+  }, [glowAnimation]);
 
   return (
-    <div id="Home" className='text-white dark:text-black'
-    // className={(colorMode === "dark") ? "text-white" : "text-black"}
-    // style={{ backgroundColor: (colorMode === 'dark') ? "#18181B" : "#f3f3f3" }
-    >
-
-    {/* <Helmet>
-      <title>LuminAI</title>
-    </Helmet> */}
-
-    <AuroraBackground>
-      <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen overflow-y-a">
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="w-full max-w-4xl mx-auto"
-        >
-          <section
-            // data-scroll-section data-aos="fade-up" data-aos-delay="0" 
-            className='flex-container p-4 text-center justify-center'>
-            <div className="justify-center text-center" style={{ animation: 'textPopIn 0.7s ease-in-out' }}>
-              <div className="text-3xl md:text-6xl font-bold dark:text-white text-center">
-                Welcome to LuminAI Bootcamps.
+    <div id="Home" className='text-white dark:text-black'>
+      <AuroraBackground>
+        <div data-scroll-section className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full">
+          <motion.div
+            initial={{ opacity: 0.0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="w-full max-w-4xl mx-auto"
+          >
+            <section className='flex-container p-4 text-center justify-center'>
+              <div className="justify-center text-center" style={{ animation: 'textPopIn 0.7s ease-in-out' }}>
+                <div className="text-4xl md:text-6xl font-bold dark:text-white text-center p-4">
+                  Meet {' '}
+                  <span className='text-blue-600'>
+                    { startTyping && (
+                      <Typewriter
+                        words={['LuminAI Bootcamps.', 'cutting-edge research opportunities.', 'speakers from prestigious universities.', 'the next generation of AI innovators.']}
+                        loop={0}
+                        cursor
+                        cursorColor="black"
+                        cursorStyle='_'
+                        typeSpeed={70}
+                        deleteSpeed={70}
+                        delaySpeed={5000}
+                      /> 
+                    )}
+                  </span>
+                </div>
+                <div className="transition-shadow text-xl mt-3 mb-1 font-extralight font md:text-3xl dark:text-neutral-200 p-4">
+                    <motion.span animate={glowAnimation} className="font-light">Empowering</motion.span>
+                      {' '}the{' '}
+                    <motion.span animate={glowAnimation} className="font-light">next generation</motion.span>
+                      {' '}of AI innovators through comprehensive bootcamps.
+                </div>
               </div>
-              <div className="mt-3 mb-1 font-extralight text-base md:text-3xl dark:text-neutral-200 py-4">
-                Empowering the next generation of AI innovators through comprehensive bootcamps
-              </div>
-            </div>
-            <ApplyButton />
+              <ApplyButton />
             {/* bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2 */}
           </section>
 

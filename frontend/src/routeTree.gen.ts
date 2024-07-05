@@ -116,7 +116,7 @@ export const routeTree = rootRoute.addChildren({
 {
   "routes": {
     "__root__": {
-      "filePath": "__root.tsx",
+      "filePath": "__root.jsx",
       "children": [
         "/",
         "/Dashboard",
