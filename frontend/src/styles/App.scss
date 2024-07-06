@@ -13,24 +13,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* @apply bg-slate-900 text-slate-400 transition-colors duration-300; */
 }
+
 /* 
 body:hover{
   @apply bg-teal-300 text-teal-900;
 } */
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-header, footer {
+header,
+footer {
   position: fixed;
   left: 0;
   width: 100%;
   z-index: 80;
-  padding: 0 20px; /* Adjust padding as needed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+  padding: 0 20px;
+  /* Adjust padding as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Optional: add shadow for better visibility */
   height: 80px;
   display: flex;
   align-items: center;
@@ -40,26 +43,30 @@ header, footer {
   backdrop-filter: blur(5px);
 }
 
-header.hidden, footer.hidden {
+header.hidden,
+footer.hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-header.visible, footer.visible {
+header.visible,
+footer.visible {
   opacity: 1;
   visibility: visible;
 }
 
 
-footer{
+footer {
   bottom: 0;
 }
 
 /* Add top padding to main content equal to the header height */
 main {
-  min-height: 100vh; /* Ensure main container takes up full viewport height */
-  overflow: hidden; /* Prevent unwanted scrollbars */
-  
+  min-height: 100vh;
+  /* Ensure main container takes up full viewport height */
+  overflow: hidden;
+  /* Prevent unwanted scrollbars */
+
 }
 
 
@@ -81,9 +88,11 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Ensure the initial container takes up the full viewport height */
+  min-height: 100vh;
+  /* Ensure the initial container takes up the full viewport height */
   padding: 0 1rem;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
 }
 
 
@@ -93,9 +102,11 @@ main {
     opacity: 0;
     transform: translateY(20px);
   }
+
   80% {
     transform: translateY(-3px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -107,9 +118,11 @@ main {
     opacity: 0;
     transform: scale(0.9);
   }
+
   70% {
     transform: scale(1.03);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -119,14 +132,16 @@ main {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-20px); 
+    transform: translateY(-20px);
   }
+
   80% {
     transform: translateY(3px);
   }
+
   100% {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
@@ -155,26 +170,36 @@ main {
 
 
 @keyframes bounceIn {
-  0%, 20%, 40%, 60%, 80%, 100% {
-      transform: translateY(0);
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: translateY(0);
   }
+
   20% {
-      transform: translateY(-20px);
+    transform: translateY(-20px);
   }
+
   40% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
+
   60% {
-      transform: translateY(-5px);
+    transform: translateY(-5px);
   }
+
   80% {
-      transform: translateY(-2px);
+    transform: translateY(-2px);
   }
 }
 
 
 @media(prefers-reduced-motion) {
-  .hidden{
+  .hidden {
     transition: none;
   }
 }
@@ -185,7 +210,7 @@ main {
 
 .custom-border {
   border-width: 2px;
-  padding: 1.5rem; 
+  padding: 1.5rem;
   border-radius: 0.5rem;
   border-color: #2d2d2d;
   height: 100%;
@@ -198,12 +223,12 @@ main {
 }
 
 
-.custom-grid{
+.custom-grid {
   display: grid;
   transition: transform 0.3s ease-in-out;
 }
 
-.custom-grid:hover{
+.custom-grid:hover {
   transform: scale(1.01);
 }
 
@@ -217,7 +242,7 @@ main {
   color: #dbd8b6
 }
 
-.absolute{
+.absolute {
   position: fixed;
   top: 0;
   left: 0;

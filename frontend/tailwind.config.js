@@ -1,5 +1,5 @@
 // tailwind.config.js
- 
+
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -9,14 +9,12 @@ const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
   theme: {
     extend: {
       transitionDuration: {
-        '200': '200ms',
+        200: "200ms",
       },
       fontFamily: {
         sans: ['"Bai Jamjuree"', "sans-serif"],
@@ -50,8 +48,8 @@ module.exports = {
       },
       zIndex: {
         "-1": "-1",
-        '50': '50',
-        '100': '100',
+        50: "50",
+        100: "100",
       },
     },
   },

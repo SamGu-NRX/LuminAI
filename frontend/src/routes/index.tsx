@@ -9,7 +9,6 @@ import '@/styles/App.scss';
 
 import { Toaster } from 'sonner';
 import showNotif from '@/components/ToastNotif';
-import getMode from '@/utils/getMode';
 import { createFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async';
 import ExploreAI from '@/components/ExploreAI';

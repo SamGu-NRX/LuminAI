@@ -8,7 +8,6 @@ import { createDirectus, rest, readItems } from "@directus/sdk";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import getMode from "@/utils/getMode";
 import MovingGradient from "@/components/DynamicGradient";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import "@/styles/App.scss";
@@ -19,8 +18,6 @@ export const Route = createFileRoute("/Staff")({
 });
 
 function Staff() {
-  const colorMode = getMode();
-
   // TODO: Change to items & setItems to "teamMembers" to use as CMS database
   const [items, setItems] = useState([]);
 
@@ -111,10 +108,7 @@ function Staff() {
     <div
       data-scroll-section
       id="main-container"
-      className={colorMode[0] === "dark" ? "text-white" : "text-black"}
-      style={{
-        backgroundColor: colorMode[0] === "dark" ? "#18181B" : "#f3f3f3",
-      }}
+      className="text-white dark:text-black bg-[#18181B] dark:bg-[#f3f3f3]"
     >
       <Helmet>
         <title>LuminAI - Staff</title>

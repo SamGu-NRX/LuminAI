@@ -1,12 +1,10 @@
 import "@/styles/App.scss";
 import "./Header.scss";
 import { useState, useEffect } from "react";
-import getMode from "../../utils/getMode";
 import { useBanner } from "@/context/BannerContext";
 import StyledLink from "./StyledLink";
 
 const Header = () => {
-  const mode = getMode();
   const { isBannerVisible } = useBanner();
   const [isAnimating, setIsAnimating] = useState(false);
 

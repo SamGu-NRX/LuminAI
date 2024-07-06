@@ -1,12 +1,11 @@
 import { toast } from 'sonner';
-import '@/styles/ToastNotif.scss'; // Include any additional styles here
-import getMode from '@/utils/getMode';
+import '@/styles/ToastNotif.scss'; // I
+import { ReactElement, JSXElementConstructor, ReactNode } from 'react';
 
 // Function to show toast notification
-const showNotif = (message, type) => {
-  const mode = getMode();
+const showNotif = (message: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined, type: string) => {
   toast(message, {
-    className: `toast-${mode} toaster-container`,
+    className: `toast-light dark:toast-dark toaster-container`,
     duration: 2000,
     type: type,
     position: 'top-right',

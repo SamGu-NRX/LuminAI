@@ -1,34 +1,34 @@
-import { useEffect } from 'react';
-import { createFileRoute } from '@tanstack/react-router';
-import getMode from '@/utils/getMode';
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import '@/styles/Syllabus.scss';
+import "@/styles/Syllabus.scss";
 
-export const Route = createFileRoute('/Syllabus')({
+export const Route = createFileRoute("/Syllabus")({
   component: Syllabus,
 });
 
 function Syllabus() {
-  var colorMode = getMode();
-
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
   return (
-    <div data-scroll-section id='main-container'
+    <div
+      data-scroll-section
+      id="main-container"
       className="text-white dark:text-black bg-[#18181B] dark:bg-[#f3f3f3]"
     >
       <Helmet>
         <title>LuminAI - Syllabus</title>
       </Helmet>
 
-      <div className="p-4 justify-center text-center"
-        style={{ animation: 'textPopIn 0.7s ease-in-out' }}
+      <div
+        className="p-4 justify-center text-center"
+        style={{ animation: "textPopIn 0.7s ease-in-out" }}
       >
         <h2 className="text-2xl font-bold mb-4">Bootcamp Syllabus</h2>
         <p>Here you will find the detailed curriculum for our AI bootcamp.</p>
@@ -38,10 +38,22 @@ function Syllabus() {
         <div className="highlights" data-aos="fade-up">
           <h2 className="text-xl font-bold mb-2">Key Highlights</h2>
           <ul>
-            <li><strong>Hands-On Learning:</strong> Each week includes practical sessions to build and implement AI models.</li>
-            <li><strong>Expert Guidance:</strong> Learn from leading AI experts and guest speakers.</li>
-            <li><strong>Real-World Applications:</strong> Discover how AI is applied in various industries.</li>
-            <li><strong>Mentorship:</strong> Personalized guidance to help you succeed in your final project.</li>
+            <li>
+              <strong>Hands-On Learning:</strong> Each week includes practical
+              sessions to build and implement AI models.
+            </li>
+            <li>
+              <strong>Expert Guidance:</strong> Learn from leading AI experts
+              and guest speakers.
+            </li>
+            <li>
+              <strong>Real-World Applications:</strong> Discover how AI is
+              applied in various industries.
+            </li>
+            <li>
+              <strong>Mentorship:</strong> Personalized guidance to help you
+              succeed in your final project.
+            </li>
           </ul>
         </div>
 
@@ -53,7 +65,9 @@ function Syllabus() {
             <li>Machine Learning: finding patterns</li>
             <li>Neural Networks - structured like a human brain</li>
             <li>AI vs AGI</li>
-            <li>Basic Programming principles (Abstraction & Control Structures)</li>
+            <li>
+              Basic Programming principles (Abstraction & Control Structures)
+            </li>
             <li>Basic Linear Algebra + Vector arithmetic</li>
             <li>Regression & Clustering</li>
             <li>Supervised vs Unsupervised Learning</li>
@@ -63,7 +77,9 @@ function Syllabus() {
         </div>
 
         <div className="week shadow-md" data-aos="fade-left">
-          <h2 className="text-xl font-bold mb-2">Week 2: Convolutional Neural Networks (CNNs)</h2>
+          <h2 className="text-xl font-bold mb-2">
+            Week 2: Convolutional Neural Networks (CNNs)
+          </h2>
           <ul className="list-disc list-inside">
             <li>Review: Neural Networks</li>
             <li>What is Convolutional Neural Networks?</li>
@@ -78,7 +94,9 @@ function Syllabus() {
         </div>
 
         <div className="week shadow-md" data-aos="fade-right">
-          <h2 className="text-xl font-bold mb-2">Week 3: Object Detection with YOLOv8</h2>
+          <h2 className="text-xl font-bold mb-2">
+            Week 3: Object Detection with YOLOv8
+          </h2>
           <ul className="list-disc list-inside">
             <li>Introduction to Object Detection</li>
             <li>What is object detection?</li>
@@ -92,7 +110,9 @@ function Syllabus() {
         </div>
 
         <div className="week shadow-md" data-aos="fade-left">
-          <h2 className="text-xl font-bold mb-2">Week 4: Audio Classification</h2>
+          <h2 className="text-xl font-bold mb-2">
+            Week 4: Audio Classification
+          </h2>
           <ul className="list-disc list-inside">
             <li>Introduction to Audio Classification</li>
             <li>What is audio classification?</li>
@@ -109,7 +129,10 @@ function Syllabus() {
         </div>
 
         <div className="week shadow-md" data-aos="fade-right">
-          <h2 className="text-xl font-bold mb-2">Weeks 5-6: Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG)</h2>
+          <h2 className="text-xl font-bold mb-2">
+            Weeks 5-6: Large Language Models (LLMs) and Retrieval-Augmented
+            Generation (RAG)
+          </h2>
           <ul className="list-disc list-inside">
             <li>Introduction to LLMs</li>
             <li>What are Large Language Models?</li>
@@ -123,26 +146,33 @@ function Syllabus() {
         </div>
 
         <div className="week grid-cols-1 shadow-md" data-aos="fade-left">
-          <h2 className="text-xl font-bold mb-2">Week 7: Check-in (Project Mentorship)</h2>
+          <h2 className="text-xl font-bold mb-2">
+            Week 7: Check-in (Project Mentorship)
+          </h2>
           <ul>
-            <li>Final Project & presentation: show off what you have learned! </li>
+            <li>
+              Final Project & presentation: show off what you have learned!{" "}
+            </li>
           </ul>
         </div>
-
-       
       </div>
 
       <div className="navigation grid-cols-1 shadow-md mb-2" data-aos="fade-up">
-          <h2>Navigate Other Bootcamps:</h2>
-          <nav>
-            <ul>
-              <li><a href="/bootcamp1">AI Bootcamp 1</a></li>
-              <li><a href="/bootcamp2">AI Bootcamp 2</a></li>
-              <li><a href="/bootcamp3">AI Bootcamp 3</a></li>
-            </ul>
-          </nav>
-        </div>
-
+        <h2>Navigate Other Bootcamps:</h2>
+        <nav>
+          <ul>
+            <li>
+              <a href="/bootcamp1">AI Bootcamp 1</a>
+            </li>
+            <li>
+              <a href="/bootcamp2">AI Bootcamp 2</a>
+            </li>
+            <li>
+              <a href="/bootcamp3">AI Bootcamp 3</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 }

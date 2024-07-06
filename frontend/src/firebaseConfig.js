@@ -9,12 +9,10 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   updatePassword,
-  linkWithPopup
-} 
-from 'firebase/auth';
+  linkWithPopup,
+} from "firebase/auth";
 
-import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
-
+import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -49,31 +47,35 @@ const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = () => signInWithPopup(auth, googleProvider);
 
 const linkWithGoogle = async () => {
-    const user = auth.currentUser;
-    await linkWithPopup(user, googleProvider);
+  const user = auth.currentUser;
+  await linkWithPopup(user, googleProvider);
 };
 
 const registerWithEmail = async (email, password) => {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
-    await setDoc(doc(db, "users", user.uid), {
-      email: user.email,
-      enrolled: false,
-      course: "AI Innovate Scholars",
-    });
+  const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  const user = userCredential.user;
+  await setDoc(doc(db, "users", user.uid), {
+    email: user.email,
+    enrolled: false,
+    course: "AI Innovate Scholars",
+  });
 };
-  
+
 const signInWithEmailAndPassword = async (email, password) => {
   await firebaseSignInWithEmailAndPassword(auth, email, password);
 };
 
 const sendPasswordReset = async (email) => {
-    await sendPasswordResetEmail(auth, email);
+  await sendPasswordResetEmail(auth, email);
 };
-  
+
 const changePassword = async (password) => {
-    const user = auth.currentUser;
-    await updatePassword(user, password);
+  const user = auth.currentUser;
+  await updatePassword(user, password);
 };
 const signInWithDiscord = () => {
   window.location.href = `https://discord.com/api/oauth2/authorize?client_id=${import.meta.env.VITE_DISCORD_CLIENT_ID}&redirect_uri=${import.meta.env.VITE_DISCORD_REDIRECT_URI}&response_type=code&scope=identify email`;
@@ -82,7 +84,6 @@ const signInWithDiscord = () => {
 const linkWithDiscord = () => {
   window.location.href = `https://discord.com/api/oauth2/authorize?client_id=${import.meta.env.VITE_DISCORD_CLIENT_ID}&redirect_uri=${import.meta.env.VITE_DISCORD_REDIRECT_URI}&response_type=code&scope=identify email`;
 };
-  
 
 // const handleDiscordCallback = async (code) => {
 //     const { data } = await axios.post('https://discord.com/api/oauth2/token', null, {
@@ -97,25 +98,25 @@ const linkWithDiscord = () => {
 //         'Content-Type': 'application/x-www-form-urlencoded',
 //       },
 //     });
-  
+
 //     const user = await axios.get('https://discord.com/api/users/@me', {
 //       headers: {
 //         Authorization: `Bearer ${data.access_token}`,
 //       },
 //     });
-  
+
 //     // Handle user data and authentication in your app
 // };
 
 export {
-    auth,
-    db,
-    signInWithGoogle,
-    signInWithDiscord,
-    signInWithEmailAndPassword,
-    registerWithEmail,
-    sendPasswordResetEmail,
-    updatePassword,
-    linkWithGoogle,
-    linkWithDiscord
+  auth,
+  db,
+  signInWithGoogle,
+  signInWithDiscord,
+  signInWithEmailAndPassword,
+  registerWithEmail,
+  sendPasswordResetEmail,
+  updatePassword,
+  linkWithGoogle,
+  linkWithDiscord,
 };

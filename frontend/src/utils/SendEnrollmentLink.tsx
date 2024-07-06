@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import generateEnrollmentLink from './generateEnrollmentLink';
+import { useState } from "react";
+import generateEnrollmentLink from "./generateEnrollmentLink";
 
 const SendEnrollmentLink = () => {
-  const [email, setEmail] = useState('');
-  const [link, setLink] = useState('');
+  const [email, setEmail] = useState("");
+  const [link, setLink] = useState("");
 
   const handleSendLink = async () => {
     const enrollmentLink = await generateEnrollmentLink(email);
     setLink(enrollmentLink);
-    console.log('Enrollment link sent');
+    console.log("Enrollment link sent");
   };
 
   return (
@@ -21,7 +21,11 @@ const SendEnrollmentLink = () => {
         placeholder="Email"
       />
       <button onClick={handleSendLink}>Send Link</button>
-      {link && <p>Enrollment Link: <a href={link}>{link}</a></p>}
+      {link && (
+        <p>
+          Enrollment Link: <a href={link}>{link}</a>
+        </p>
+      )}
     </div>
   );
 };

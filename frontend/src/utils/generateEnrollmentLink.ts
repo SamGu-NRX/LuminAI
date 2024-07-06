@@ -1,5 +1,5 @@
-import { db } from '../firebaseConfig';
-import { v4 as uuidv4 } from 'uuid';
+import { db } from "../firebaseConfig";
+import { v4 as uuidv4 } from "uuid";
 
 const generateEnrollmentLink = async (email) => {
   const token = uuidv4();

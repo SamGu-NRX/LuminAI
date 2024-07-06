@@ -10,7 +10,6 @@ import AOSInit from "@/utils/aos";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer";
-import getMode from "@/utils/getMode";
 import "@/components/Header/Header.scss";
 import "@/styles/App.scss";
 
@@ -141,20 +140,18 @@ function Root() {
       {showProgressBar && (
         <div
           id="progress-bar"
-          className={
-            getMode() === "dark"
-              ? "scroll-watcher-dark"
-              : "scroll-watcher-light"
-          }
+          className="dark:scroll-watcher-dark scroll-watcher-light"
           style={{ width: "0%" }}
         ></div>
       )}
       <div>
+      <Header />
         <main data-scroll-container>
-          <Header />
+          
           <Outlet />
-          <Footer />
+          
         </main>
+        <Footer />
       </div>
     </div>
   );
