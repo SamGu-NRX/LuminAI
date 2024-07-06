@@ -54,10 +54,11 @@ function Syllabus() {
             <li>Machine Learning: finding patterns</li>
             <li>Neural Networks - structured like a human brain</li>
             <li>AI vs AGI</li>
-            <li>Basic Programming principles</li>
-            <li>Regression</li>
+            <li>Basic Programming principles (Abstraction & Control Structures)</li>
+            <li>Basic Linear Algebra + Vector arithmetic</li>
+            <li>Regression & Clustering</li>
             <li>Supervised vs Unsupervised Learning</li>
-            <li>KNNs simulation</li>
+            <li>k-NN algorithm</li>
             <li>Applications of AI in daily life</li>
           </ul>
         </div>
@@ -65,13 +66,15 @@ function Syllabus() {
         <div className="week shadow-md" data-aos="fade-left">
           <h2 className="text-xl font-bold mb-2">Week 2: Convolutional Neural Networks (CNNs)</h2>
           <ul className="list-disc list-inside">
-            <li>Basics of Neural Networks</li>
-            <li>Basic Linear Algebra + Vector arithmetic</li>
+            <li>Review: Neural Networks</li>
+            <li>What is Convolutional Neural Networks?</li>
             <li>Comparison: Neural Networks and vectors</li>
-            <li>Introduction to Convolutional Neural Networks (CNNS)</li>
-            <li>Digit recognition + basic image classification</li>
+            <li>Weights and Biases</li>
+            <li>Activation Functions</li>
+            <li>Training and Loss</li>
             <li>CNNs vs RNNs</li>
-            <li>Build a simple CNN model for digit recognition (MNIST dataset)</li>
+            <li>Building a CNN model for digit classification (MNIST)</li>
+            <li>Building a CNN model for image classification (CIFAR-10)</li>
           </ul>
         </div>
 

@@ -1,16 +1,27 @@
 import "../../styles/App.scss";
 import "./Header.scss";
+import { useState, useEffect } from "react";
 import getMode from "../../utils/getMode";
-import { Link } from "@tanstack/react-router";
 import { useBanner } from "@/context/BannerContext";
+import StyledLink from "./StyledLink";
 
 const Header = () => {
   const mode = getMode();
   const { isBannerVisible } = useBanner();
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  //TODO: remove this and change to dark:text-white, etc.
-  const headerClass = ` p-4 ${isBannerVisible ? 'mt-16' : ''} hidden `;
-  const navClass = `mt-2 ${mode === "dark" ? "header-text-dark text-white" : "header-text-light text-black"}`; // add fonts
+  useEffect(() => {
+    if (!isBannerVisible) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 500); // Duration of the slide up animation
+    }
+  }, [isBannerVisible]);
+
+  //TODO: remove this (${mode === "dark" ? "header-text-dark text-white" : "header-text-light text-black"}) and change to dark:text-white, etc.
+  const headerClass = ` p-4 ${isBannerVisible ? 'mt-12' : ''} ${isAnimating ? 'slide-up' : '' } hidden `;
+  const navClass = `mt-2 `; // add fonts
 
   return (
     <header className={headerClass}>
@@ -32,15 +43,3 @@ const Header = () => {
 };
 
 export default Header;
-
-function StyledLink({ address, text }) {
-  return (
-    <Link
-      to={address}
-      className="relative mx-1 p-2 bg-white overflow-hidden group"
-    >
-      <span className="relative z-10">{text}</span>
-      <div className="absolute rounded-md inset-0 bg-gradient-to-r from-cyan-300 to-purple-300 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100 origin-left"></div>
-    </Link>
-  );
-}

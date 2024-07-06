@@ -1,18 +1,24 @@
 // src/context/BannerContext.tsx
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import { createContext, useState, useContext, ReactNode } from 'react';
 
 interface BannerContextType {
   isBannerVisible: boolean;
-  setBannerVisible: (visible: boolean) => void;
+  setBannerVisibility: React.Dispatch<React.SetStateAction<boolean>>;
+  hideBanner: () => void;
 }
 
 const BannerContext = createContext<BannerContextType | undefined>(undefined);
 
 export const BannerProvider = ({ children }: { children: ReactNode }) => {
-  const [isBannerVisible, setBannerVisible] = useState(false);
+  const [isBannerVisible, setBannerVisibility] = useState(false);
+
+  const hideBanner = () => {
+    setBannerVisibility(false);
+  };
+
 
   return (
-    <BannerContext.Provider value={{ isBannerVisible, setBannerVisible }}>
+    <BannerContext.Provider value={{ isBannerVisible, setBannerVisibility, hideBanner }}>
       {children}
     </BannerContext.Provider>
   );
