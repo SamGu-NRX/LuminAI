@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "../../utils/cn";
+import { cn } from "@/utils/cn";
 import { ReactNode } from "react";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {

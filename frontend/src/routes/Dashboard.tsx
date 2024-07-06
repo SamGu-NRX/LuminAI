@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
-import Sidebar from '../components/Dashboard/Sidebar';
-import Dash from '../components/Dashboard/Dashboard';
-import TodoList from '../components/Dashboard/TodoList';
+import Sidebar from '@/components/Dashboard/Sidebar';
+import Dash from '@/components/Dashboard/Dashboard';
+import TodoList from '@/components/Dashboard/TodoList';
 
 function Dashboard() {
   return (

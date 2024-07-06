@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Helmet } from "react-helmet-async";
-import { getItems } from "../services/directus";
+import { getItems } from "@/services/directus";
 
 import { createDirectus, rest, readItems } from "@directus/sdk";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import getMode from "../utils/getMode";
-import MovingGradient from "../components/DynamicGradient";
-import { BackgroundGradient } from "../components/ui/background-gradient";
-import "../styles/App.scss";
-import "../styles/Staff.scss";
+import getMode from "@/utils/getMode";
+import MovingGradient from "@/components/DynamicGradient";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
+import "@/styles/App.scss";
+import "@/styles/Staff.scss";
 
 export const Route = createFileRoute("/Staff")({
   component: Staff,

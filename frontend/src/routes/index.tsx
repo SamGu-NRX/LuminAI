@@ -1,19 +1,19 @@
 import { motion, useAnimation } from "framer-motion";
-import { AuroraBackground } from "../components/ui/aurora-background";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 import 'aos/dist/aos.css';
 
 import ApplyButton from '../components/ApplyButton';
-import '../styles/App.scss';
+import '@/styles/App.scss';
 // import Aos from 'locomotive-aos';
 
 import { Toaster } from 'sonner';
-import showNotif from '../components/ToastNotif';
-import getMode from '../utils/getMode';
+import showNotif from '@/components/ToastNotif';
+import getMode from '@/utils/getMode';
 import { createFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async';
-import ExploreAI from '../components/ExploreAI';
-import ContactUs from '../components/ContactUs';
+import ExploreAI from '@/components/ExploreAI';
+import ContactUs from '@/components/ContactUs';
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import ApplicationBanner from "@/components/ApplicationBanner/ApplicationBanner";

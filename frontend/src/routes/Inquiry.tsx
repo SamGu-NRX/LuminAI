@@ -1,24 +1,22 @@
-import React from 'react';
+import React from "react";
 // import useModal from '../hooks/useModal';
 // import Modal from '../components/Modal';
 // import {Route} from 'react-router-dom';
-import ContactForm from '../components/ContactForm';
-import { createFileRoute } from '@tanstack/react-router'
-import { Helmet } from 'react-helmet-async';
-import getMode from '../utils/getMode';
+import ContactForm from "@/components/ContactForm";
+import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 
 //form invalid  border-[]
-export const Route = createFileRoute('/Inquiry')({
+export const Route = createFileRoute("/Inquiry")({
   component: Inquiry,
-})
+});
 
 function Inquiry() {
-  var colorMode = getMode();
-  
   return (
-    <div data-scroll-section id='main-container'
-    className={(colorMode === "dark") ? "text-white" : "text-black"}
-    style={{ backgroundColor: (colorMode === 'dark') ? "#18181B" : "#f3f3f3" }}
+    <div
+      data-scroll-section
+      id="main-container"
+      className="text-white dark:text-black bg-[#18181B] dark:bg-[#f3f3f3]"
     >
       <Helmet>
         <title>LuminAI - Inquiry</title>
@@ -32,7 +30,7 @@ function Inquiry() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
 export default Inquiry;

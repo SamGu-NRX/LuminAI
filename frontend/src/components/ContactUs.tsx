@@ -1,7 +1,7 @@
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import AOSInit from '../utils/aos';
+import AOSInit from '@/utils/aos';
 
 const ContactSection = () => {
 

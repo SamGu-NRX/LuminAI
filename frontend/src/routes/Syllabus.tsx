@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import getMode from '../utils/getMode';
+import getMode from '@/utils/getMode';
 import { Helmet } from 'react-helmet-async';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import '../styles/Syllabus.scss';
+import '@/styles/Syllabus.scss';
 
 export const Route = createFileRoute('/Syllabus')({
   component: Syllabus,
@@ -21,8 +21,7 @@ function Syllabus() {
 
   return (
     <div data-scroll-section id='main-container'
-      className={(colorMode === "dark") ? "text-white" : "text-black"}
-      style={{ backgroundColor: (colorMode === 'dark') ? "#18181B" : "#f3f3f3" }}
+      className="text-white dark:text-black bg-[#18181B] dark:bg-[#f3f3f3]"
     >
       <Helmet>
         <title>LuminAI - Syllabus</title>

@@ -1,6 +1,6 @@
 import { toast } from 'sonner';
-import '../styles/ToastNotif.scss'; // Include any additional styles here
-import getMode from '../utils/getMode';
+import '@/styles/ToastNotif.scss'; // Include any additional styles here
+import getMode from '@/utils/getMode';
 
 // Function to show toast notification
 const showNotif = (message, type) => {

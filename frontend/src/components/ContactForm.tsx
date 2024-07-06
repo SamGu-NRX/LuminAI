@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import Modal from './Modal';
-import useModal from '../hooks/useModal';
-import sendEmails from '../services/emailService';
+import useModal from '@/hooks/useModal';
+import sendEmails from '@/services/emailService';
 import showNotif from './ToastNotif';
 import { Toaster } from 'sonner';
 

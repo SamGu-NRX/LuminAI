@@ -1,4 +1,4 @@
-import "../../styles/App.scss";
+import "@/styles/App.scss";
 import "./Header.scss";
 import { useState, useEffect } from "react";
 import getMode from "../../utils/getMode";

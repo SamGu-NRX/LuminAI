@@ -5,14 +5,14 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import AOSInit from "../utils/aos";
-// import Preloader from '../components/Preloader.jsx';
+import AOSInit from "@/utils/aos";
+// import Preloader from '@/components/Preloader.jsx';
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer";
-import getMode from "../utils/getMode";
-import "../components/Header/Header.scss";
-import "../styles/App.scss";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer";
+import getMode from "@/utils/getMode";
+import "@/components/Header/Header.scss";
+import "@/styles/App.scss";
 
 export const Route = createRootRoute({
   component: Root,
