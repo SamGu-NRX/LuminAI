@@ -21,6 +21,7 @@ module.exports = {
         slab: ['"Bebas Neue"', "sans-serif"],
         serif: ['"Montserrat"', "serif"],
         spartan: ['"League Spartan"', "sans-serif"],
+        inter: ['"Inter"', "sans-serif"],
       },
       animation: {
         aurora: "aurora 60s linear infinite",

@@ -1,35 +1,47 @@
-.curriculum-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.25rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+// syllabus.scss
 
+// Define variables
+$primary-color: #2c3e50;
+$background-color: #ffffff;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$transition: transform 0.3s ease-in-out;
+$border-radius: 8px;
+$gap: 1rem;
+$padding: 1.25rem;
+$max-width: 1200px;
 
-@media (min-width: 768px) {
-    .curriculum-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+// Mixin for reusable styles
+@mixin card-style {
+  background-color: $background-color;
+  padding: $gap;
+  border-radius: $border-radius;
+  &:hover {
+    box-shadow: $box-shadow;
+    transform: scale(1.05);
+    transition: $transition;
   }
-  
+}
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $gap;
+  padding: $padding;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .week, .highlights, .roles, .join-us, .navigation {
-  background-color: #ffffff;
-  padding: 1rem;
-  border-radius: 8px;
+  @include card-style;
 }
 
-
-.week, .highlights, .roles, .join-us, .navigation:hover{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-}
-
-  h2 {
+h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: $gap;
 }
 
 ul {
@@ -44,29 +56,32 @@ li {
 }
 
 h1, h2 {
-  color: #2c3e50;
+  color: $primary-color;
 }
 
-join-us h2, .join-us p {
-  text-align: center;
+.join-us {
+  h2, p {
+    text-align: center;
+  }
 }
 
-.navigation nav ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
+.navigation {
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin: 0 10px;
+
+        a {
+          text-decoration: none;
+          color: $primary-color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
-
-.navigation nav ul li {
-  margin: 0 10px;
-}
-
-.navigation nav ul li a {
-  text-decoration: none;
-  color: #2c3e50;
-  font-weight: bold;
-}
-
-
-  

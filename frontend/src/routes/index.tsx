@@ -35,7 +35,7 @@ function Home() {
     const glowTimer = setTimeout(() => {
 
       glowAnimation.start({
-        textShadow: ['0 0 0px #00ff00', '0 0 3px #00ff00'],
+        textShadow: ['0 0 0px #62ff62', '0 0 3px #62ff62'],
         transition: {
           duration: 0.3,
           ease: 'easeInOut',
@@ -43,7 +43,7 @@ function Home() {
 
       }).then(() => {
         glowAnimation.start({
-          textShadow: ['0 0 3px #00ff00', '0 0 20px #00ff00', '0 0 3px #00ff00'],
+          textShadow: ['0 0 3px #62ff62', '0 0 20px #62ff62', '0 0 3px #62ff62'],
           transition: {
             duration: 5,
             repeat: Infinity,
@@ -99,7 +99,8 @@ function Home() {
                       <motion.span animate={glowAnimation} className="font-light">Empowering</motion.span>
                         {' '}the{' '}
                       <motion.span animate={glowAnimation} className="font-light">next generation</motion.span>
-                        {' '}of AI innovators through comprehensive bootcamps.
+                        {' '}of AI innovators through{' '}
+                        <span className="font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">free and comprehensive</span>{' '}bootcamps.
                   </div>
                 </div>
                 <ApplyButton />
@@ -108,15 +109,28 @@ function Home() {
 
             <section 
               // data-scroll-section data-aos="fade-up" data-aos-delay="100"
-              className='p-4 font-spartan'>
-              <h2 className="text-3xl font-bold mb-2" >Welcome to Lumin AI Innovate Scholars</h2>
+              className='p-2 font-spartan'>
 
-              <p className="text-xl first-line:mb-4" data-aos-delay="100">Empowering the next generation of AI innovators through comprehensive bootcamps.</p>
+              <h1 className="mt-2 mb-6 text-center justify-center text-5xl">Follow us on Socials</h1>
+
+              <div className="flex flex-wrap items-center justify-center max-w-6xl mx-auto p-2">
+                
+                {/* Make new discord invite link that automatically connects to "Prospective Applicant role" */}
+                <a className="w-1/2 md:w-1/3 lg:w-1/5 px-6 mb-8 mx-2" href="https://discord.gg/5fnTFmbhdK" target="_blank">
+                    <img className="mx-auto logo" alt="LuminAI Bootcamps Discord" src="brand-assets\discord-logo.svg" />
+                </a>
+                <a className="w-1/2 md:w-1/3 lg:w-1/5 px-6 mb-8" href="https://instagram.com" target="_blank">
+                    <img className="mx-auto logo" alt="LuminAI Bootcamps Instagram" src="brand-assets\instagram-logo.png" />
+                </a>
+                <a className="w-1/2 md:w-1/3 lg:w-1/5 px-6 mb-9" href="https://www.linkedin.com/company/luminai-bootcamps" target="_blank">
+                  <img className="mx-auto logo scale-95 hover:scale-[112%]" alt="LuminAI Bootcamps LinkedIn" src="brand-assets\LinkedIn_Logo.svg.png" />
+                </a>
+              </div>
             </section>
 
             <section 
             //data-scroll-section data-aos="fade-up" data-aos-delay="200" 
-            className="p-4 custom-grid grid-cols-1 md:grid-cols-2 gap-4 transition-all">
+            className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 transition-all">
               <div className="custom-grid bg-gray-100 p-4 rounded shadow-md hover:shadow-lg">
                 <h3 className="text-xl font-bold">Completely Free</h3>
                 <p>Lumin AI Innovate Scholars is a completely free bootcamp. We believe in providing quality education to everyone without any cost at all.</p>

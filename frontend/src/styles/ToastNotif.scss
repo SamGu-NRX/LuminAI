@@ -1,63 +1,83 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
 
-@keyframes countdown {
-    from {width:100%;}
-    to {width:0%;}
-}
+// // Define variables
+// $light-bg-color: #fff;
+// $light-text-color: #000;
+// $dark-bg-color: #333;
+// $dark-text-color: #fff;
+// $countdown-height: 5px;
+// $countdown-duration: 3s;
+// $light-gradient: linear-gradient(to right, #00b09b, #96c93d);
+// $dark-gradient: linear-gradient(to right, #ff7700, #9c00c3);
 
-@keyframes fadeout{
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-  /* Light Mode Styles */
-  .toast-light {
-    background-color: #fff;
-    color: #000;
-    position: relative;
-  }
-  
-  .toast-light::after{
-    background: linear-gradient(to right, #00b09b, #96c93d);
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100px;
-    animation: countdown 3s linear forwards;
-  }
+// // Keyframes
+// @keyframes countdown {
+//   from {
+//     width: 100%;
+//   }
+//   to {
+//     width: 0%;
+//   }
+// }
 
-  /* Dark Mode Styles */
-  .toast-dark {
-    background-color: #333;
-    color: #fff;
-    position: relative;
-  }
-  
-  .toast-dark::after{
-    background: linear-gradient(to right #ff7700, #9c00c3);
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100px;
-    animation: countdown 3s linear forwards;  
-}
+// @keyframes fadeout {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
-  /* Countdown Bar */
-  .toast-light::after, .toast-dark::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100px;
-    animation: countdown 2s linear forwards;
-  }
-  
-  .toaster-container {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    /* z-index: 1000; */
-  }
+// /* Light Mode Styles */
+// .toast-light {
+//   background-color: $light-bg-color;
+//   color: $light-text-color;
+//   position: relative;
+
+//   &::after {
+//     background: $light-gradient;
+//     content: '';
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     height: $countdown-height;
+//     animation: countdown $countdown-duration linear forwards;
+//   }
+// }
+
+// /* Dark Mode Styles */
+// .toast-dark {
+//   background-color: $dark-bg-color;
+//   color: $dark-text-color;
+//   position: relative;
+
+//   &::after {
+//     background: $dark-gradient;
+//     content: '';
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     height: $countdown-height;
+//     animation: countdown $countdown-duration linear forwards;
+//   }
+// }
+
+// /* Countdown Bar */
+// .toast-light::after, .toast-dark::after {
+//   content: '';
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   height: $countdown-height;
+//   animation: countdown 2s linear forwards;
+// }
+
+// .toaster-container {
+//   position: fixed;
+//   top: 1rem;
+//   right: 1rem;
+//   z-index: 1000;
+// }

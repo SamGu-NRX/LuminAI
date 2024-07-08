@@ -18,12 +18,13 @@ const Header = () => {
   }, [isBannerVisible]);
 
   //TODO: remove this (${mode === "dark" ? "header-text-dark text-white" : "header-text-light text-black"}) and change to dark:text-white, etc.
-  const headerClass = ` p-4 ${isBannerVisible ? 'mt-12' : ''} ${isAnimating ? 'slide-up' : '' } hidden `;
+  const headerClass = ` p-4 hidden ${isBannerVisible ? 'mt-12' : ''} ${isAnimating ? 'slide-up' : '' } 
+    header-text-dark header-text-light dark:header-dark dark:text-white`;
   const navClass = `mt-2 `; // add fonts
 
   return (
     <header className={headerClass}>
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between  items-center">
         <StyledLink
           address="/"
           text={<h2 className="text-2xl font-sans font-semibold">LuminAI Innovate Scholars</h2>}
