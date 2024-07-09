@@ -20,7 +20,7 @@ function Syllabus() {
     <div
       data-scroll-section
       id="main-container"
-      className="text-white dark:text-black bg-[#18181B] dark:bg-[#f3f3f3]"
+      className="text-black dark:text-white dark:bg-[#18181B] bg-[#f3f3f3]"
     >
       <Helmet>
         <title>LuminAI - Syllabus</title>

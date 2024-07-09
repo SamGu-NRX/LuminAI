@@ -108,7 +108,7 @@ function Staff() {
     <div
       data-scroll-section
       id="main-container"
-      className="text-white dark:text-black bg-[#18181B] dark:bg-[#f3f3f3]"
+      className="text-black dark:text-white dark:bg-[#18181B] bg-[#f3f3f3]"
     >
       <Helmet>
         <title>LuminAI - Staff</title>
@@ -122,7 +122,7 @@ function Staff() {
             <div style={{ animation: "textPopIn 0.7s ease-in-out" }}>
               <div
                 key={index}
-                className="bg-white bg-opacity-80 p-6 rounded-lg text-center relative group"
+                className="bg-white dark:bg-zinc-900 bg-opacity-80 p-6 rounded-lg text-center relative group"
                 data-aos="fade-up"
               >
                 <div className="w-24 h-24 mx-auto mb-4 relative">
@@ -140,7 +140,7 @@ function Staff() {
                 </div>
 
                 <h2 className="text-2xl font-bold ">{member.name}</h2>
-                <div className="transform absolute inset-0 duration-300 transition hover:scale-105 rounded-md bg-white bg-opacity-90 p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 ">
+                <div className="transform absolute inset-0 duration-300 transition hover:scale-105 rounded-md bg-white dark:bg-zinc-900 bg-opacity-90 p-6 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 ">
                   <p
                     className="text-xl font-sans"
                     style={{ fontWeight: "500" }}

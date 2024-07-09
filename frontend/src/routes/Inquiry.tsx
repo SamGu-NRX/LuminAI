@@ -16,7 +16,7 @@ function Inquiry() {
     <div
       data-scroll-section
       id="main-container"
-      className="text-white dark:text-black bg-[#18181B] dark:bg-[#f3f3f3]"
+      className="dark:text-white text-black dark:bg-[#18181B] bg-[#f3f3f3]"
     >
       <Helmet>
         <title>LuminAI - Inquiry</title>
