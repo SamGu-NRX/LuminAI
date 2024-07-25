@@ -14,4 +14,4 @@ The bootcamp will also include guest speakers that have work and research experi
 
 **Back-End:**  Node.js, Express.js, MongoDB, Firebase
 
-**Deployment:** Vercel, Firebase
+**Deployment:** Vercel, Firebase/Netlify

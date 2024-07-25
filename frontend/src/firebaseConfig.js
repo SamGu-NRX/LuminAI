@@ -20,13 +20,6 @@ import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-console.log(import.meta.env.VITE_FIREBASE_API_KEY);
-console.log(import.meta.env.VITE_FIREBASE_AUTH_DOMAIN);
-console.log(import.meta.env.VITE_FIREBASE_PROJECT_ID);
-console.log(import.meta.env.VITE_FIREBASE_STORAGE_BUCKET);
-console.log(import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID);
-console.log(import.meta.env.VITE_FIREBASE_APP_ID);
-
 // change to env.local?
 
 const firebaseConfig = {

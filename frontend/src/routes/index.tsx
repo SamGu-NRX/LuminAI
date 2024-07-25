@@ -65,7 +65,7 @@ function Home() {
     <div id="Home" className='text-white dark:text-black'>
       <ApplicationBanner />
         <AuroraBackground>
-          <div data-scroll-section className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full">
+          <div data-scroll-section className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full"> 
             <motion.div
               initial={{ opacity: 0.0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
