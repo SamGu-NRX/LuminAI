@@ -10,8 +10,8 @@ The bootcamp will also include guest speakers that have work and research experi
 
 ## How It's Made:
 
-**Front-End:** React.js, Vite.js, Tailwind.css, Aceternity UI
+**Front-End:** React.js, Next.js, Tailwind.css, Aceternity UI, Shadcn UI, Auth.js
 
-**Back-End:**  Node.js, Express.js, MongoDB, Firebase
+**Back-End:**  Node.js, Express.js, Supabase
 
-**Deployment:** Vercel, Firebase
+**Deployment:** Vercel (Full-stack)
