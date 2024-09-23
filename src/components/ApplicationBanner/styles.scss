@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-border:hover {
+    border-image: linear-gradient(to right, #6366f1, #a855f7) 1;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.custom-bg-gradient {
+    background: linear-gradient(110deg, #000103 45%, #1e2631 55%, #000103);
+}
+
+// src/components/styles.scss
+@keyframes fadeOutUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+  
+  .fade-out-up {
+    animation: fadeOutUp 0.5s forwards;
+  }
+  

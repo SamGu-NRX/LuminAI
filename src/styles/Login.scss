@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;    
+
+.custom-google-button {
+    animation: bounceIn 1s;
+    border-radius: 10px;
+  }
+  
+  .custom-google-button .icon {
+    border-radius: 10px;
+  }
+  

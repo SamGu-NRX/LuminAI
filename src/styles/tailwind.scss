@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.darken-slide {
+    background-image: linear-gradient(to bottom, var(--tw-bg-opacity, 1) var(--tw-bg-opacity, 1) 50%, #3730a3 100%);
+    animation: darkenSlide 1s forwards;
+  }
+
+  /* Make this button darken (for hovering over buttons like the applybutton) effect and put it in a separate CSS file */
+  @keyframes darkenSlide {
+    from {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    to {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+
+  

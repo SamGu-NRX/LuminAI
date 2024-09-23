@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* scroll-watcher */
+.progress-bar-light, .progress-bar-dark {
+    height: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    z-index: 9999;
+    transform-origin: left;
+    /* animation: scroll-watcher linear; */
+    /* animation-timeline: scroll(y); */
+    /* scale: 0 1; */
+    transition: width 0.25s ease-out, opacity 0.5s ease-in-out;
+    /* animation: fadeInLeft 0.5s forwards; */
+    margin-bottom: 5px;
+  }
+  
+.progress-bar-light{
+    background: var(--light-gradient-color);
+  }
+  
+.progress-bar-dark{
+  background: var(--dark-gradient-color);
+}

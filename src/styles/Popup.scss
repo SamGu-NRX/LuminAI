@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --glow-color: rgba(128, 0, 128, 1); /* Default max glow color for animation */
+    --glow-color-origin: rgba(128, 0, 128, 0.4); /* Glow color before glow animation starts */
+    --hover-glow-color: rgb(231, 108, 0); /* Glow color for hover */
+    --background: linear-gradient(135deg, #5e4bef, #db8466);
+}
+
+.popup-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px var(--glow-color-origin);
+    }
+    to {
+        box-shadow: 0 0 20px var(--glow-color);
+    }
+}
+
+
+.popup {
+    background-color: var(--background);
+    border: 1px solid #ddd;
+    border-radius: 16px; /* Rounded rectangle shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    position: relative;
+    width: 300px;
+    animation: glow 1.5s   alternate;
+    /* animation: bounceIn 1s; */
+    transition: box-shadow 0.3s ease-in-out;
+    animation-fill-mode: forwards; /* Keep the final state of bounce */
+}
+
+.popup-glow {
+    animation: glow 1.5s infinite alternate;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.popup:hover {
+    /* Stop the glow animation */
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 30px var(--hover-glow-color); /* Apply glow on hover */
+    
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+.popup-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.popup-options label {
+    display: flex;
+    align-items: center;
+}
+
+.popup-options input {
+    margin-right: 5px;
+}
+
+.popup:close{
+    animation: bounceOut 1s;
+}
+
+/* @keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+    80% {
+        transform: translateY(-2px);
+    }
+} */
+
+/* @keyframes bounceOut {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-20px);           
+    }       
+    100% {  
+        transform: translateY(-200px);   
+    }
+} */

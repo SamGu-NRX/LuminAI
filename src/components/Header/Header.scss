@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --light-gradient-color: linear-gradient(to right, #2ecfe1, #96c93d);
+  --dark-gradient-color: linear-gradient(to right, #ff7700, #9c00c3);
+  
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(56px); // Start from the position you want to animate up from
+  }
+  to {
+    transform: translateY(0); // Slide up to its normal position
+  }
+}
+
+.slide-up {
+  animation: slideUp 5s forwards;
+}
+
+
+.header-light{
+    background: linear-gradient(to top, #fff, #fff);
+};
+
+.header-dark{
+    background: var(--dark-gradient-color);
+};
+
+
+// @keyframes fadeInLeft {
+//   from {
+//     opacity: 0;
+//     transform: scaleX(0);
+//     transform-origin: left;
+//   }
+//   to {
+//     opacity: 1;
+//     transform: scaleX(1%);
+//   }
+// }
+
+
+
+/* header text hover animation */
+
+.header-text-light, .header-text-dark{
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.header-text-light:after, .header-text-light:after{
+  position: absolute;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  transition: width .3s ease-in-out;
+}
+
+.header-text-light:after{
+  background: var(--light-gradient-color);
+}
+
+.header-text-dark:after {
+  background: var(--dark-gradient-color);
+}
+
+.header-text-light:hover:after, .header-text-dark:hover:after{
+  width: 100%;
+}
+
+
+
+/* deprecated code segements */
+
+/* @keyframes scroll-watcher {
+    to { scale: 1 1;}
+} */
+
+/* @keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+} */
+
+/* background: linear-gradient(to right, #e66465, #9198e5); */
+/* 
+background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%); */

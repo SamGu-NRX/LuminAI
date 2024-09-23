@@ -11,10 +11,10 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "types": [
-      "styled-components",
-      "node"
-    ],
+    // "types": [
+    //   "styled-components",
+    //   "node"
+    // ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,

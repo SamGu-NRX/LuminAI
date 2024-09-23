@@ -1,0 +1,37 @@
+/* Existing styles */
+
+.ai-types {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+.ai-types h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+  
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+  
+.grid-item {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+.grid-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+  
+.grid-item p {
+    font-size: 1rem;
+}
+  
+  

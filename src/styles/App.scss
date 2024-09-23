@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@mixin logo-style {
+  filter: grayscale(100);
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    filter: grayscale(0);
+    transform: scale(1.20);
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* @apply bg-slate-900 text-slate-400 transition-colors duration-300; */
+}
+
+/* 
+body:hover{
+  @apply bg-teal-300 text-teal-900;
+} */
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+header,
+footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 80;
+  padding: 0 20px;
+  /* Adjust padding as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Optional: add shadow for better visibility */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 2s ease-in-out, opacity 2s ease-in-out, visibility 2s ease-in-out;
+  /* animation: fadeInLeft 0.5s forwards; */
+  backdrop-filter: blur(5px);
+}
+
+header.hidden,
+footer.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+header.visible,
+footer.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+footer {
+  bottom: 0;
+}
+
+/* Add top padding to main content equal to the header height */
+main {
+  min-height: 100vh;
+  /* Ensure main container takes up full viewport height */
+  overflow: hidden;
+  /* Prevent unwanted scrollbars */
+
+}
+
+
+.hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+
+}
+
+.visible {
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Ensure the initial container takes up the full viewport height */
+  padding: 0 1rem;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+
+/* General Animations */
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  80% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  70% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  80% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-exit-active {
+  transform: translateY(4);
+  opacity: 0;
+}
+
+/* @keyframes buttonHover {
+    0% {
+      color:lab(from color l a b);
+    }
+    100%{
+      color: lab(from color l+200 a b);
+    }
+} */
+
+
+@keyframes bounceIn {
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+
+  80% {
+    transform: translateY(-2px);
+  }
+}
+
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+/* 
+  background: linear-gradient(to top, rgba(255, 255, 255, 100) 0%, rgba(255, 255, 255, 50) 100%); */
+
+
+.custom-border {
+  border-width: 2px;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-color: #2d2d2d;
+  height: 100%;
+  transition: transform 0.2s;
+}
+
+/* Add a hover effect for scaling */
+.custom-border:hover {
+  transform: scale(1.01);
+}
+
+
+.custom-grid {
+  display: grid;
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-grid:hover {
+  transform: scale(1.01);
+}
+
+
+.loader-wrapper {
+  position: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #191919;
+  color: #dbd8b6
+}
+
+.absolute {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  z-index: 1;
+}
+
+.logo {
+  @include logo-style;
+}
+
