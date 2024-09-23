@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '@/styles/Button.scss';
+// import '@/styles/Button.scss';
 
 const Modal = ({modalType = 'Confirm',
   isOpen, onClose,

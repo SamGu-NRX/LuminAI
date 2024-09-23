@@ -1,5 +1,5 @@
 import { toast } from 'sonner';
-import '@/styles/ToastNotif.scss'; // I
+// import '@/styles/ToastNotif.scss'; // edit this
 import { ReactElement, JSXElementConstructor, ReactNode } from 'react';
 
 // Function to show toast notification

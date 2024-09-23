@@ -1,3 +1,5 @@
+"use client";
+
 // src/context/BannerContext.tsx
 import { createContext, useState, useContext, ReactNode } from 'react';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import useModal from '@/hooks/useModal';
 import Modal from './Modal';
-import '@/styles/Button.scss';
+// import '@/styles/Button.scss';
 
 const ApplyButton = () => {
   const { isOpen, openModal, closeModal } = useModal();
