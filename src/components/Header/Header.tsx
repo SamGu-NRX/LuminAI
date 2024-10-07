@@ -1,5 +1,5 @@
-// import "@/styles/App.scss";
-// import "./Header.scss";
+import "@/styles/App.scss";
+import "./Header.scss";
 import { useState, useEffect } from "react";
 import { useBanner } from "@/context/BannerContext";
 import Link from 'next/link';

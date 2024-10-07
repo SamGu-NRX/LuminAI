@@ -7,6 +7,7 @@ import {
   ClockIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/solid";
+import Image from 'next/image';
 
 function Sidebar() {
   const menuItems = [
@@ -21,10 +22,12 @@ function Sidebar() {
   return (
     <aside className="w-20 bg-gray-800 p-4">
       <div className="mb-8">
-        <img
+        <Image
           src="/path-to-avatar.png"
           alt="Account"
-          className="w-12 h-12 rounded-full"
+          width={48}
+          height={48}
+          className="rounded-full"
         />
       </div>
       {menuItems.map((item, index) => (

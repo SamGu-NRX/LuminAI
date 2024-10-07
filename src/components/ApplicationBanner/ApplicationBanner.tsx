@@ -1,7 +1,7 @@
 // src/components/ApplicationBanner.jsx
 import  { useEffect, useState } from 'react';
 import { useBanner } from '@/context/BannerContext';
-// import './styles.scss';
+import './styles.scss';
 // import { Button } from '@/components/ui/moving-border'; - Implement moving border effect when hovered, also add fade-in for the border
 
 const ApplicationBanner = () => {

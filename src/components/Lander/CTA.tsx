@@ -13,7 +13,7 @@ export default function CTASection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         ctaRef.current,
-        { delay: 0.6, start: 'top 80%', ease: 'power3.inOut' }
+        { delay: 0.1, start: 'top 80%', ease: 'power3.inOut' }
       );
     }
   }, []);
@@ -22,16 +22,25 @@ export default function CTASection() {
     <section ref={ctaRef} className="mt-8 p-4 text-center">
       <div
         className="transition-all bg-white rounded-lg custom-grid grid-cols-1 mt-8 p-4 shadow-md hover:shadow-lg"
-        ref={(el) => el && elementsRef.current.push(el)}
       >
-        <h2 className="text-2xl font-bold mb-2">
+        <h2 className="text-2xl font-bold mb-2" 
+            ref={(el) => {
+              if (el) elementsRef.current[1] = el;
+            }}>
           Ready to Start Your AI Journey?
         </h2>
-        <p className="mb-4">
+        <p className="mb-4"
+          ref={(el) => {
+            if (el) elementsRef.current[2] = el;
+          }}
+        >
           Join us for an immersive AI learning experience and be part of the
           future of innovation.
         </p>
-        <ApplyButton />
+        <ApplyButton ref={(el) => {
+              if (el) elementsRef.current[3] = el;
+            }}
+        />
       </div>
     </section>
   );

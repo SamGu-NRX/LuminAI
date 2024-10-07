@@ -64,7 +64,9 @@ export default function HeroSection() {
           Meet{' '}
           <span
             className="text-blue-600"
-            ref={(el) => el && elementsRef.current.push(el)}
+            ref={(el) => {
+              if (el) elementsRef.current[1] = el;
+            }}
           >
             {startTyping && (
               <Typewriter
@@ -85,7 +87,11 @@ export default function HeroSection() {
             )}
           </span>
         </div>
-        <div className="transition-shadow text-xl mt-3 mb-1 font-extralight font md:text-3xl dark:text-neutral-200 p-4 max-w-4xl">
+        <div className="transition-shadow text-xl mt-3 mb-1 font-extralight font md:text-3xl dark:text-neutral-200 p-4 max-w-4xl"
+          ref={(el) => {
+            if (el) elementsRef.current[2] = el;
+          }}
+        >
           <motion.span animate={glowAnimation} className="font-light">
             Empowering
           </motion.span>{' '}

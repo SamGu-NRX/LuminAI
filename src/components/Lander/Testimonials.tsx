@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { fadeUp } from '@/animations/gsap';
+import Image from 'next/image';
 
 export default function TestimonialsSection() {
   const testimonialsRef = useRef<HTMLDivElement>(null);
@@ -23,14 +24,14 @@ export default function TestimonialsSection() {
       role: 'AI Enthusiast',
       testimonial:
         'LuminAI Bootcamps have truly changed the way I understand AI. The hands-on approach and the support from the community are unparalleled.',
-      image: '/brand-assets/testimonial1.jpg',
+      // image: '/brand-assets/testimonial1.jpg',
     },
     {
       name: 'Jane Smith',
       role: 'Data Scientist',
       testimonial:
         'The curriculum is comprehensive and up-to-date with the latest industry trends. Highly recommend to anyone looking to dive into AI.',
-      image: '/brand-assets/testimonial2.jpg',
+      // image: '/brand-assets/testimonial2.jpg',
     },
     // Add more testimonials as needed
   ];
@@ -51,10 +52,12 @@ export default function TestimonialsSection() {
             ref={(el) => el && elementsRef.current.push(el)}
           >
             <div className="flex items-center mb-4">
-              <img
+              <Image
                 src={testimonial.image}
                 alt={testimonial.name}
-                className="w-12 h-12 rounded-full mr-4"
+                width={48}
+                height={48}
+                className="rounded-full mr-4"
               />
               <div>
                 <h3 className="text-xl font-semibold">{testimonial.name}</h3>

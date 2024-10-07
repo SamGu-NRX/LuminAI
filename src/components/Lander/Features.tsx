@@ -12,7 +12,7 @@ export default function FeaturesSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         featuresRef.current,
-        { delay: 0.2, start: 'top 80%', ease: 'power3.inOut' }
+        { delay: 0.1, start: 'top 80%', ease: 'power3.out' }
       );
     }
   }, []);
@@ -49,7 +49,9 @@ export default function FeaturesSection() {
         <div
           key={index}
           className="custom-grid bg-gray-100 p-4 rounded shadow-md hover:shadow-lg"
-          ref={(el) => el && elementsRef.current.push(el)}
+          ref={(el) => {
+            if (el) elementsRef.current[index] = el;
+          }}
         >
           <h3 className="text-xl font-bold">{feature.title}</h3>
           <p>{feature.content}</p>

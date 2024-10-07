@@ -13,7 +13,7 @@ import TestimonialsSection from '@/components/Lander/Testimonials';
 import CTASection from '@/components/Lander/CTA';
 import ExploreAISection from '@/components/Lander/ExploreAI';
 import ContactUsSection from '@/components/Lander/ContactUs';
-// import '@/styles/App.scss';
+import '@/styles/App.scss';
 
 export default function Home() {
   return (
