@@ -1,4 +1,4 @@
-<h1 align="center">LuminAI</h1>
+<h1 align="center">LuminAI Bootcamps</h1>
 
 <p align="center">
   <strong>Empowering the Next Generation of AI Innovators</strong><br>
