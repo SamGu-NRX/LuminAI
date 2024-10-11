@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">LuminAI</h1>
 
-## Getting Started
+<p align="center">
+  <strong>Empowering the Next Generation of AI Innovators</strong><br>
+  Creating free, comprehensive courses and bootcamps designed to teach high school students about AI and Machine Learning (ML).<br>
+  <a href="https://forms.gle/RYGHkuvyyzgru3Qh9">Apply for the AI Innovate Scholars Bootcamp</a>
+</p>
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About Us
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+LuminAI is a nonprofit organization dedicated to making AI education accessible. We provide high-quality, free courses and bootcamps aimed at teaching students the fundamentals and advanced concepts of AI and ML algorithms.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🧠 **Why Join Us?**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Are you a high school student interested in diving into the fascinating world of AI? Do you want to develop technical expertise and learn to build AI models using TensorFlow and PyTorch? Join the **AI Innovate Scholars Bootcamp** hosted in partnership with **RAY4Students**!
 
-## Learn More
+- **Hands-on Experience**: Learn to program AI models with the latest tools.
+- **Expert Mentorship**: Sessions with AI professionals and researchers.
+- **Interactive Projects**: Build real-world AI solutions and present your work.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How It's Made
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<table>
+  <tr>
+    <td><strong>Front-End</strong></td>
+    <td>React.js, Next.js, Tailwind.css, Aceternity UI, Shadcn UI, Auth.js (full-stack)</td>
+  </tr>
+  <tr>
+    <td><strong>Back-End</strong></td>
+    <td>Node.js, Express.js, Supabase</td>
+  </tr>
+  <tr>
+    <td><strong>Deployment</strong></td>
+    <td>Vercel (Full-stack)</td>
+  </tr>
+</table>
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Learning Management System (LMS)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+We are developing a fully integrated Learning Management System (LMS) for asynchronous learning. Here’s what you can expect:
+
+### **Features**
+
+- **Interactive Modules**: Self-paced learning with quizzes, coding exercises, and video tutorials.
+- **Progress Tracking**: Monitor your learning journey and gain insights through real-time analytics.
+- **Project Submissions**: Upload your projects and receive personalized feedback from mentors.
+- **Community Forum**: Engage with peers and instructors, collaborate on projects, and discuss AI concepts.
+- **Resource Library**: Access comprehensive study materials, research papers, and toolkits for building AI models.
+
+### **Future Enhancements**
+
+- [ ] AI-powered personalized learning paths based on student progress
+- [ ] Integration with AI tools like TensorFlow Hub for live model deployment
+- [ ] Certification programs upon course completion
+- [ ] Mobile app support for learning on the go
+
+---
+
+## Apply to LuminAI Bootcamps NOW!
+
+<p align="center">
+  Interested in joining our bootcamp? <br>
+  <a href="https://forms.gle/RYGHkuvyyzgru3Qh9"><strong>Apply Today!</strong></a>
+</p>
+
+<p align="center">
+  <a href="https://nextjs.org/">Next.js</a> •
+  <a href="https://vercel.com/">Vercel</a> •
+  <a href="https://supabase.com/">Supabase</a>
+</p>
+
+---
+
+We believe in the power of education to transform lives. Join us in building the future of AI, one student at a time.
