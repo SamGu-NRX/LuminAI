@@ -12,7 +12,7 @@ export default function ExploreAISection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         exploreRef.current,
-        { delay: 0.1, start: 'top 80%', ease: 'power3.out' }
+        { delay: 0.1}
       );
     }
   }, []);
@@ -27,7 +27,7 @@ export default function ExploreAISection() {
       >
         Explore AI with Us
       </h2>
-      <p 
+      <p
         ref={(el) => {
           if (el) elementsRef.current[1] = el;
         }}

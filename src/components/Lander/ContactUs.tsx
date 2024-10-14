@@ -14,7 +14,7 @@ export default function ContactUsSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         contactRef.current,
-        { delay: 0.8, start: 'top 80%', ease: 'power3.inOut' }
+        { delay: 0.8}
       );
     }
   }, []);

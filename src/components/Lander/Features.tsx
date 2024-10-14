@@ -4,18 +4,14 @@ import { useEffect, useRef } from 'react';
 import { fadeUp } from '@/animations/gsap';
 
 export default function FeaturesSection() {
-  const featuresRef = useRef<HTMLDivElement>(null);
-  const elementsRef = useRef<HTMLElement[]>([]);
 
-  useEffect(() => {
-    if (featuresRef.current) {
-      fadeUp(
-        elementsRef.current.filter((el) => el !== null),
-        featuresRef.current,
-        { delay: 0.1, start: 'top 80%', ease: 'power3.out' }
-      );
-    }
-  }, []);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+      cardRefs.current.forEach((card, index) => {
+        fadeUp(card, card, { delay: index * 0.1 });
+      });
+    }, []);
 
   const features = [
     {
@@ -41,16 +37,13 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section
-      ref={featuresRef}
-      className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 transition-all"
-    >
+    <section className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 transition-all">
       {features.map((feature, index) => (
         <div
           key={index}
           className="custom-grid bg-gray-100 p-4 rounded shadow-md hover:shadow-lg"
           ref={(el) => {
-            if (el) elementsRef.current[index] = el;
+            if (el) cardRefs.current[index] = el;
           }}
         >
           <h3 className="text-xl font-bold">{feature.title}</h3>

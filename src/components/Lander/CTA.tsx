@@ -13,7 +13,7 @@ export default function CTASection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         ctaRef.current,
-        { delay: 0.1, start: 'top 80%', ease: 'power3.inOut' }
+        { delay: 0.1 }
       );
     }
   }, []);
@@ -23,7 +23,7 @@ export default function CTASection() {
       <div
         className="transition-all bg-white rounded-lg custom-grid grid-cols-1 mt-8 p-4 shadow-md hover:shadow-lg"
       >
-        <h2 className="text-2xl font-bold mb-2" 
+        <h2 className="text-2xl font-bold mb-2"
             ref={(el) => {
               if (el) elementsRef.current[1] = el;
             }}>
