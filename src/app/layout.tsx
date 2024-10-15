@@ -2,6 +2,38 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { BannerProvider } from "@/context/BannerContext";
+import {
+  Bai_Jamjuree,
+  Bebas_Neue,
+  League_Spartan,
+  Inter,
+} from "next/font/google";
+
+// Load Google Fonts
+const baiJamjuree = Bai_Jamjuree({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const leagueSpartan = League_Spartan({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,8 +58,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased
+          ${baiJamjuree.className} ${bebasNeue.className} ${leagueSpartan.className} ${inter.className}`}
       >
         <BannerProvider>
           {children}

@@ -14,7 +14,7 @@ export default function AICurriculumSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         sectionRef.current,
-        { delay: 0.3, start: 'top 80%', ease: 'power3.inOut' }
+        { delay: 0.3 }
       );
     }
   }, []);
@@ -43,11 +43,11 @@ export default function AICurriculumSection() {
   return (
     <div ref={sectionRef} className="p-4 max-w-2xl mx-auto">
       <Card className="mt-4 overflow-hidden">
-        <CardHeader 
-          className="cursor-pointer" 
+        <CardHeader
+          className="cursor-pointer"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <CardTitle 
+          <CardTitle
             className="flex items-center justify-between"
             ref={(el) => el && elementsRef.current.push(el)}
           >
@@ -57,7 +57,7 @@ export default function AICurriculumSection() {
         </CardHeader>
         {isExpanded && (
           <CardContent>
-            <p 
+            <p
               className="mb-4"
               ref={(el) => el && elementsRef.current.push(el)}
             >
@@ -65,7 +65,7 @@ export default function AICurriculumSection() {
             </p>
             {curriculumItems.map((section, sectionIndex) => (
               <div key={sectionIndex} className="mb-4">
-                <h3 
+                <h3
                   className="text-xl font-bold mb-2"
                   ref={(el) => el && elementsRef.current.push(el)}
                 >
@@ -85,7 +85,7 @@ export default function AICurriculumSection() {
                 </ul>
               </div>
             ))}
-            <Button 
+            <Button
               className="mt-4 w-full"
               ref={(el) => el && elementsRef.current.push(el)}
             >

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { Config } from "tailwindcss";
 
 import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
@@ -9,13 +10,13 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const config: Config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{css,js,jsx,ts,tsx}',
-    './components/**/*.{css,js,jsx,ts,tsx}',
-    './components/*.{css,js,jsx,ts,tsx}',
-    './app/*.{css,js,jsx,ts,tsx}',
-    './app/**/*.{css,js,jsx,ts,tsx}',
-    './src/**/*.{css,js,jsx,ts,tsx}',
-	],
+    "./pages/**/*.{css,js,jsx,ts,tsx}",
+    "./components/**/*.{css,js,jsx,ts,tsx}",
+    "./components/*.{css,js,jsx,ts,tsx}",
+    "./app/*.{css,js,jsx,ts,tsx}",
+    "./app/**/*.{css,js,jsx,ts,tsx}",
+    "./src/**/*.{css,js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -26,11 +27,11 @@ const config: Config = {
         200: "200ms",
       },
       fontFamily: {
-        sans: ['"Bai Jamjuree"', "sans-serif"],
-        slab: ['"Bebas Neue"', "sans-serif"],
-        serif: ['"Montserrat"', "serif"],
-        spartan: ['"League Spartan"', "sans-serif"],
-        inter: ['"Inter"', "sans-serif"],
+        sans: ["var(--font-baiJamjuree)"],
+        slab: ["var(--font-bebasNeue)"],
+        serif: ["var(--font-Montserrat)"],
+        spartan: ["var(--font-leagueSpartan)"],
+        inter: ["var(--font-inter)"],
       },
       animation: {
         aurora: "aurora 60s linear infinite",
@@ -65,18 +66,18 @@ const config: Config = {
   },
   plugins: [addVariablesForColors],
 };
-  
+
   // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
   function addVariablesForColors({ addBase, theme }: any) {
     let allColors = flattenColorPalette(theme("colors"));
     let newVars = Object.fromEntries(
       Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
     );
-   
+
     addBase({
       ":root": newVars,
     });
   }
-  
-  
+
+
   export default config;

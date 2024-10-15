@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         testimonialsRef.current,
-        { delay: 0.5, start: 'top 80%', ease: 'power3.inOut' }
+        { delay: 0.3 }
       );
     }
   }, []);

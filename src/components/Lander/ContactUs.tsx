@@ -14,13 +14,13 @@ export default function ContactUsSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         contactRef.current,
-        { delay: 0.8, start: 'top 80%', ease: 'power3.inOut' }
+        { delay: 0.5 }
       );
     }
   }, []);
 
   return (
-    <section ref={contactRef} className="text-center mt-8 p-4">
+    <div ref={contactRef} className="text-center mt-8 p-4">
       <h2
         className="text-3xl font-bold mb-4"
         ref={(el) => el && elementsRef.current.push(el)}
@@ -44,6 +44,6 @@ export default function ContactUsSection() {
       >
         Show Error Toast
       </button>
-    </section>
+    </div>
   );
 }

@@ -22,7 +22,7 @@ export default function Home() {
       <AuroraBackground>
         <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full">
           <Header />
-          <main data-scroll-container>
+          <div>
             <motion.div
               initial={{ opacity: 0.0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function Home() {
               <ExploreAISection />
               {/* <ContactUsSection /> */}
             </motion.div>
-          </main>
+          </div>
           <Footer />
         </div>
       </AuroraBackground>

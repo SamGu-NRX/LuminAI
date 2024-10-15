@@ -6,16 +6,16 @@ import PropTypes from 'prop-types';
 const Background = () => {
     return <div className="background">{/* Existing SVGs for the background */}</div>;
 };
-  
+
   // Activities Component
 const Activities = () => {
     return (
-      <section className="activities" style={{ transform: 'translateX(25%)' }}>
+      <div className="activities" style={{ transform: 'translateX(25%)' }}>
         {/* Existing activities */}
-      </section>
+      </div>
     );
 };
-  
+
   // GridItem Component
 const GridItem = ({ type, title, description }) => {
     return (
@@ -25,7 +25,7 @@ const GridItem = ({ type, title, description }) => {
       </div>
     );
   };
-  
+
   GridItem.propTypes = {
     type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -92,7 +92,7 @@ const AiTypes = () => {
         description: 'Isolation Forest is an algorithm for detecting anomalies by isolating data points using random splits, making it easier to identify outliers.',
     }
   ];
-      
+
 
   return (
     <section className="ai-types">
