@@ -6,12 +6,6 @@
   <a href="https://forms.gle/RYGHkuvyyzgru3Qh9" style="font-size:1.2em; color:#4F46E5;">Apply for the AI Innovate Scholars Bootcamp</a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/LuminAIBootcamps/LuminAI-Bootcamps">
-    <img src="https://img.shields.io/github/license/LuminAIBootcamps/LuminAI-Bootcamps" alt="License">
-  </a>
-</p>
-
 ---
 
 ## 📚 Table of Contents
@@ -112,12 +106,6 @@ We are developing a fully integrated **Learning Management System (LMS)** for as
 - [ ] 🔗 Integration with AI tools like TensorFlow Hub for live model deployment
 - [ ] 🏅 Certification programs upon course completion
 - [ ] 📱 Mobile app support for learning on the go
-
----
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
