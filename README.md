@@ -6,12 +6,13 @@
   <a href="https://forms.gle/RYGHkuvyyzgru3Qh9" style="font-size:1.2em; color:#4F46E5;">Apply for the AI Innovate Scholars Bootcamp</a>
 </p>
 
----
-
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ed3233d0-619a-455e-8702-4e0f50cdc66e" alt="LuminAI Lander Page">
+  <video src="https://github.com/user-attachments/assets/f6098d59-04bd-49f2-9a8c-3481d90d6491" controls autoplay muted width="600">
+    Your browser does not support the video.
+  </video>
 </div>
 
+---
 
 ## 📚 Table of Contents
 
