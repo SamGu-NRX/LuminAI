@@ -8,6 +8,11 @@
 
 ---
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ed3233d0-619a-455e-8702-4e0f50cdc66e" alt="LuminAI Lander Page">
+</div>
+
+
 ## 📚 Table of Contents
 
 - [About Us](#about-us)
