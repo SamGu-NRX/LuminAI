@@ -39,8 +39,8 @@ export default function Home() {
               <AICurriculumSection />
               <TestimonialsSection />
               <CTASection />
-              <ExploreAISection />
-              {/* <ContactUsSection /> */}
+              {/* <ExploreAISection /> */}
+              <ContactUsSection />
             </motion.div>
           </div>
           <Footer />

@@ -1,73 +1,99 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { fadeUp } from '@/animations/gsap';
-import Image from 'next/image';
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
+
+// Shared Variants for Animations
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 
 export default function TestimonialsSection() {
-  const testimonialsRef = useRef<HTMLDivElement>(null);
-  const elementsRef = useRef<HTMLElement[]>([]);
-
-  useEffect(() => {
-    if (testimonialsRef.current) {
-      fadeUp(
-        elementsRef.current.filter((el) => el !== null),
-        testimonialsRef.current,
-        { delay: 0.3 }
-      );
-    }
-  }, []);
-
   const testimonials = [
     {
-      name: 'John Doe',
-      role: 'AI Enthusiast',
+      name: "John Doe",
+      role: "AI Enthusiast",
       testimonial:
-        'LuminAI Bootcamps have truly changed the way I understand AI. The hands-on approach and the support from the community are unparalleled.',
-      // image: '/brand-assets/testimonial1.jpg',
+        "LuminAI Bootcamps have truly changed the way I understand AI. The hands-on approach and the support from the community are unparalleled.",
+      initials: "JD",
     },
     {
-      name: 'Jane Smith',
-      role: 'Data Scientist',
+      name: "Jane Smith",
+      role: "Data Scientist",
       testimonial:
-        'The curriculum is comprehensive and up-to-date with the latest industry trends. Highly recommend to anyone looking to dive into AI.',
-      // image: '/brand-assets/testimonial2.jpg',
+        "The curriculum is comprehensive and up-to-date with the latest industry trends. Highly recommend to anyone looking to dive into AI.",
+      initials: "JS",
     },
-    // Add more testimonials as needed
   ];
 
   return (
-    <section ref={testimonialsRef} className="p-4 mt-8">
-      <h2
-        className="text-3xl font-bold text-center mb-6"
-        ref={(el) => el && elementsRef.current.push(el)}
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      className="p-4 mt-8 max-w-5xl mx-auto"
+    >
+      <motion.h2
+        variants={itemVariants}
+        className="text-3xl font-bold text-center mb-12 text-gray-800"
       >
         What Our Participants Say
-      </h2>
-      <div className="flex flex-wrap justify-center gap-8">
+      </motion.h2>
+
+      <div className="grid md:grid-cols-2 gap-8">
         {testimonials.map((testimonial, index) => (
-          <div
+          <motion.div
             key={index}
-            className="max-w-sm bg-white rounded-lg shadow-md p-6"
-            ref={(el) => el && elementsRef.current.push(el)}
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.03,
+              boxShadow: "0 10px 20px rgba(59, 130, 246, 0.15)",
+            }}
+            className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 relative overflow-hidden transition-all duration-300"
           >
-            <div className="flex items-center mb-4">
-              <Image
-                src={testimonial.image}
-                alt={testimonial.name}
-                width={48}
-                height={48}
-                className="rounded-full mr-4"
-              />
+            {/* <Quote
+              className="absolute top-4 left-4 text-blue-100 opacity-50"
+              size={48}
+            /> */}
+            <div className="flex items-center mb-4 relative z-10">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                <span className="text-blue-600 font-semibold text-xl">
+                  {testimonial.initials}
+                </span>
+              </div>
               <div>
-                <h3 className="text-xl font-semibold">{testimonial.name}</h3>
+                <p className="font-semibold text-lg text-gray-800">
+                  {testimonial.name}
+                </p>
                 <p className="text-gray-600">{testimonial.role}</p>
               </div>
             </div>
-            <p className="text-gray-800">{testimonial.testimonial}</p>
-          </div>
+
+            <p className="text-gray-700 relative z-10">
+              {testimonial.testimonial}
+            </p>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

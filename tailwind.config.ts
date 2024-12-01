@@ -22,6 +22,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        white: {
+          "100": "#BEC1DD",
+          "200": "#C1C2D3",
+          DEFAULT: "#FFF",
+        },
+        black: {
+          "100": "#BEC1DD",
+          "200": "#C1C2D3",
+          DEFAULT: "#000",
+        },
       },
       transitionDuration: {
         200: "200ms",

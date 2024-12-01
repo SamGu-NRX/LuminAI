@@ -15,24 +15,28 @@ const baiJamjuree = Bai_Jamjuree({
   weight: ["200", "300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
+  variable: "--font-baiJamjuree",
 });
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
+  variable: "--font-bebasNeue",
 });
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
+  variable: "--font-leagueSpartan",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
+  variable: "--font-inter",
 });
 
 const geistSans = localFont({
@@ -40,6 +44,7 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -58,14 +63,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased
-          ${baiJamjuree.className} ${bebasNeue.className} ${leagueSpartan.className} ${inter.className}`}
+        className={`${geistSans.variable} ${geistMono.variable}
+          ${baiJamjuree.variable} ${bebasNeue.variable} ${leagueSpartan.variable} ${inter.variable}
+          antialiased
+        `}
       >
-        <BannerProvider>
-          {children}
-        </BannerProvider>
+        <BannerProvider>{children}</BannerProvider>
       </body>
     </html>
   );

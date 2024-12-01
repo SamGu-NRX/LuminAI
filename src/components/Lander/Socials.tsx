@@ -65,6 +65,9 @@ export default function SocialsSection() {
           className="w-1/2 md:w-1/3 lg:w-1/5 px-6 mb-9"
           href="https://www.linkedin.com/company/luminai-bootcamps"
           target="_blank"
+          ref={(el) => {
+            if (el) elementsRef.current[4] = el;
+          }}
         >
           <img
             className="mx-auto logo scale-95 hover:scale-[112%]"
