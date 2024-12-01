@@ -83,10 +83,7 @@ export default function ContactUsSection() {
         </div>
 
         {/* Content */}
-        <motion.div
-          variants={itemVariants}
-          className="px-6 py-6 text-center"
-        >
+        <motion.div variants={itemVariants} className="px-6 py-6 text-center">
           <motion.div variants={itemVariants} className="mb-6">
             <h3 className="text-2xl font-semibold text-blue-700 mb-3">
               Business Inquiry
@@ -103,9 +100,13 @@ export default function ContactUsSection() {
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-4 px-8 py-4 bg-blue-500 text-white rounded-full
-                       hover:bg-blue-600 transition-colors duration-300
-                       flex items-center justify-center space-x-2"
+            className="group relative px-8 py-4
+            bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400
+          text-white font-semibold
+            transition-colors duration-300 flex items-center
+            justify-center mx-auto space-x-3 rounded-full
+            hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-blue-600
+            hover:shadow-xl"
           >
             <Send className="w-5 h-5 text-white" />
             <span>Get In Touch</span>
