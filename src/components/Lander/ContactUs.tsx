@@ -31,29 +31,25 @@ export default function ContactUsSection() {
     };
   }, [controls]);
 
+  // Shared Variants for Animations
   const containerVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      scale: 1,
+      y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        when: "beforeChildren",
-        staggerChildren: 0.3,
+        delayChildren: 0.3,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.5 },
     },
   };
 
@@ -63,64 +59,63 @@ export default function ContactUsSection() {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="relative max-w-4xl mx-auto p-8 bg-white/10 backdrop-filter backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl overflow-hidden"
+      className="p-4 max-w-4xl mx-auto"
     >
-      {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5
-        opacity-70 pointer-events-none z-0"
-      />
+      <motion.div
+        variants={itemVariants}
+        className="bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-black/10 overflow-hidden"
+      >
+        {/* Header */}
+        <div className="px-6 py-8 text-center">
+          <motion.h2
+            variants={itemVariants}
+            className="text-4xl font-extrabold text-gray-800 mb-4"
+          >
+            Contact Us
+          </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-gray-700 max-w-2xl mx-auto"
+          >
+            We're excited to hear from you. Let's collaborate and innovate
+            together.
+          </motion.p>
+        </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-white text-center">
-        <motion.h2
+        {/* Content */}
+        <motion.div
           variants={itemVariants}
-          className="text-5xl font-extrabold mb-6 bg-clip-text text-transparent
-          bg-gradient-to-r from-white via-white/90 to-white/70"
+          className="px-6 py-6 text-center"
         >
-          Contact Us
-        </motion.h2>
+          <motion.div variants={itemVariants} className="mb-6">
+            <h3 className="text-2xl font-semibold text-blue-700 mb-3">
+              Business Inquiry
+            </h3>
+            <p className="text-gray-700 max-w-xl mx-auto">
+              Transform the future of AI education with us. Whether you&apos;re
+              a student, educator, or business owner, we&apos;re here to help.
+              We collaborate with all who believe in the education of our next
+              generation. Let&apos;s transform the future of AI together.
+            </p>
+          </motion.div>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-lg mb-8 text-white/80 max-w-2xl mx-auto"
-        >
-          We're excited to hear from you. Let's collaborate and innovate
-          together.
-        </motion.p>
-
-        <motion.div variants={itemVariants} className="mb-10">
-          <h3 className="text-3xl font-semibold mb-4 text-white/90">
-            Business Inquiry
-          </h3>
-          <p className="text-white/70 max-w-xl mx-auto">
-            Transform the future of AI education with us.
-
-            We collaborate with all who believe in the education of our next generation. Let&apos;s
-            transform the future of AI together.
-          </p>
+          <motion.button
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-4 px-8 py-4 bg-blue-500 text-white rounded-full
+                       hover:bg-blue-600 transition-colors duration-300
+                       flex items-center justify-center space-x-2"
+          >
+            <Send className="w-5 h-5 text-white" />
+            <span>Get In Touch</span>
+            <ArrowRight
+              className="w-5 h-5 text-white transition-transform
+                         group-hover:translate-x-1"
+            />
+          </motion.button>
         </motion.div>
-
-        <motion.button
-          variants={itemVariants}
-          whileHover={{
-            scale: 1.05,
-            transition: { duration: 0.2 },
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="group relative px-8 py-4 bg-white/20 hover:bg-white/30
-          backdrop-blur-md rounded-full text-white font-semibold
-          transition-all duration-300 ease-in-out flex items-center
-          justify-center mx-auto space-x-3 hover:shadow-xl"
-        >
-          <Send className="w-5 h-5 mr-3 text-white/80 group-hover:animate-pulse" />
-          Get In Touch
-          <ArrowRight
-            className="ml-3 w-5 h-5 text-white/80 transition-transform
-            group-hover:translate-x-1"
-          />
-        </motion.button>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

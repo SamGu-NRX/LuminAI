@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, Quote } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 // Shared Variants for Animations
 const containerVariants = {
