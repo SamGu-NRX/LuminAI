@@ -7,7 +7,7 @@
 </p>
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/f6098d59-04bd-49f2-9a8c-3481d90d6491" controls autoplay muted width="600">
+  <video src="https://github.com/user-attachments/assets/f6098d59-04bd-49f2-9a8c-3481d90d6491" autoplay muted width="600">
     Your browser does not support the video.
   </video>
 </div>
