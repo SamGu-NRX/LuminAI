@@ -1,6 +1,6 @@
 // src/animations/gsap.ts
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,8 +10,12 @@ interface FadeUpOptions extends gsap.TweenVars {
   ease?: string;
 }
 
-export const fadeUp = (targets: gsap.TweenTarget, trigger: gsap.DOMTarget, options?: FadeUpOptions) => {
-  const { start = 'top 90%', ease = 'power3.out', ...rest } = options || {};
+export const fadeUp = (
+  targets: gsap.TweenTarget,
+  trigger: gsap.DOMTarget,
+  options?: FadeUpOptions
+) => {
+  const { start = "top 90%", ease = "power3.inOut", ...rest } = options || {};
 
   gsap.fromTo(
     targets,
@@ -25,9 +29,9 @@ export const fadeUp = (targets: gsap.TweenTarget, trigger: gsap.DOMTarget, optio
       scrollTrigger: {
         trigger: trigger,
         start: start, // start the animation when the top of the section hits 80% of the viewport height
-        toggleActions: 'play reset restart reverse',
+        toggleActions: "play reset restart reverse",
       },
-      ...rest
+      ...rest,
     }
   );
 };

@@ -2,90 +2,53 @@
 
 import { useEffect, useRef } from "react";
 import { fadeUp } from "@/animations/gsap";
-import Image from "next/image";
-import { FaStar } from "react-icons/fa"; // Import star icon
 
-export default function TestimonialsSection() {
-  const testimonialsRef = useRef<HTMLDivElement>(null);
-  const elementsRef = useRef<HTMLElement[]>([]);
+export default function FeaturesSection() {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    if (testimonialsRef.current) {
-      fadeUp(
-        elementsRef.current.filter((el) => el !== null),
-        testimonialsRef.current,
-        { delay: 0.3 }
-      );
-    }
+    cardRefs.current.forEach((card, index) => {
+      fadeUp(card, card, { delay: index * 0.1 });
+    });
   }, []);
 
-  const testimonials = [
+  const features = [
     {
-      name: "John Doe",
-      role: "AI Enthusiast",
-      testimonial:
-        "LuminAI Bootcamps have truly changed the way I understand AI. The hands-on approach and the support from the community are unparalleled.",
-      // image: "/brand-assets/testimonial1.jpg",
-      image: false,
+      title: "Completely Free",
+      content:
+        "LuminAI Innovate Scholars is a completely free bootcamp. We believe in providing quality education to everyone without any cost at all.",
     },
     {
-      name: "Jane Smith",
-      role: "Data Scientist",
-      testimonial:
-        "The curriculum is comprehensive and up-to-date with the latest industry trends. Highly recommend to anyone looking to dive into AI.",
-      // image: "/brand-assets/testimonial2.jpg",
-      image: false,
+      title: "From Students, For Students",
+      content:
+        "Our program is created by students who understand the challenges and needs of learning AI. We aim to make AI education accessible to all students.",
     },
-    // Add more testimonials as needed
+    {
+      title: "Non-Profit Organization",
+      content:
+        "We are a non-profit organization dedicated to spreading knowledge and fostering innovation in the field of artificial intelligence.",
+    },
+    {
+      title: "Industry-Standard AI",
+      content:
+        "Our curriculum covers industry-standard AI tools and techniques, ensuring that our students are well-prepared for real-world applications.",
+    },
   ];
 
   return (
-    <section ref={testimonialsRef} className="p-4 mt-8">
-      <h2
-        className="text-3xl font-bold text-center mb-6"
-        ref={(el) => el && elementsRef.current.push(el)}
-      >
-        What Our Participants Say
-      </h2>
-      <div className="flex flex-wrap justify-center gap-8">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className="max-w-sm p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
-            ref={(el) => el && elementsRef.current.push(el)}
-            style={{
-              background: "rgba(255, 255, 255, 0.4)", // Glassmorphism effect
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.6)",
-            }}
-          >
-            <div className="flex items-center mb-4">
-              {testimonial.image && typeof testimonial.image === 'string' && (
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  width={48}
-                  height={48}
-                  className="rounded-full mr-4"
-                />
-              )}
-              <div>
-                <h3 className="text-xl font-bold text-black">
-                  {testimonial.name}
-                </h3>
-                <p className="text-slate-800">{testimonial.role}</p>
-              </div>
-            </div>
-            <p className="text-slate-900 mb-4">{testimonial.testimonial}</p>
-            <div className="flex items-center text-yellow-400">
-              {/* Display 5-star rating */}
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+    <section className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 transition-all">
+      {features.map((feature, index) => (
+        <div
+          key={index}
+          className="custom-grid bg-gray-100 p-4 rounded shadow-md hover:shadow-lg"
+          ref={(el) => {
+            if (el) cardRefs.current[index] = el;
+          }}
+        >
+          <h3 className="text-xl font-bold">{feature.title}</h3>
+          <p>{feature.content}</p>
+        </div>
+      ))}
     </section>
   );
 }

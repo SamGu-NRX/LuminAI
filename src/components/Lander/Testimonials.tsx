@@ -26,7 +26,6 @@ const itemVariants = {
   },
 };
 
-
 export default function TestimonialsSection() {
   const testimonials = [
     {

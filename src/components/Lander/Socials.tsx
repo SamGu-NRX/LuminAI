@@ -13,7 +13,7 @@ export default function SocialsSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         socialsRef.current,
-        { delay: 0.1, start: "top 80%", ease: "power3.inOut" }
+        { delay: 0.05, start: 'top 90%', ease: 'power3.out' }
       );
     }
   }, []);

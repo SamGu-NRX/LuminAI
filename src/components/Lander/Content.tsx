@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { fadeUp } from "@/animations/gsap";
 
 // Shared Variants for Animations
 const containerVariants = {
@@ -28,6 +29,21 @@ const itemVariants = {
 
 export default function AICurriculumSection() {
   const [isExpanded, setIsExpanded] = useState(false);
+  
+  // TODO: Implement GSAP fadeUp animation
+
+  // const sectionRef = useRef(null);
+  // const elementsRef = useRef([]);
+
+  // useEffect(() => {
+  //   if (sectionRef.current) {
+  //     fadeUp(
+  //       elementsRef.current.filter((el) => el !== null),
+  //       sectionRef.current,
+  //       { delay: 0.3 }
+  //     );
+  //   }
+  // }, []);
 
   const curriculumItems = [
     {
