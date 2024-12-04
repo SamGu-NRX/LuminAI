@@ -2,7 +2,7 @@
 // this component HAS TO BE use client
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import * as m from "framer-motion/m";
 import { FaDiscord, FaGithub, FaGoogle } from 'react-icons/fa';
 import { LogIn } from 'lucide-react';
 
@@ -19,7 +19,7 @@ type EmailSignInButtonProps = {
 
 export function GoogleSignInButton({ buttonText, handleClick, isLoading }: OAuthButtonProps) {
   return (
-    <motion.button
+    <m.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
@@ -27,13 +27,13 @@ export function GoogleSignInButton({ buttonText, handleClick, isLoading }: OAuth
       disabled={isLoading}
     >
       <FaGoogle className="mr-2" /> {isLoading ? 'Loading...' : buttonText || 'Continue with Google'}
-    </motion.button>
+    </m.button>
   )
 }
 
 export function DiscordSignInButton({ buttonText, handleClick, isLoading }: OAuthButtonProps) {
   return (
-    <motion.button
+    <m.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
@@ -41,13 +41,13 @@ export function DiscordSignInButton({ buttonText, handleClick, isLoading }: OAut
       disabled={isLoading}
     >
       <FaDiscord className="mr-2" /> {isLoading ? 'Loading...' : buttonText || 'Continue with Discord'}
-    </motion.button>
+    </m.button>
   )
 }
 
 export function GithubSignInButton({ buttonText, handleClick, isLoading }: OAuthButtonProps) {
   return (
-    <motion.button
+    <m.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
@@ -55,13 +55,13 @@ export function GithubSignInButton({ buttonText, handleClick, isLoading }: OAuth
       disabled={isLoading}
     >
       <FaGithub className="mr-2" /> {isLoading ? 'Loading...' : buttonText || 'Continue with Github'}
-    </motion.button>
+    </m.button>
   )
 }
 
 export function EmailSignInButton({ mode, isLoading }: EmailSignInButtonProps) {
   return (
-    <motion.button
+    <m.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       type="submit"
@@ -72,6 +72,6 @@ export function EmailSignInButton({ mode, isLoading }: EmailSignInButtonProps) {
         <LogIn className="mr-2 h-4 w-4" />
         {isLoading ? 'Loading...' : mode === 'signin' ? 'Sign In' : mode === 'signup' ? 'Sign Up' : 'Reset Password'}
       </div>
-    </motion.button>
+    </m.button>
   );
 }

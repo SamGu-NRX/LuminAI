@@ -77,7 +77,7 @@ export default function ContactUsSection() {
             variants={itemVariants}
             className="text-lg text-gray-700 max-w-2xl mx-auto"
           >
-            We're excited to hear from you. Let's collaborate and innovate
+            We&apos;re excited to hear from you. Let&apos;s collaborate and innovate
             together.
           </motion.p>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import * as m from "framer-motion/m";
 import { Quote } from "lucide-react";
 
 // Shared Variants for Animations
@@ -46,22 +46,22 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <motion.section
+    <m.section
       initial="hidden"
       animate="visible"
       variants={containerVariants}
       className="p-4 mt-8 max-w-5xl mx-auto"
     >
-      <motion.h2
+      <m.h2
         variants={itemVariants}
         className="text-3xl font-bold text-center mb-12 text-gray-800"
       >
         What Our Participants Say
-      </motion.h2>
+      </m.h2>
 
       <div className="grid md:grid-cols-2 gap-8">
         {testimonials.map((testimonial, index) => (
-          <motion.div
+          <m.div
             key={index}
             variants={itemVariants}
             whileHover={{
@@ -91,9 +91,9 @@ export default function TestimonialsSection() {
             <p className="text-gray-700 relative z-10">
               {testimonial.testimonial}
             </p>
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 }

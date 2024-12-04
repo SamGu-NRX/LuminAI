@@ -25,14 +25,16 @@ export default function TestimonialsSection() {
       role: "AI Enthusiast",
       testimonial:
         "LuminAI Bootcamps have truly changed the way I understand AI. The hands-on approach and the support from the community are unparalleled.",
-      image: "/brand-assets/testimonial1.jpg",
+      // image: "/brand-assets/testimonial1.jpg",
+      image: false,
     },
     {
       name: "Jane Smith",
       role: "Data Scientist",
       testimonial:
         "The curriculum is comprehensive and up-to-date with the latest industry trends. Highly recommend to anyone looking to dive into AI.",
-      image: "/brand-assets/testimonial2.jpg",
+      // image: "/brand-assets/testimonial2.jpg",
+      image: false,
     },
     // Add more testimonials as needed
   ];
@@ -58,13 +60,15 @@ export default function TestimonialsSection() {
             }}
           >
             <div className="flex items-center mb-4">
-              <Image
-                src={testimonial.image}
-                alt={testimonial.name}
-                width={48}
-                height={48}
-                className="rounded-full mr-4"
-              />
+              {testimonial.image && typeof testimonial.image === 'string' && (
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  width={48}
+                  height={48}
+                  className="rounded-full mr-4"
+                />
+              )}
               <div>
                 <h3 className="text-xl font-bold text-black">
                   {testimonial.name}
