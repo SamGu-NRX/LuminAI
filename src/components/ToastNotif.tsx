@@ -7,7 +7,7 @@ const showNotif = (message: string | number | boolean | ReactElement<any, string
   toast(message, {
     className: `toast-light dark:toast-dark toaster-container`,
     duration: 2000,
-    type: type,
+    // type: type,
     position: 'top-right',
     // Add custom CSS class for countdown bar
     // style: { animation: 'fadeout 4s ease-in-out forwards' },

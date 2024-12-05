@@ -56,7 +56,7 @@ const Popup = () => {
     }, []);
 
     const handleClose = () => {
-        
+
         setIsVisible(false);
     };
 
@@ -65,8 +65,18 @@ const Popup = () => {
             <div className="popup-container">
                 <div
                     className="popup popup-glow" style={{animation: "bounceIn 1s"}}
-                    onMouseEnter={() => document.querySelector('.popup').classList.remove('popup-glow')}
-                    onMouseLeave={() => document.querySelector('.popup').classList.add('popup-glow')}
+                    onMouseEnter={() => {
+                        const popupElement = document.querySelector('.popup');
+                        if (popupElement) {
+                            popupElement.classList.remove('popup-glow');
+                        }
+                    }}
+                    onMouseLeave={() => {
+                        const popupElement = document.querySelector('.popup');
+                        if (popupElement) {
+                            popupElement.classList.add('popup-glow');
+                        }
+                    }}
                 >
                     <button className="close-button" onClick={handleClose}>×</button>
                     <p>Hey there, want to help make our website better?</p>

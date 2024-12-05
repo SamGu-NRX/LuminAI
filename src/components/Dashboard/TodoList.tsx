@@ -33,7 +33,13 @@ function TodoList() {
   );
 }
 
-function TodoItem({ name, course, dueDate }) {
+interface TodoItemProps {
+  name: string;
+  course: string;
+  dueDate: string;
+}
+
+function TodoItem({ name, course, dueDate }: TodoItemProps) {
   return (
     <div className="mb-4 bg-gray-700 p-3 rounded-lg">
       <h3 className="font-semibold">{name}</h3>
