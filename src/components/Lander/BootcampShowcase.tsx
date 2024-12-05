@@ -150,7 +150,7 @@ const BootcampModuleShowcase: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
               >
-                {currentModule.topics.map((topic, index) => (
+                {currentModule.topics.map((topic) => (
                   <span
                     key={topic}
                     className="bg-white/10 px-3 py-1 rounded-full text-sm"

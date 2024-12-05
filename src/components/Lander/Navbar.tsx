@@ -12,19 +12,12 @@ import {
 import { useBanner } from "@/context/BannerContext";
 
 const useIsMobile = () => {
-/*************  ✨ Codeium Command ⭐  *************/
-/**
- * A custom hook that determines if the current window width
- * is less than 768 pixels, indicating a mobile device.
- *
- * @returns {boolean} - A boolean value indicating if the device is mobile.
- */
-/******  7dedcb1a-7d79-451d-a45f-b369ccce41b1  *******/  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
 
-    const handleChange = (e) => setIsMobile(e.matches);
+    const handleChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
 
     mediaQuery.addEventListener("change", handleChange);
 

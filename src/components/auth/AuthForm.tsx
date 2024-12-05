@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useState, useTransition } from "react";
@@ -120,7 +121,7 @@ const AuthForm = ({ mode, schema, children, csrfToken }: AuthFormProps) => {
     setIsLoading(true);
     try {
       if (provider) {
-        await signIn(provider, { redirectTo: false }).then((result) => {
+        await signIn(provider, { redirect: false }).then((result) => {
           if (result && result.error) {
             console.error(result.error);
           } else {
