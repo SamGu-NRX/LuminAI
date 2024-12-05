@@ -153,18 +153,20 @@ export const Content: React.FC = () => {
           </div>
 
           {/* Navigation Links */}
-          <ul className="flex flex-wrap justify-center md:justify-end space-x-6">
+          <div className="flex flex-wrap justify-center md:justify-end space-x-6">
             {footerLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  {link.name}
-                </Link>
-              </li>
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-blue-400 transition-colors group relative font-medium duration-[250ms]"
+              >
+                {/* Wrap the text in a span to manage z-index */}
+                <span className="relative z-10">{link.name}</span>
+                {/* Underline Effect positioned below the text */}
+                <span className="absolute left-0 top-full h-[2px] w-full bg-current origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 pointer-events-none"></span>
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* Divider */}

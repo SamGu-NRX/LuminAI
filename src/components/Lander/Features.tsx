@@ -1,54 +1,201 @@
-"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaGraduationCap,
+  FaHeart,
+  FaLayerGroup,
+  FaRobot,
+} from "react-icons/fa";
 
-import { useEffect, useRef } from "react";
-import { fadeUp } from "@/animations/gsap";
+const features = [
+  {
+    title: "Free. As in Zero. Nada.",
+    content:
+      "Yep, you read that right. Our AI bootcamp costs you nothing but your time. Because who needs money when you've got ambition?",
+    linkText: "Learn More",
+    link: "#",
+    icon: FaGraduationCap,
+    color: "from-blue-500 to-purple-600",
+  },
+  {
+    title: "Built by Students Who Get It",
+    content:
+      "We know the struggle. That's why we crafted a bootcamp that doesn't suck. Learn AI from people who actually understand you.",
+    linkText: "Discover How",
+    link: "#",
+    icon: FaHeart,
+    color: "from-pink-500 to-rose-600",
+  },
+  {
+    title: "Non-Profit, Not Non-Ambitious",
+    content:
+      "We're not in it for the money. We're here to revolutionize AI education. Join us, unless you hate progress.",
+    linkText: "Our Mission",
+    link: "#",
+    icon: FaLayerGroup,
+    color: "from-green-500 to-emerald-600",
+  },
+  {
+    title: "Real Tools. Real Skills.",
+    content:
+      "Forget outdated textbooks. We're all about hands-on with the latest AI tech. Get ready to actually know what you're doing.",
+    linkText: "Curriculum Details",
+    link: "#",
+    icon: FaRobot,
+    color: "from-indigo-500 to-cyan-600",
+  },
+];
 
-export default function FeaturesSection() {
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+const getColSpanClass = (index) => {
+  const isEvenRow = Math.floor(index / 2) % 2 === 0;
+  if (isEvenRow) {
+    return index % 2 === 0
+      ? "md:col-span-6 lg:col-span-8"
+      : "md:col-span-6 lg:col-span-4";
+  } else {
+    return index % 2 === 0
+      ? "md:col-span-6 lg:col-span-4"
+      : "md:col-span-6 lg:col-span-8";
+  }
+};
 
-  useEffect(() => {
-    cardRefs.current.forEach((card, index) => {
-      fadeUp(card, card, { delay: index * 0.1 });
-    });
-  }, []);
-
-  const features = [
-    {
-      title: "Completely Free",
-      content:
-        "LuminAI Innovate Scholars is a completely free bootcamp. We believe in providing quality education to everyone without any cost at all.",
-    },
-    {
-      title: "From Students, For Students",
-      content:
-        "Our program is created by students who understand the challenges and needs of learning AI. We aim to make AI education accessible to all students.",
-    },
-    {
-      title: "Non-Profit Organization",
-      content:
-        "We are a non-profit organization dedicated to spreading knowledge and fostering innovation in the field of artificial intelligence.",
-    },
-    {
-      title: "Industry-Standard AI",
-      content:
-        "Our curriculum covers industry-standard AI tools and techniques, ensuring that our students are well-prepared for real-world applications.",
-    },
-  ];
+const FeatureCard = ({ feature, index }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const Icon = feature.icon;
+  const colSpanClass = getColSpanClass(index);
 
   return (
-    <section className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 transition-all">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className="custom-grid bg-gray-100 p-4 rounded shadow-md hover:shadow-lg"
-          ref={(el) => {
-            if (el) cardRefs.current[index] = el;
-          }}
-        >
-          <h3 className="text-xl font-bold">{feature.title}</h3>
-          <p>{feature.content}</p>
+    <motion.div
+      className={`
+        group relative overflow-hidden rounded-2xl p-6
+        bg-white/10 backdrop-blur-lg border border-white/20
+        flex flex-col justify-between
+        transition-all duration-300 ease-in-out
+        hover:shadow-2xl
+        hover:scale-105
+        min-h-[20rem] transform
+        ${colSpanClass}
+      `}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: index * 0.2,
+        type: "spring",
+        stiffness: 100,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Gradient Background */}
+      <div
+        className={`
+          absolute inset-0 opacity-20
+          bg-gradient-to-br ${feature.color}
+          transition-opacity duration-500
+          group-hover:opacity-40
+          group-hover:scale-110
+        `}
+      />
+
+      <div className="flex h-full flex-col justify-between p-5 transition-transform transform-gpu duration-300 group-hover:-translate-y-3 z-20">
+        {/* Icon */}
+        <div className="relative z-10 mb-4">
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{
+              scale: isHovered ? 1.1 : 1,
+              rotate: isHovered ? 5 : 0,
+            }}
+            className={`
+            w-16 h-16 rounded-full
+            bg-gradient-to-br ${feature.color}
+            flex items-center justify-center
+            text-white shadow-lg
+          `}
+          >
+            <Icon className="w-8 h-8" />
+          </motion.div>
         </div>
-      ))}
+
+        {/* Content */}
+        <div className="relative z-10 space-y-2 flex-grow">
+          <h3 className="text-xl font-bold text-black/90">{feature.title}</h3>
+          <p className="text-sm text-black/70">{feature.content}</p>
+        </div>
+      </div>
+
+      <div
+        className="
+    absolute bottom-0 top-auto w-full translate-y-full transform-gpu opacity-0
+    transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100
+    z-20
+  "
+      >
+        <a
+          href={feature.link}
+          className="
+      gradient-border
+      flex items-center justify-center bg-black py-2.5 text-sm uppercase text-white
+    "
+        >
+          {feature.linkText}
+        </a>
+      </div>
+    </motion.div>
+  );
+};
+
+const LuminAIFeatures = () => {
+  return (
+    <section className="w-full py-16 bg-transparent backdrop-blur-lg rounded-2xl overflow-hidden">
+      <div className="container mx-auto px-4 space-y-10">
+        <div className="text-center mb-12">
+          <motion.h2
+            className="text-4xl font-bold text-black mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            The One AI Bootcamp You Must Need
+          </motion.h2>
+          <motion.p
+            className="text-xl text-black/70 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            Join us if you're ready to learn AI without mortgaging your future.
+            We promise not to bore you to death.
+          </motion.p>
+        </div>
+
+        <motion.div
+          className="grid w-full auto-rows-[20rem] grid-cols-1 gap-5 md:grid-cols-12 relative min-h-[20rem] overflow-hidden"
+          initial="hidden"
+          animate="visible"
+        >
+          {features.map((feature, index) => (
+            <FeatureCard key={feature.title} feature={feature} index={index} />
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <button
+            className="
+              bg-gradient-to-r from-purple-600 to-blue-500
+              text-white font-bold py-3 px-8 rounded-full
+              hover:scale-105 transition-transform duration-300
+              shadow-lg hover:shadow-xl
+            "
+          >
+            Start Your AI Journey Now!
+          </button>
+        </motion.div>
+      </div>
     </section>
   );
-}
+};
+
+export default LuminAIFeatures;

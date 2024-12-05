@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AuroraBackground } from '@/components/ui/aurora-background';
-import Header from '@/components/Header/Header';
+import Navigation from "@/components/Lander/Navbar";
 import Footer from '@/components/Footer';
 import ApplicationBanner from '@/components/ApplicationBanner/ApplicationBanner';
 import HeroSection from '@/components/Lander/Hero';
@@ -19,11 +19,14 @@ import BootcampModuleShowcase from "@/components/Lander/BootcampShowcase";
 export default function Home() {
   return (
     <div id="Home" className="text-white dark:text-black">
-      <ApplicationBanner />
+      <ApplicationBanner
+        text="Last-minute call for our 2024 summer application!"
+        link="https://forms.gle/RaW38zynf2p515Ua8"
+      />
       <div className="relative bg-white min-h-screen mb-[249px]">
         <AuroraBackground className="z-1">
           <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full z-100">
-            <Header />
+            <Navigation />
             <div>
               <motion.div
                 initial={{ opacity: 0.0, y: 40 }}
@@ -33,7 +36,7 @@ export default function Home() {
                   duration: 0.8,
                   ease: "easeInOut",
                 }}
-                className="w-full mx-auto"
+                className="w-full mx-auto pb-12"
               >
                 <HeroSection />
                 <SocialsSection />
