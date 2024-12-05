@@ -25,7 +25,6 @@
 - [📖 Learning Management System (LMS)](#-learning-management-system-lms)
   - [**Features**](#features)
   - [**Future Enhancements**](#future-enhancements)
-- [📜 License](#-license)
 
 ---
 
@@ -108,8 +107,7 @@ We are developing a fully integrated **Learning Management System (LMS)** for as
 
 ### **Future Enhancements**
 
-- [ ] 🤖 AI-powered personalized learning paths based on student progress
-- [ ] 🔗 Integration with AI tools like TensorFlow Hub for live model deployment
+- [ ] 🤖 AI-powered personalized learning paths based on student progress (asynchronous courses)
 - [ ] 🏅 Certification programs upon course completion
 - [ ] 📱 Mobile app support for learning on the go
 
