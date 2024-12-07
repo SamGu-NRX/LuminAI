@@ -7,14 +7,12 @@ function MovingGradient() {
 
   useEffect(() => {
     const generateDistinctColors = () => {
-      const colors = [];
+      const colors: { color: string; hue: number }[] = [];
       while (colors.length < 6) {
         const hue = Math.floor(Math.random() * 361);
         const saturation = Math.floor(Math.random() * 31) + 50; // Saturation between 50% and 80%
         const lightness = Math.floor(Math.random() * 21) + 42;  // Lightness between 42% and 62%
         const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-        
-        
         // Ensure colors are distinct by checking hue differences
         if (colors.every(existingColor => Math.abs(existingColor.hue - hue) > 30)) {
           colors.push({ color, hue });

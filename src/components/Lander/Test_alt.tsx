@@ -43,7 +43,9 @@ export default function TestimonialsSection() {
     <section ref={testimonialsRef} className="p-4 mt-8">
       <h2
         className="text-3xl font-bold text-center mb-6"
-        ref={(el) => el && elementsRef.current.push(el)}
+        ref={(el) => {
+          if (el) elementsRef.current.push(el);
+        }}
       >
         What Our Participants Say
       </h2>
@@ -52,7 +54,9 @@ export default function TestimonialsSection() {
           <div
             key={index}
             className="max-w-sm p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
-            ref={(el) => el && elementsRef.current.push(el)}
+            ref={(el) => {
+              if (el) elementsRef.current.push(el);
+            }}
             style={{
               background: "rgba(255, 255, 255, 0.4)", // Glassmorphism effect
               backdropFilter: "blur(10px)",

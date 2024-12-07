@@ -21,7 +21,7 @@ const bootcampModulesData: BootcampModule[] = [
     description:
       "Explore the core concepts of Artificial Intelligence and machine learning foundations",
     difficulty: "Beginner",
-    imageUrl: "/2024-Summer-2.png",
+    imageUrl: "/images/2024-Summer-5.png",
     topics: ["AI History", "Machine Learning Basics", "Ethical AI"],
   },
   {
@@ -30,16 +30,16 @@ const bootcampModulesData: BootcampModule[] = [
     description:
       "Advanced exploration of neural network architectures and deep learning principles",
     difficulty: "Intermediate",
-    imageUrl: "/2024-Summer-1.png",
+    imageUrl: "/images/2024-Summer-1.png",
     topics: ["Perceptrons", "Backpropagation", "Activation Functions"],
   },
   {
     id: 3,
-    title: "2024-Summer-3.png",
+    title: "AI in Real-World Applications",
     description:
       "Practical applications of AI across various industries and cutting-edge technologies",
     difficulty: "Advanced",
-    imageUrl: "/api/placeholder/1600/900",
+    imageUrl: "/images/2024-Summer-3.png",
     topics: [
       "Computer Vision",
       "Natural Language Processing",
@@ -64,14 +64,14 @@ const BootcampModuleShowcase: React.FC = () => {
   const currentModule = bootcampModulesData[currentModuleIndex];
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-16">
+    <div className="w-full max-w-6xl mx-auto px-4 py-16 relative">
       <motion.div
         className="relative w-full h-[700px] rounded-3xl overflow-hidden"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Background Glassmorphic Overlay */}
+        {/* Background Glassmorphic Overlay (Uncomment if needed) */}
         {/* <div className="absolute inset-0 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl z-10"></div> */}
 
         {/* Module Image */}
@@ -87,7 +87,7 @@ const BootcampModuleShowcase: React.FC = () => {
             <Image
               src={currentModule.imageUrl}
               alt={currentModule.title}
-              fill
+              layout="fill"
               priority
               quality={90}
               className="object-cover opacity-30 blur-sm"
@@ -96,7 +96,7 @@ const BootcampModuleShowcase: React.FC = () => {
         </AnimatePresence>
 
         {/* Module Content */}
-        <div className="relative z-20 flex flex-col justify-center h-full p-12 text-white">
+        <div className="relative z-20 flex flex-col justify-center h-full p-12 pl-24 text-white">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentModule.id}
@@ -145,7 +145,7 @@ const BootcampModuleShowcase: React.FC = () => {
 
               {/* Topics */}
               <motion.div
-                className="flex space-x-2 mt-4"
+                className="flex flex-wrap space-x-2 mt-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
@@ -153,7 +153,7 @@ const BootcampModuleShowcase: React.FC = () => {
                 {currentModule.topics.map((topic) => (
                   <span
                     key={topic}
-                    className="bg-white/10 px-3 py-1 rounded-full text-sm"
+                    className="bg-white/10 px-3 py-1 rounded-full text-sm mb-2"
                   >
                     {topic}
                   </span>
@@ -168,10 +168,12 @@ const BootcampModuleShowcase: React.FC = () => {
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
                 <button
-                  className="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full p-3 transition-all duration-300"
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full p-3 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
                   onClick={() => {
                     /* Start Module Logic */
                   }}
+                  aria-label="Start Module"
+                  tabIndex={0}
                 >
                   <Play className="w-6 h-6 text-white" />
                 </button>
@@ -179,30 +181,36 @@ const BootcampModuleShowcase: React.FC = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-
-        {/* Navigation Buttons */}
-          <motion.button
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-30
-              bg-white/10 hover:bg-white/20 backdrop-blur-md
-              rounded-full p-3 transition-all duration-300 w-12 h-12"
-            onClick={prevModule}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <ChevronLeft className="w-6 h-6 text-white" />
-          </motion.button>
-
-          <motion.button
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-30
-              bg-white/10 hover:bg-white/20 backdrop-blur-md
-              rounded-full p-3 transition-all duration-300 w-12 h-12"
-            onClick={nextModule}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <ChevronRight className="w-6 h-6 text-white" />
-          </motion.button>
       </motion.div>
+
+      {/* Navigation Buttons Positioned Absolutely */}
+      {/* Left Navigation Button */}
+      <motion.button
+        className="absolute left-8 top-1/2 transform z-30
+             bg-white/10 hover:bg-white/20 backdrop-blur-md
+             rounded-full p-3 transition-all duration-300 w-14 h-14
+             flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white"
+        onClick={prevModule}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        aria-label="Previous Module"
+      >
+        <ChevronLeft className="w-6 h-6 text-white" />
+      </motion.button>
+
+      {/* Right Navigation Button */}
+      <motion.button
+        className="absolute left-auto right-8 top-1/2 transform z-30
+             bg-white/10 hover:bg-white/20 backdrop-blur-md
+             rounded-full p-3 transition-all duration-300 w-14 h-14
+             flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white"
+        onClick={nextModule}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        aria-label="Next Module"
+      >
+        <ChevronRight className="w-6 h-6 text-white" />
+      </motion.button>
     </div>
   );
 };

@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  AnimatePresence,
+} from "framer-motion";
 import {
   Home,
   Info,
@@ -10,22 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { useBanner } from "@/context/BannerContext";
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-
-    const handleChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-
-    mediaQuery.addEventListener("change", handleChange);
-
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
-
-  return isMobile;
-};
+import { useIsMobile } from "@/lib/utils";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +25,7 @@ const Navigation = () => {
   const lastScrollY = useRef(0);
 
   const { bannerHeight } = useBanner();
+
   // Navigation items
   const [navItems, setNavItems] = useState([
     {

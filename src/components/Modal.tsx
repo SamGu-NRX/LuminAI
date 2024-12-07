@@ -1,13 +1,26 @@
 import { useEffect, useState } from 'react';
 import '@/styles/Button.scss';
 
-const Modal = ({modalType = 'Confirm',
+interface ModalProps {
+  modalType?: 'Confirm' | 'Error';
+  isOpen: boolean;
+  onClose: () => void;
+  onConfirm: () => void;
+  children: React.ReactNode;
+  confirmText?: string;
+  cancelText?: string;
+  confirmClass?: string;
+  cancelClass?: string;
+}
+
+const Modal: React.FC<ModalProps> = ({
+  modalType = 'Confirm',
   isOpen, onClose,
-  onConfirm, children, 
-  confirmText = 'OK', cancelText = 'Cancel', 
+  onConfirm, children,
+  confirmText = 'OK', cancelText = 'Cancel',
   confirmClass = 'bg-blue-500', cancelClass = 'bg-gray-500'
 }) => {
-  
+
   const [active, setActive] = useState(false);
 
   useEffect(() => {

@@ -1,6 +1,5 @@
 import '@/styles/ExploreAI.scss';
 import '@/styles/App.scss';
-import PropTypes from 'prop-types';
 
 // Background Component
 const Background = () => {
@@ -17,7 +16,13 @@ const Activities = () => {
 };
 
   // GridItem Component
-const GridItem = ({ type, title, description }) => {
+interface GridItemProps {
+  type: string;
+  title: string;
+  description: string;
+}
+
+const GridItem: React.FC<GridItemProps> = ({ type, title, description }) => {
     return (
       <div className="custom-grid grid-item" data-type={type}>
         <h3>{title}</h3>
@@ -26,11 +31,6 @@ const GridItem = ({ type, title, description }) => {
     );
   };
 
-  GridItem.propTypes = {
-    type: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-};
 
 const AiTypes = () => {
   const aiTypes = [

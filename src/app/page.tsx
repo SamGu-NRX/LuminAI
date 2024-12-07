@@ -40,12 +40,12 @@ export default function Home() {
                 className="w-full mx-auto pb-12"
               >
                 <HeroSection />
-                <SocialsSection />
                 <FeaturesSection />
                 <AICurriculumSection />
                 <BootcampModuleShowcase />
                 <TestimonialsSection />
                 <CTASection />
+                <SocialsSection />
                 {/* <ExploreAISection /> */}
                 <ContactUsSection />
               </motion.div>
