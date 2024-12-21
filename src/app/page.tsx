@@ -20,13 +20,13 @@ import BootcampModuleShowcase from "@/components/Lander/BootcampShowcase";
 export default function Home() {
   return (
     <div id="Home" className="text-white dark:text-black">
-      <ApplicationBanner
+      {/* <ApplicationBanner
         text="Last-minute call for our 2024 summer application!"
         link="https://forms.gle/RaW38zynf2p515Ua8"
-      />
-      <div className="relative bg-white min-h-screen mb-[249px]">
-        <AuroraBackground className="z-1">
-          <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full z-100">
+      /> */}
+      <div className="relative bg-white min-h-screen">
+        <AuroraBackground>
+          <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full">
             <Navigation />
             <div>
               <motion.div

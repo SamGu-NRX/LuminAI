@@ -13,7 +13,7 @@ const features = [
   {
     title: "Free. As in Zero. Nada.",
     content:
-      "Yep, you read that right. Our AI bootcamp costs you nothing but your time. Because who needs money when you've got ambition?",
+      "Yep, you read that right. Our AI bootcamp costs you nothing but your time. Because who needs money when you truly want to educate everyone? We don't gatekeep knowledge behind a paywall.",
     linkText: "Learn More",
     link: "#",
     icon: <FaGraduationCap />,
@@ -140,10 +140,10 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
 
       <div
         className="
-    absolute bottom-0 top-auto w-full translate-y-full transform-gpu opacity-0
-    transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100
-    z-20
-  "
+          absolute bottom-0 left-0 top-auto w-full translate-y-full transform-gpu opacity-0
+          transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100
+          z-20
+        "
       >
         <a
           href={feature.link}

@@ -35,24 +35,24 @@ code {
     monospace;
 }
 
-header,
-footer {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  z-index: 80;
-  padding: 0 20px;
-  /* Adjust padding as needed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Optional: add shadow for better visibility */
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background-color 2s ease-in-out, opacity 2s ease-in-out, visibility 2s ease-in-out;
-  /* animation: fadeInLeft 0.5s forwards; */
-  backdrop-filter: blur(5px);
-}
+// header,
+// footer {
+//   position: fixed;
+//   left: 0;
+//   width: 100%;
+//   z-index: 80;
+//   padding: 0 20px;
+//   /* Adjust padding as needed */
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   /* Optional: add shadow for better visibility */
+//   height: 80px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   transition: background-color 2s ease-in-out, opacity 2s ease-in-out, visibility 2s ease-in-out;
+//   /* animation: fadeInLeft 0.5s forwards; */
+//   backdrop-filter: blur(5px);
+// }
 
 header.hidden,
 footer.hidden {
@@ -252,15 +252,6 @@ main {
   color: #dbd8b6
 }
 
-.absolute {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: black;
-  z-index: 1;
-}
 
 .logo {
   @include logo-style;
