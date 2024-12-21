@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import OrbBackground from "./CTAOrbBackground/Background";
 
 const CTAContent = {
   headline: "From Zero to AI Hero",
@@ -63,19 +64,15 @@ const CTASection = () => {
       animate="visible"
       variants={variants.container}
     >
-      <div
-        className="relative w-full max-w-2xl mx-auto"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Animated background elements */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 blur-3xl pointer-events-none" />
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-xl pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/20 rounded-full blur-xl pointer-events-none" />
+      <div className="relative w-full max-w-2xl mx-auto overflow-hidden rounded-2xl">
+        <OrbBackground />
 
-        {/* Main content container */}
+        {/* Blurred background as a sibling (instead of wrapping the content) */}
+        <div className="absolute inset-0 z-0 " />
+
+        {/* Main content container (no blur here) */}
         <motion.div
-          className="relative backdrop-blur-lg bg-black/5 border border-black/20 rounded-2xl p-8 shadow-xl overflow-hidden"
+          className="relative z-10 p-8 rounded-2xl shadow-xl overflow-hidden border border-black/20"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
         >
