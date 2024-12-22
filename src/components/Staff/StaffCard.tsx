@@ -1,59 +1,85 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { useState } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { StaffMember } from '@/data/staff';
 
-type StaffMember = {
-  id: number;
-  Name: string;
-  Role: string;
-  Achievement: string;
-  Introduction: string;
-  Photo?: string;
-};
-
-export default function StaffCard({ member }: { member: StaffMember }) {
-  const hasPhoto = member.Photo && member.Photo.trim() !== "";
+const StaffCard: React.FC<{ member: StaffMember }> = ({ member }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      className="bg-black bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden shadow-xl"
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
+      className="relative w-64 h-64 cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      <div className="p-6">
-        <div className="w-32 h-32 mx-auto mb-4 relative">
-          {hasPhoto ? (
-            <Image
-              src={member.Photo as string}
-              alt={member.Name}
-              fill
-              style={{ objectFit: "cover" }}
-              className="rounded-full"
-            />
-          ) : (
-            <motion.div
-              className="rounded-full w-full h-full"
-              style={{
-                background:
-                  "radial-gradient(circle at center, #1FA2FF, #12D8FA, #A6FFCB)",
-              }}
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-            />
-          )}
-        </div>
-        <h2 className="text-2xl font-bold text-black text-center mb-2">
-          {member.Name}
-        </h2>
-        <p className="text-lg text-slate-800 text-center mb-2">{member.Role}</p>
-        <p className="text-sm text-slate-600 text-center italic mb-4">
-          {member.Achievement}
-        </p>
-        <p className="text-slate-600 text-center">{member.Introduction}</p>
-      </div>
+      <motion.div
+        className="absolute inset-0 bg-white rounded-lg shadow-lg overflow-hidden"
+        animate={{
+          scale: isHovered ? 1.05 : 1,
+          boxShadow: isHovered ? '0 10px 30px rgba(0,0,0,0.1)' : '0 4px 6px rgba(0,0,0,0.1)'
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <Image
+          src={member.imageUrl}
+          alt={member.name}
+          fill
+          quality={80}
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-b from-transparent to-white"
+          animate={{ opacity: isHovered ? 0.9 : 0.7 }}
+          transition={{ duration: 0.3 }}
+        />
+      </motion.div>
+
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            className="absolute inset-0 flex flex-col justify-end p-6 text-gray-800"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.h3
+              className="text-xl font-semibold mb-1"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              {member.name}
+            </motion.h3>
+
+            <motion.p
+              className="text-sm mb-2"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              {member.role}
+            </motion.p>
+
+            <motion.p
+              className="text-xs italic"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              &quot;{member.quote}&quot;
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
-}
+};
+
+export default StaffCard;

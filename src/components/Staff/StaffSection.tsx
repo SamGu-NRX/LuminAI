@@ -1,17 +1,37 @@
-import StaffGrid from "@/components/Staff/StaffGrid";
+"use client";
 
-export default function StaffSection() {
+import { motion, useScroll, useTransform } from "framer-motion";
+import StaffGrid from "./StaffGrid";
+import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+
+const StaffSection: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const y = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
+
   return (
-    <main className="flex-container p-8 mx-auto items-center">
-      <div
-        className="flex flex-col items-center justify-center text-center w-full mx-auto"
-        style={{ animation: "textPopIn 0.7s ease-in-out" }}
-      >
-        <h1 className="text-4xl font-bold text-center mb-12 mt-4 text-gray-800">
-          Meet Our AI Wizards
-        </h1>
+    <FadeInWhenVisible
+      as="section"
+      className="pb-20 pt-10 mt-10 px-8 bg-gray-50/20 overflow-hidden shadow-lg backdrop-blur-md rounded-2xl"
+    >
+      <motion.div className="max-w-6xl mx-auto px-4" style={{ opacity, y }}>
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            Meet Our Team
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4" />
+          <p className="text-xl text-gray-600">The minds behind the machines</p>
+        </motion.div>
+
         <StaffGrid />
-      </div>
-    </main>
+      </motion.div>
+    </FadeInWhenVisible>
   );
-}
+};
+
+export default StaffSection;

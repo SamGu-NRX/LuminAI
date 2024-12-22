@@ -29,7 +29,7 @@ export default function FadeInWhenVisible<
   ...motionProps // This includes 'variants' and any other MotionProps
 }: FadeInWhenVisibleProps<T>) {
   // Use 'as' directly since it's now constrained to valid HTML elements
-  const Component = motion(as) as React.ElementType;
+  const Component = motion.create(as) as React.ElementType;
 
   return (
     <Component
