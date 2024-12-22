@@ -68,7 +68,8 @@ const syllabusData = [
   },
   {
     week: 5,
-    title: "Weeks 5-6: Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG)",
+    title:
+      "Weeks 5-6: Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG)",
     content: [
       "Introduction to Large Language Models (LLMs)",
       "Defining Large Language Models",
@@ -92,50 +93,59 @@ export default function SyllabusContent() {
   const [activeWeek, setActiveWeek] = useState(1);
 
   return (
-    <div className="bg-black bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-8 shadow-xl">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:col-span-1">
-          <h2 className="text-2xl font-bold text-black mb-4">Weeks</h2>
-          {syllabusData.map((week) => (
-            <motion.button
-              key={week.week}
-              className={`block w-full text-left p-2 rounded-md mb-2 ${
-                activeWeek === week.week
-                  ? "bg-white bg-opacity-20"
-                  : "hover:bg-white hover:bg-opacity-10"
-              }`}
-              onClick={() => setActiveWeek(week.week)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-black font-semibold">
-                {week.title.startsWith("Weeks 5-6:")
-                  ? "Weeks 5-6"
-                  : week.title.startsWith("Week 7:")
-                  ? "Week 7"
-                  : `Week ${week.week}`}
-              </span>
-            </motion.button>
-          ))}
-        </div>
-        <div className="md:col-span-2">
-          <motion.div
-            key={activeWeek}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl font-bold text-black mb-4">
-              {syllabusData[activeWeek - 1].title}
-            </h2>
-            <ul className="list-disc list-inside text-black">
-              {syllabusData[activeWeek - 1].content.map((item, index) => (
-                <li key={index} className="mb-2">
-                  {item}
-                </li>
+    <div className="bg-white/10 backdrop-blur-sm min-h-screen w-full flex flex-col items-center justify-center p-4">
+      <h1>
+        <span className="text-4xl font-bold text-gray-900">AI Innovate Scholars</span>
+        <span className="text-4xl font-bold text-blue-500"> Syllabus</span>
+      </h1>
+      <div className="max-w-4xl w-full bg-white/20 border border-gray-200 shadow-sm rounded-lg p-6">
+        <h1 className="text-3xl font-semibold text-gray-900 mb-6 text-center">
+          Course Syllabus
+        </h1>
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="md:w-1/3">
+            <h2 className="text-xl font-bold text-gray-800 mb-4">Weeks</h2>
+            <div className="flex flex-col space-y-2">
+              {syllabusData.map((week) => (
+                <motion.button
+                  key={week.week}
+                  className={`text-left w-full py-2 px-3 rounded transition-colors ${
+                    activeWeek === week.week
+                      ? "bg-gray-100 text-gray-900 font-medium"
+                      : "text-gray-700 hover:bg-gray-50"
+                  }`}
+                  onClick={() => setActiveWeek(week.week)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                >
+                  {week.title.startsWith("Weeks 5-6:")
+                    ? "Weeks 5-6"
+                    : week.title.startsWith("Week 7:")
+                    ? "Week 7"
+                    : `Week ${week.week}`}
+                </motion.button>
               ))}
-            </ul>
-          </motion.div>
+            </div>
+          </div>
+          <div className="md:w-2/3">
+            <motion.div
+              key={activeWeek}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                {syllabusData[activeWeek - 1].title}
+              </h2>
+              <ul className="list-disc list-inside text-gray-800 space-y-2">
+                {syllabusData[activeWeek - 1].content.map((item, index) => (
+                  <li key={index} className="leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
