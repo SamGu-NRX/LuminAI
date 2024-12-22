@@ -16,8 +16,10 @@ import ExploreAISection from "@/components/Lander/ExploreAI";
 import ContactUsSection from "@/components/Lander/ContactUs";
 import "@/styles/App.scss";
 import BootcampModuleShowcase from "@/components/Lander/BootcampShowcase";
+import StaffGrid from "@/components/Staff/StaffGrid";
+import StaffSection from "@/components/Staff/StaffSection";
 
-export default function Home() {
+export default function StaffPage() {
   return (
     <div id="Home" className="text-white dark:text-black">
       {/* <ApplicationBanner
@@ -25,11 +27,11 @@ export default function Home() {
         link="https://forms.gle/RaW38zynf2p515Ua8"
       /> */}
       <div className="relative bg-white min-h-screen">
-        <AuroraBackground>
-          <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full">
+        <AuroraBackground className="z-1">
+          <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full z-10">
             <Navigation />
             <div>
-              {/* <motion.div
+              <motion.div
                 initial={{ opacity: 0.0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -38,18 +40,9 @@ export default function Home() {
                   ease: "easeInOut",
                 }}
                 className="w-full mx-auto pb-12"
-              > */}
-              <div className="w-full mx-auto pb-12">
-                <HeroSection />
-                <FeaturesSection />
-                <AICurriculumSection />
-                <BootcampModuleShowcase />
-                <TestimonialsSection />
-                <CTASection />
-                {/* <ExploreAISection /> */}
-                <ContactUsSection />
-                {/* <SocialsSection /> */}
-              </div>
+              >
+                <StaffSection />
+              </motion.div>
             </div>
           </div>
         </AuroraBackground>

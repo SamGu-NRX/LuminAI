@@ -4,13 +4,14 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { fadeUp } from "@/animations/gsap";
+import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
+import FadeInWhenVisible from "../motion/FadeInWhenVisible";
 
 // Shared Variants for Animations
 const containerVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
       delayChildren: 0.3,
       staggerChildren: 0.1,
@@ -29,7 +30,8 @@ const itemVariants = {
 
 export default function AICurriculumSection() {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+  const router = useRouter(); // Initialize router
+
   // TODO: Implement GSAP fadeUp animation
 
   // const sectionRef = useRef(null);
@@ -67,11 +69,10 @@ export default function AICurriculumSection() {
   ];
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="p-4 max-w-4xl mx-auto"
+    <FadeInWhenVisible
+      as="section"
+      transition={containerVariants}
+      className="p-4 max-w-6xl mx-auto my-8"
     >
       <motion.div
         variants={itemVariants}
@@ -163,6 +164,7 @@ export default function AICurriculumSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => router.push("/programs")} // Navigate to /programs
                 className="mt-4 w-full py-3 bg-blue-500 text-white rounded-xl
                            hover:bg-blue-600 transition-colors duration-300
                            flex items-center justify-center space-x-2"
@@ -173,6 +175,6 @@ export default function AICurriculumSection() {
           )}
         </AnimatePresence>
       </motion.div>
-    </motion.div>
+    </FadeInWhenVisible>
   );
 }

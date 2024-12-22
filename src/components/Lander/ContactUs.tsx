@@ -1,71 +1,44 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+
+import { motion } from "framer-motion";
 import { Send, ArrowRight } from "lucide-react";
 
+import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 export default function ContactUsSection() {
-  const contactRef = useRef(null);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          controls.start("visible");
-        }
-      });
-    }, observerOptions);
-
-    const currentRef = contactRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [controls]);
-
-  // Shared Variants for Animations
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
-    <motion.div
-      ref={contactRef}
-      initial="hidden"
-      animate={controls}
+    <FadeInWhenVisible
+      as="section"
       variants={containerVariants}
-      className="p-4 max-w-4xl mx-auto"
+      className="p-4 max-w-3xl w-full mx-auto my-8"
     >
       <motion.div
-        variants={itemVariants}
-        className="bg-white/20 backdrop-blur-lg rounded-2xl shadow-2xl border border-black/10 overflow-hidden"
+        className="relative z-10 p-8 rounded-2xl shadow-xl overflow-hidden border border-black/20"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.3 }}
       >
+        <div className="absolute inset-0 z-0 bg-black/5 blur-xl" />
         {/* Header */}
         <div className="px-6 py-8 text-center">
           <motion.h2
@@ -78,8 +51,8 @@ export default function ContactUsSection() {
             variants={itemVariants}
             className="text-lg text-gray-700 max-w-2xl mx-auto"
           >
-            We&apos;re excited to hear from you. Let&apos;s collaborate and innovate
-            together.
+            We&apos;re excited to hear from you. Let&apos;s collaborate and
+            innovate together.
           </motion.p>
         </div>
 
@@ -104,10 +77,10 @@ export default function ContactUsSection() {
             className="group relative px-8 py-4
             bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400
           text-white font-semibold
-            transition-colors duration-300 flex items-center
+            transition-all duration-300 flex items-center
             justify-center mx-auto space-x-3 rounded-full
             hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-blue-600
-            hover:shadow-xl"
+            hover:shadow-xl" // TODO: transition colors doesn't work
           >
             <Send className="w-5 h-5 text-white" />
             <span>Get In Touch</span>
@@ -118,6 +91,6 @@ export default function ContactUsSection() {
           </motion.button>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </FadeInWhenVisible>
   );
 }

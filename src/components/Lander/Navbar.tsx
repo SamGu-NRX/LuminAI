@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { useBanner } from "@/context/BannerContext";
 import { useIsMobile } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,40 +27,44 @@ const Navigation = () => {
   const lastScrollY = useRef(0);
 
   const { bannerHeight } = useBanner();
+  const pathname = usePathname();
 
-  // Navigation items
-  const [navItems, setNavItems] = useState([
+  // Navigation items without isActive
+  const navItems = [
     {
       label: "Home",
       href: "/",
       icon: Home,
-      isActive: true,
     },
     {
       label: "About Us",
       href: "/about",
       icon: Info,
-      isActive: false,
     },
     {
       label: "Programs",
       href: "/programs",
       icon: Briefcase,
-      isActive: false,
     },
-    {
-      label: "Contact",
-      href: "/contact",
-      icon: Phone,
-      isActive: false,
-    },
-    {
-      label: "FAQ",
-      href: "/faq",
-      icon: MessageCircleQuestion,
-      isActive: false,
-    },
-  ]);
+    // {
+    //   label: "Contact",
+    //   href: "/contact",
+    //   icon: Phone,
+    // },
+    // {
+    //   label: "FAQ",
+    //   href: "/faq",
+    //   icon: MessageCircleQuestion,
+    // },
+  ];
+
+  // Determine if a nav item is active based on current pathname
+  const isItemActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
 
   // Scroll tracking
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -74,15 +80,10 @@ const Navigation = () => {
     }
   });
 
-  // Nav item click handler
-  const handleNavItemClick = (clickedIndex: number) => {
-    const updatedNavItems = navItems.map((item, index) => ({
-      ...item,
-      isActive: index === clickedIndex,
-    }));
-    setNavItems(updatedNavItems);
+  // Close menu on route change
+  useEffect(() => {
     setIsMenuOpen(false);
-  };
+  }, [pathname]);
 
   // Mobile Navigation Render
   const renderMobileNavigation = () => (
@@ -96,6 +97,8 @@ const Navigation = () => {
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         whileTap={{ scale: 0.95 }}
         className="group flex items-center rounded-full bg-white/80 px-3 py-2 text-sm font-medium text-zinc-800 shadow-xl backdrop-blur-md dark:bg-zinc-800/80 dark:text-zinc-200"
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isMenuOpen}
       >
         {isMenuOpen ? (
           <X className="h-5 w-5 text-zinc-600 dark:text-zinc-300" />
@@ -136,7 +139,7 @@ const Navigation = () => {
                     },
                   }}
                 >
-                  {navItems.map((item, index) => (
+                  {navItems.map((item) => (
                     <motion.li
                       key={item.href}
                       variants={{
@@ -144,18 +147,18 @@ const Navigation = () => {
                         visible: { opacity: 1, x: 0 },
                       }}
                     >
-                      <a
+                      <Link
                         href={item.href}
-                        onClick={() => handleNavItemClick(index)}
+                        onClick={() => setIsMenuOpen(false)}
                         className={`flex items-center py-3 px-4 rounded-xl transition-all duration-300 ${
-                          item.isActive
+                          isItemActive(item.href)
                             ? "bg-teal-500/10 text-teal-600 dark:text-teal-400"
                             : "hover:bg-teal-500/5 hover:text-teal-500 dark:hover:text-teal-400"
                         }`}
                       >
                         <item.icon className="h-5 w-5 mr-3" strokeWidth={2} />
                         {item.label}
-                      </a>
+                      </Link>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -192,25 +195,25 @@ const Navigation = () => {
           className="flex space-x-2 rounded-2xl bg-white/70 p-2 shadow-2xl ring-1 ring-zinc-900/5 backdrop-blur-xl dark:bg-zinc-800/70 dark:ring-white/10"
           layout
         >
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <motion.li
               key={item.href}
               layout
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="relative"
             >
-              <a
+              <Link
                 href={item.href}
-                onClick={() => handleNavItemClick(index)}
                 className={`flex items-center px-4 py-2 rounded-xl transition-all duration-300 relative ${
-                  item.isActive
+                  isItemActive(item.href)
                     ? "text-white bg-teal-500 dark:text-zinc-100"
                     : "hover:bg-teal-500/10 text-zinc-600 dark:text-zinc-300 hover:text-teal-600 dark:hover:text-teal-400"
                 }`}
+                aria-current={isItemActive(item.href) ? "page" : undefined}
               >
                 <item.icon className="h-5 w-5 mr-2" strokeWidth={2} />
                 {item.label}
-              </a>
+              </Link>
             </motion.li>
           ))}
         </motion.ul>

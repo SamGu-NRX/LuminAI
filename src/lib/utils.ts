@@ -36,3 +36,11 @@ export const useIsMobile = () => {
   return isMobile;
 };
 
+// TODO: Make this, add a link, link to modal
+// export const CTALink = ({ href, children }) => {
+//   return (
+//     <a href={href} target="_blank" rel="noopener noreferrer">
+//       {children}
+//     </a>
+//   );
+// };

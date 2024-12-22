@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
-import Navigation from "./Nav";
+import Navigation from "./ShowcaseNav";
 import { Button } from "@/components/ui/button";
+import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+
+//TODO: add shadow to everything (not just this)
 
 // Module data type
 interface BootcampModule {
@@ -67,8 +70,11 @@ const BootcampModuleShowcase: React.FC = () => {
   const currentModule = bootcampModulesData[currentModuleIndex];
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="w-full max-w-6xl mx-auto px-4 py-16 relative">
+    <FadeInWhenVisible
+      as="section"
+      className="flex flex-col items-center justify-center p-4 my-8"
+    >
+      <div className="w-full max-w-6xl mx-auto px-4 relative">
         <motion.div
           className="relative w-full min-h-[700px] rounded-3xl overflow-hidden flex justify-center items-center"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -119,14 +125,14 @@ const BootcampModuleShowcase: React.FC = () => {
                     {currentModule.title}
                   </motion.h2>
                   <motion.span
-                    className={`relative flex items-center justify-center px-3 py-1 rounded-full text-sm font-semibold w-auto ${
+                    className={`relative flex items-center justify-center px-3 py-1 rounded-full text-sm font-semibold w-fit ${
                       currentModule.difficulty === "Beginner"
                         ? "bg-green-500/20 text-green-300"
                         : currentModule.difficulty === "Intermediate"
                         ? "bg-yellow-500/20 text-yellow-300"
                         : "bg-red-500/20 text-red-300"
                     }`}
-                    style={{ top: "4px" }}
+                    style={{ top: "5px" }} // Adjust vertical alignment since the h2 component is not vertically centered
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
@@ -193,7 +199,7 @@ const BootcampModuleShowcase: React.FC = () => {
           totalItems={bootcampModulesData.length}
         />
       </div>
-    </div>
+    </FadeInWhenVisible>
   );
 };
 

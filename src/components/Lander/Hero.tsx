@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import ApplyButton from "../ApplyButton";
+import ApplyButton from "./ApplyButton";
 import { fadeUp } from "@/animations/gsap";
+import ScrollArrow from "./ScrollArrow";
 
 export default function HeroSection() {
   const glowAnimation = useAnimation();
@@ -59,7 +60,18 @@ export default function HeroSection() {
   }, [glowAnimation]);
 
   return (
-    <div ref={heroRef} className="flex-container p-4 mx-auto items-center">
+    <motion.section
+      initial={{ opacity: 0.0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: 0.3,
+        duration: 0.8,
+        ease: "easeInOut",
+        staggerChildren: 0.05,
+      }}
+      ref={heroRef}
+      className="flex-container p-4 w-full items-center relative min-h-screen"
+    >
       <div
         className="overflow-hidden flex flex-col items-center justify-center text-center w-full mx-auto"
         style={{ animation: "textPopIn 0.7s ease-in-out" }}
@@ -112,6 +124,7 @@ export default function HeroSection() {
         </div>
       </div>
       <ApplyButton />
-    </div>
+      <ScrollArrow />
+    </motion.section>
   );
 }

@@ -8,6 +8,8 @@ import {
   FaLayerGroup,
   FaRobot,
 } from "react-icons/fa";
+import { IoBuild } from "react-icons/io5";
+import FadeInWhenVisible from "../motion/FadeInWhenVisible";
 
 const features = [
   {
@@ -20,6 +22,34 @@ const features = [
     color: "from-blue-500 to-purple-600",
   },
   {
+    title: "Hands-On, For Real.",
+    content:
+      "Spare us the fluff. You’ll actually get your hands dirty with real AI tools.",
+    linkText: "Curriculum Details",
+    link: "/programs",
+    icon: <IoBuild />,
+    color: "from-indigo-500 to-cyan-600",
+  },
+  {
+    title: "Non-Profit, Not Non-Ambitious",
+    content:
+      "We're not in it for the money. We're here to revolutionize AI education. Join us, unless you hate progress.",
+    linkText: "Our Mission",
+    link: "/about",
+    icon: <FaLayerGroup />,
+    color: "from-green-500 to-emerald-600",
+  },
+  // {
+  //   title: "Real Tools. Real Skills.",
+  //   content:
+  //     "Forget outdated textbooks. We're all about hands-on with the latest AI tech. Get ready to actually know what you're doing.",
+  //   linkText: "Curriculum Details",
+  //   link: "/programs",
+  //   icon: <FaRobot />,
+  //   color: "from-indigo-500 to-cyan-600",
+  // },
+
+  {
     title: "Built by Students Who Get It",
     content:
       "We know the struggle. That's why we crafted a bootcamp that doesn't suck. Learn AI from people who actually understand you.",
@@ -27,24 +57,6 @@ const features = [
     link: "#",
     icon: <FaHeart />,
     color: "from-pink-500 to-rose-600",
-  },
-  {
-    title: "Non-Profit, Not Non-Ambitious",
-    content:
-      "We're not in it for the money. We're here to revolutionize AI education. Join us, unless you hate progress.",
-    linkText: "Our Mission",
-    link: "#",
-    icon: <FaLayerGroup />,
-    color: "from-green-500 to-emerald-600",
-  },
-  {
-    title: "Real Tools. Real Skills.",
-    content:
-      "Forget outdated textbooks. We're all about hands-on with the latest AI tech. Get ready to actually know what you're doing.",
-    linkText: "Curriculum Details",
-    link: "#",
-    icon: <FaRobot />,
-    color: "from-indigo-500 to-cyan-600",
   },
 ];
 
@@ -93,9 +105,9 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        delay: index * 0.2,
-        type: "spring",
-        stiffness: 100,
+        delay: index * 0.1,
+        duration: 0.5,
+        ease: "easeInOut",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -133,8 +145,8 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
 
         {/* Content */}
         <div className="relative z-10 space-y-2 flex-grow">
-          <h3 className="text-xl font-bold text-black/90">{feature.title}</h3>
-          <p className="text-sm text-black/70">{feature.content}</p>
+          <h3 className="text-2xl font-bold text-black/90">{feature.title}</h3>
+          <p className="text-md text-black/70">{feature.content}</p>
         </div>
       </div>
 
@@ -161,7 +173,10 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
 
 const LuminAIFeatures = () => {
   return (
-    <section className="w-full py-16 bg-transparent backdrop-blur-lg rounded-2xl overflow-hidden">
+    <FadeInWhenVisible
+      as="section"
+      className="w-full py-4 bg-transparent backdrop-blur-lg rounded-2xl overflow-hidden my-8 mt-24"
+    >
       <div className="container mx-auto px-4 space-y-10">
         <div className="text-center mb-12">
           <motion.h2
@@ -208,7 +223,7 @@ const LuminAIFeatures = () => {
           </button>
         </motion.div>
       </div>
-    </section>
+    </FadeInWhenVisible>
   );
 };
 

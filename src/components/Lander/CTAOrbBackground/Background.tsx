@@ -29,8 +29,8 @@ const OrbBackground: React.FC = () => {
         animationVariants: {
           initial: { opacity: 0.2, scale: 1 },
           animate: {
-            x: [0, 30, -20, 40, 0],
-            y: [0, -25, 15, -35, 0],
+            x: [0, 60, -40, 80, 0],
+            y: [0, -50, 30, -70, 0],
             scale: [1, 1.2, 0.8, 1.25, 1],
             opacity: [0.5, 0.6, 0.5, 0.6, 0.5],
           },
@@ -66,8 +66,8 @@ const OrbBackground: React.FC = () => {
         animationVariants: {
           initial: { opacity: 0.2, scale: 1 },
           animate: {
-            x: [0, -25, 35, -20, 0],
-            y: [0, 30, -25, 20, 0],
+            x: [0, -50, 70, -40, 0],
+            y: [0, 60, -50, 40, 0],
             scale: [1, 0.85, 1.25, 1, 1],
             opacity: [0.5, 0.6, 0.5, 0.6, 0.5],
           },
@@ -103,8 +103,8 @@ const OrbBackground: React.FC = () => {
         animationVariants: {
           initial: { opacity: 0.1, scale: 1 },
           animate: {
-            x: [0, 15, -25, 10, 0],
-            y: [0, -15, 25, -10, 0],
+            x: [0, 30, -50, 20, 0],
+            y: [0, -30, 50, -20, 0],
             scale: [1, 1.25, 0.75, 1.15, 1],
             opacity: [0.5, 0.6, 0.5, 0.6, 0.5],
           },

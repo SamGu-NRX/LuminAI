@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import FadeInWhenVisible from "../motion/FadeInWhenVisible";
 
 // Shared Variants for Animations
 const containerVariants = {
@@ -45,9 +46,8 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <motion.section
-      initial="hidden"
-      animate="visible"
+    <FadeInWhenVisible
+      as="section"
       variants={containerVariants}
       className="p-4 mt-8 max-w-5xl mx-auto"
     >
@@ -66,13 +66,10 @@ export default function TestimonialsSection() {
             whileHover={{
               scale: 1.03,
               boxShadow: "0 10px 20px rgba(59, 130, 246, 0.15)",
+              transition: { duration: 0.3, ease: "easeInOut" },
             }}
-            className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 relative overflow-hidden transition-all duration-300"
+            className="bg-white rounded-2xl border border-gray-100 p-6 relative overflow-hidden"
           >
-            {/* <Quote
-              className="absolute top-4 left-4 text-blue-100 opacity-50"
-              size={48}
-            /> */}
             <div className="flex items-center mb-4 relative z-10">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                 <span className="text-blue-600 font-semibold text-xl">
@@ -93,6 +90,6 @@ export default function TestimonialsSection() {
           </motion.div>
         ))}
       </div>
-    </motion.section>
+    </FadeInWhenVisible>
   );
 }
