@@ -104,60 +104,11 @@ const Footer: React.FC = () => {
   const REVEAL_DISTANCE = FOOTER_HEIGHT; // Distance from bottom to start revealing the footer
 
   // Get scroll position and window size
-  const { scrollY } = useScroll();
-  const { height: windowHeight = 0 } = useWindowSize();
-
-  const [scrollableHeight, setScrollableHeight] = useState<number>(0);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && typeof document !== "undefined") {
-      const updateScrollableHeight = () => {
-        setScrollableHeight(
-          document.documentElement.scrollHeight - windowHeight
-        );
-      };
-
-      // Initial calculation
-      updateScrollableHeight();
-
-      window.addEventListener("resize", updateScrollableHeight);
-      window.addEventListener("scroll", updateScrollableHeight);
-
-      return () => {
-        window.removeEventListener("resize", updateScrollableHeight);
-        window.removeEventListener("scroll", updateScrollableHeight);
-      };
-    }
-  }, [windowHeight]);
-
-  const transform = useMemo(() => {
-    if (scrollableHeight <= 0) return "translateY(0%)"; // If content fits in viewport, show footer
-
-    const triggerPoint = scrollableHeight - REVEAL_DISTANCE;
-
-    if (scrollY.get() >= triggerPoint) {
-      return "translateY(0%)";
-
-    } else {
-      const progress =
-        (scrollY.get() - (triggerPoint - windowHeight)) /
-        (windowHeight + REVEAL_DISTANCE);
-      const clampedProgress = Math.max(0, Math.min(progress, 1));
-      const translateY = 100 - clampedProgress * 100;
-      return `translateY(${translateY}%)`;
-    }
-  }, [REVEAL_DISTANCE, scrollY, scrollableHeight, windowHeight]);
-
-  const styles = useSpring({
-    transform,
-    config: { tension: 250, friction: 30 },
-  });
-
   return (
     <animated.div
       className="fixed bottom-0 h-[249px] w-full"
       style={{
-        ...styles,
+        // ...styles,
         // Set a neutral zIndex so it can be placed behind the main content if main content has a higher zIndex
         zIndex: -1,
       }}

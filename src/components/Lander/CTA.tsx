@@ -32,11 +32,17 @@ const CTAContent = {
         "The other 11%? They launched their own startups. Maybe you’ll hire us someday.",
     },
     {
-      label: "Average Salary",
-      value: "$95K",
+      label: "First Cohort Attendees",
+      value: "200+",
       tooltip:
-        "Enough to upgrade from instant noodles to artisanal ramen (don’t @ us).",
+        "Good stuff right here",
     },
+    // {
+    //   label: "Average Salary",
+    //   value: "$95K",
+    //   tooltip:
+    //     "Enough to upgrade from instant noodles to artisanal ramen (don’t @ us).",
+    // },
   ],
   funFacts: [
     "Taught by students, not weird, out-of-touch geniuses",

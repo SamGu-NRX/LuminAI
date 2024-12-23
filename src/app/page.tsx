@@ -25,7 +25,7 @@ export default function Home() {
         text="Last-minute call for our 2024 summer application!"
         link="https://forms.gle/RaW38zynf2p515Ua8"
       /> */}
-      <div className="relative min-h-screen bg-white">
+      <div className="relative min-h-screen bg-white mb-[249px]">
         <AuroraBackground>
           <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-4">
             <Navigation />

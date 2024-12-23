@@ -31,7 +31,7 @@ export default function ContactUsSection() {
     <FadeInWhenVisible
       as="section"
       variants={containerVariants}
-      className="mx-auto my-8 w-full max-w-3xl p-4"
+      className="mx-auto mt-8 w-full max-w-3xl p-4"
     >
       <motion.div
         className="relative z-10 overflow-hidden rounded-2xl border border-black/20 p-8 shadow-xl"
@@ -74,7 +74,8 @@ export default function ContactUsSection() {
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative mx-auto flex items-center justify-center space-x-3 rounded-full bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 hover:shadow-xl" // TODO: transition colors doesn't work
+            className="group relative mx-auto flex items-center justify-center space-x-3 rounded-full bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 hover:shadow-xl"
+            // TODO: transition colors doesn't work
           >
             <Send className="h-5 w-5 text-white" />
             <span>Get In Touch</span>
