@@ -2,19 +2,22 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import StaffGrid from "./StaffGrid";
-import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 const StaffSection: React.FC = () => {
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const y = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
+  // const { scrollYProgress } = useScroll();
+  // const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  // const y = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
 
   return (
     <FadeInWhenVisible
       as="section"
       className="pb-20 pt-10 mt-10 px-8 bg-gray-50/20 overflow-hidden shadow-lg backdrop-blur-md rounded-2xl"
     >
-      <motion.div className="max-w-6xl mx-auto px-4" style={{ opacity, y }}>
+      <motion.div
+        className="max-w-6xl mx-auto px-4"
+        // style={{ opacity, y }}
+      >
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}

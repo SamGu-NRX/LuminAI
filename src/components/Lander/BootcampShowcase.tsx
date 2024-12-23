@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import Navigation from "./ShowcaseNav";
 import { Button } from "@/components/ui/button";
-import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 //TODO: add shadow to everything (not just this)
 
@@ -70,16 +70,19 @@ const BootcampModuleShowcase: React.FC = () => {
   const currentModule = bootcampModulesData[currentModuleIndex];
 
   return (
-    <FadeInWhenVisible
-      as="section"
-      className="flex flex-col items-center justify-center p-4 my-8"
-    >
+    <section className="flex flex-col items-center justify-center p-4 my-8">
       <div className="w-full max-w-6xl mx-auto px-4 relative">
         <motion.div
           className="relative w-full min-h-[700px] rounded-3xl overflow-hidden flex justify-center items-center"
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.95, y: 40 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          viewport={{ once: true }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -199,7 +202,7 @@ const BootcampModuleShowcase: React.FC = () => {
           totalItems={bootcampModulesData.length}
         />
       </div>
-    </FadeInWhenVisible>
+    </section>
   );
 };
 

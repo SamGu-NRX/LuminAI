@@ -15,9 +15,10 @@ import {
   X,
 } from "lucide-react";
 import { useBanner } from "@/context/BannerContext";
-import { useIsMobile } from "@/lib/utils";
+import { useIsMobile } from "@/utils/isMobile";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { TransitionLink } from "@/utils/TransitionLink";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -147,7 +148,7 @@ const Navigation = () => {
                         visible: { opacity: 1, x: 0 },
                       }}
                     >
-                      <Link
+                      <TransitionLink
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
                         className={`flex items-center py-3 px-4 rounded-xl transition-all duration-300 ${
@@ -158,7 +159,7 @@ const Navigation = () => {
                       >
                         <item.icon className="h-5 w-5 mr-3" strokeWidth={2} />
                         {item.label}
-                      </Link>
+                      </TransitionLink>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -212,7 +213,7 @@ const Navigation = () => {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="relative"
             >
-              <Link
+              <TransitionLink
                 href={item.href}
                 className={`flex items-center px-4 py-2 rounded-xl transition-all duration-300 relative
                 ${
@@ -225,7 +226,7 @@ const Navigation = () => {
               >
                 <item.icon className="mr-2 h-5 w-5" strokeWidth={2} />
                 {item.label}
-              </Link>
+              </TransitionLink>
             </motion.li>
           ))}
         </motion.ul>

@@ -35,7 +35,7 @@ const StaffCard: React.FC<{ member: StaffMember }> = ({ member }) => {
         />
         <motion.div
           className="absolute inset-0 bg-gradient-to-b from-transparent to-white"
-          animate={{ opacity: isHovered ? 0.9 : 0.7 }}
+          animate={{ opacity: isHovered ? 0.9 : 0.5 }}
           transition={{ duration: 0.3 }}
         />
       </motion.div>

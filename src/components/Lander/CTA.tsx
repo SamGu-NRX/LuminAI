@@ -8,7 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 const CTAContent = {
   headline: "From Zero to AI Hero",
@@ -45,7 +45,6 @@ const CTAContent = {
   ],
 };
 
-
 const variants = {
   container: {
     hidden: { opacity: 0, y: 20 },
@@ -69,7 +68,10 @@ const variants = {
 
 const CTASection = () => {
   return (
-    <FadeInWhenVisible as="section" className="relative w-full max-w-3xl mx-auto rounded-2xl my-8 justify-center flex items-center">
+    <FadeInWhenVisible
+      as="section"
+      className="relative w-full max-w-3xl mx-auto rounded-2xl my-8 justify-center flex items-center"
+    >
       <HoverBorderGradient
         containerClassName="rounded-2xl group-hover:scale-[102%] shadow-xl group-hover:shadow-2xl"
         as="div"
@@ -134,7 +136,6 @@ const CTASection = () => {
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-40 group-hover/modal-btn:opacity-100 transition duration-500" />
               <div className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center overflow-hidden text-lg">
-
                 <span className="group-hover/modal-btn:translate-x-60 text-white text-center transition duration-500">
                   {CTAContent.buttonText}
                 </span>

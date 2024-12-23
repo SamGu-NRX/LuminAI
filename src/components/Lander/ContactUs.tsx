@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Send, ArrowRight } from "lucide-react";
 
-import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },

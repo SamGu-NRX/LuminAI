@@ -9,7 +9,7 @@ import {
   FaRobot,
 } from "react-icons/fa";
 import { IoBuild } from "react-icons/io5";
-import FadeInWhenVisible from "../motion/FadeInWhenVisible";
+import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 const features = [
   {
