@@ -56,7 +56,7 @@ export const Content: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="hover:text-blue-400 transition-colors group relative font-medium duration-[250ms]"
+                className="hover:text-blue-400 transition-colors group relative font-medium duration-300"
               >
                 <span className="relative z-10">{link.name}</span>
                 <span className="absolute left-0 top-full h-[2px] w-full bg-current origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 pointer-events-none"></span>

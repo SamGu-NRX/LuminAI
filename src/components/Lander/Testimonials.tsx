@@ -30,17 +30,17 @@ const itemVariants = {
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      name: "John Doe",
-      role: "AI Enthusiast",
+      name: "Diyorbek Komilov",
+      role: "High School Senior",
       testimonial:
         "LuminAI Bootcamps have truly changed the way I understand AI. The hands-on approach and the support from the community are unparalleled.",
-      initials: "JD",
+      initials: "DK",
     },
     {
-      name: "Jane Smith",
-      role: "Data Scientist",
+      name: "Jeeval Shah",
+      role: "Computer Engineering, University Student",
       testimonial:
-        "The curriculum is comprehensive and up-to-date with the latest industry trends. Highly recommend to anyone looking to dive into AI.",
+        "Although I’ve been learning AI/ML for months, I always struggled with Neural Networks. This course explained them brilliantly. While it’s accessible to those with some experience, beginners in Python might find the first week challenging. That said, the high standards set by the bootcamp ensure a rewarding learning journey. Highly recommend it for anyone looking to dive into AI.",
       initials: "JS",
     },
   ];
