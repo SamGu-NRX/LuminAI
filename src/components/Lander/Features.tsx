@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { IoBuild } from "react-icons/io5";
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
+import { TransitionLink } from "@/utils/TransitionLink";
 
 const features = [
   {
@@ -92,16 +93,7 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
 
   return (
     <motion.div
-      className={`
-        group relative overflow-hidden rounded-2xl p-6
-        bg-white/10 backdrop-blur-lg border border-white/20
-        flex flex-col justify-between
-        transition-all duration-300 ease-in-out
-        hover:shadow-2xl
-        hover:scale-105
-        min-h-[20rem] transform
-        ${colSpanClass}
-      `}
+      className={`group relative flex min-h-[20rem] transform flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl ${colSpanClass} `}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -114,16 +106,10 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
     >
       {/* Gradient Background */}
       <div
-        className={`
-          absolute inset-0 opacity-20
-          bg-gradient-to-br ${feature.color}
-          transition-opacity duration-500
-          group-hover:opacity-40
-          group-hover:scale-110
-        `}
+        className={`absolute inset-0 bg-gradient-to-br opacity-20 ${feature.color} transition-opacity duration-500 group-hover:scale-110 group-hover:opacity-40`}
       />
 
-      <div className="flex h-full flex-col justify-between p-5 transition-transform transform-gpu duration-300 group-hover:-translate-y-3 z-20">
+      <div className="z-20 flex h-full transform-gpu flex-col justify-between p-5 transition-transform duration-300 group-hover:-translate-y-3">
         {/* Icon */}
         <div className="relative z-10 mb-4">
           <motion.div
@@ -132,40 +118,26 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
               scale: isHovered ? 1.1 : 1,
               rotate: isHovered ? 5 : 0,
             }}
-            className={`
-            w-16 h-16 rounded-full
-            bg-gradient-to-br ${feature.color}
-            flex items-center justify-center
-            text-white shadow-lg
-          `}
+            className={`h-16 w-16 rounded-full bg-gradient-to-br ${feature.color} flex items-center justify-center text-white shadow-lg`}
           >
             {React.cloneElement(Icon, { className: "w-8 h-8" })}
           </motion.div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 space-y-2 flex-grow">
+        <div className="relative z-10 flex-grow space-y-2">
           <h3 className="text-2xl font-bold text-black/90">{feature.title}</h3>
           <p className="text-md text-black/70">{feature.content}</p>
         </div>
       </div>
 
-      <div
-        className="
-          absolute bottom-0 left-0 top-auto w-full translate-y-full transform-gpu opacity-0
-          transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100
-          z-20
-        "
-      >
-        <a
+      <div className="absolute bottom-0 left-0 top-auto z-20 w-full translate-y-full transform-gpu opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <TransitionLink
           href={feature.link}
-          className="
-      gradient-border
-      flex items-center justify-center bg-black py-2.5 text-sm uppercase text-white
-    "
+          className="gradient-border flex items-center justify-center bg-black py-2.5 text-sm uppercase text-white"
         >
           {feature.linkText}
-        </a>
+        </TransitionLink>
       </div>
     </motion.div>
   );
@@ -175,19 +147,19 @@ const LuminAIFeatures = () => {
   return (
     <FadeInWhenVisible
       as="section"
-      className="w-full py-4 bg-transparent backdrop-blur-lg rounded-2xl overflow-hidden my-8 mt-24"
+      className="my-8 mt-24 w-full overflow-hidden rounded-2xl bg-transparent py-4 backdrop-blur-lg"
     >
-      <div className="container mx-auto px-4 space-y-10">
-        <div className="text-center mb-12">
+      <div className="container mx-auto space-y-10 px-4">
+        <div className="mb-12 text-center">
           <motion.h2
-            className="text-4xl font-bold text-black mb-4"
+            className="mb-4 text-4xl font-bold text-black"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             The One AI Bootcamp You Must Need
           </motion.h2>
           <motion.p
-            className="text-xl text-black/70 max-w-3xl mx-auto"
+            className="mx-auto max-w-3xl text-xl text-black/70"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -197,7 +169,7 @@ const LuminAIFeatures = () => {
         </div>
 
         <motion.div
-          className="grid w-full auto-rows-[20rem] grid-cols-1 gap-5 md:grid-cols-12 relative min-h-[20rem] overflow-hidden"
+          className="relative grid min-h-[20rem] w-full auto-rows-[20rem] grid-cols-1 gap-5 overflow-hidden md:grid-cols-12"
           initial="hidden"
           animate="visible"
         >
@@ -207,18 +179,11 @@ const LuminAIFeatures = () => {
         </motion.div>
 
         <motion.div
-          className="text-center mt-12"
+          className="mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <button
-            className="
-              bg-gradient-to-r from-purple-600 to-blue-500
-              text-white font-bold py-3 px-8 rounded-full
-              hover:scale-105 transition-transform duration-300
-              shadow-lg hover:shadow-xl
-            "
-          >
+          <button className="rounded-full bg-gradient-to-r from-purple-600 to-blue-500 px-8 py-3 font-bold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
             Start Your AI Journey Now!
           </button>
         </motion.div>

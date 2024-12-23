@@ -18,11 +18,11 @@ export default function StaffPage() {
         text="Last-minute call for our 2024 summer application!"
         link="https://forms.gle/RaW38zynf2p515Ua8"
       /> */}
-      <div className="relative bg-white min-h-screen">
+      <div className="relative min-h-screen bg-white">
         <AuroraBackground>
-          <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full">
+          <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-4">
             <Navigation />
-            <div className="w-full mx-auto mt-12 pb-12">
+            <div className="mx-auto mt-12 w-full pb-12">
               <StaffSection />
             </div>
           </div>

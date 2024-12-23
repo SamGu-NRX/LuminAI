@@ -22,7 +22,7 @@ const CTAContent = {
   stats: [
     {
       label: "Completion Rate",
-      value: "90+%", // add ticking number effect, separate "%" and value (font size much larger)
+      value: "80+%", // TODO: add ticking number effect, separate "%" and value (font size much larger)
       tooltip: "No quitters yet… but hey, there's always tomorrow!",
     },
     {
@@ -70,15 +70,15 @@ const CTASection = () => {
   return (
     <FadeInWhenVisible
       as="section"
-      className="relative w-full max-w-3xl mx-auto rounded-2xl my-8 justify-center flex items-center"
+      className="relative mx-auto my-8 flex w-full max-w-3xl items-center justify-center rounded-2xl"
     >
       <HoverBorderGradient
         containerClassName="rounded-2xl group-hover:scale-[102%] shadow-xl group-hover:shadow-2xl"
         as="div"
-        className=" dark:bg-black bg-white text-black dark:text-white flex items-center transition-all overflow-hidden justify-center"
+        className="flex items-center justify-center overflow-hidden bg-white text-black transition-all dark:bg-black dark:text-white"
       >
         <motion.div
-          className="min-h-[500px] relative rounded-2xl "
+          className="relative min-h-[500px] rounded-2xl"
           initial="hidden"
           animate="visible"
           variants={variants.container}
@@ -88,27 +88,27 @@ const CTASection = () => {
           <OrbBackground />
 
           {/* Main content container (no blur here) */}
-          <div className="relative z-10 p-8 rounded-2xl overflow-hidden transition duration-300">
+          <div className="relative z-10 overflow-hidden rounded-2xl p-8 transition duration-300">
             {/* BLur Overlay */}
             <div className="absolute inset-0 z-0 bg-black/5 blur-xl" />
             {/* Header */}
             <motion.h2
               variants={variants.child}
-              className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-blue-700 mb-2"
+              className="mb-2 bg-gradient-to-r from-purple-700 to-blue-700 bg-clip-text text-4xl font-bold text-transparent"
             >
               {CTAContent.headline}
             </motion.h2>
 
             <motion.h3
               variants={variants.child}
-              className="text-xl text-purple-700 mb-4"
+              className="mb-4 text-xl text-purple-700"
             >
               {CTAContent.subheadline}
             </motion.h3>
 
             <motion.p
               variants={variants.child}
-              className="text-lg text-gray-800 mb-8 max-w-xl"
+              className="mb-8 max-w-xl text-lg text-gray-800"
             >
               {CTAContent.description}
             </motion.p>
@@ -116,12 +116,12 @@ const CTASection = () => {
             {/* Fun Facts */}
             <motion.div
               variants={variants.child}
-              className="flex flex-wrap gap-2 mb-8"
+              className="mb-8 flex flex-wrap gap-2"
             >
               {CTAContent.funFacts.map((fact, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-black/5 text-gray-800 rounded-full text-sm border border-black/10"
+                  className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-sm text-gray-800"
                 >
                   {fact}
                 </span>
@@ -130,16 +130,16 @@ const CTASection = () => {
 
             <motion.button
               variants={variants.child}
-              className="relative group/modal-btn rounded-md text-black dark:text-white text-center bg-black dark:bg-white flex justify-center left-2 "
+              className="group/modal-btn relative left-2 flex justify-center rounded-md bg-black text-center text-black dark:bg-white dark:text-white"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-40 group-hover/modal-btn:opacity-100 transition duration-500" />
-              <div className="relative px-8 py-4 bg-black rounded-lg leading-none flex items-center overflow-hidden text-lg">
-                <span className="group-hover/modal-btn:translate-x-60 text-white text-center transition duration-500">
+              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-40 blur transition duration-500 group-hover/modal-btn:opacity-100" />
+              <div className="relative flex items-center overflow-hidden rounded-lg bg-black px-8 py-4 text-lg leading-none">
+                <span className="text-center text-white transition duration-500 group-hover/modal-btn:translate-x-60">
                   {CTAContent.buttonText}
                 </span>
-                <div className="-translate-x-60 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
+                <div className="absolute inset-0 z-20 flex -translate-x-60 items-center justify-center text-white transition duration-500 group-hover/modal-btn:translate-x-0">
                   {CTAContent.buttonHoverText}
                 </div>
               </div>
@@ -149,14 +149,14 @@ const CTASection = () => {
             <TooltipProvider>
               <motion.div
                 variants={variants.child}
-                className="grid grid-cols-3 gap-4 mt-8 mb-4 text-center transition duration-300"
+                className="mb-4 mt-8 grid grid-cols-3 gap-4 text-center transition duration-300"
               >
                 {CTAContent.stats.map((stat, index) => (
                   <Tooltip key={index}>
                     {/* TooltipTrigger wraps the element that will trigger the tooltip */}
                     <TooltipTrigger asChild>
                       <div className="relative p-4">
-                        <div className="text-2xl font-bold text-black mb-1">
+                        <div className="mb-1 text-2xl font-bold text-black">
                           {stat.value}
                         </div>
                         <div className="text-sm text-gray-800">
@@ -169,7 +169,7 @@ const CTASection = () => {
                     <TooltipContent
                       side="bottom" // Adjust the position as needed (top, bottom, left, right)
                       align="center" // Adjust the alignment as needed (start, center, end)
-                      className="-mt-2 px-3 py-2 bg-black/90 rounded-lg text-xs text-white whitespace-nowrap"
+                      className="-mt-2 whitespace-nowrap rounded-lg bg-black/90 px-3 py-2 text-xs text-white"
                     >
                       {stat.tooltip}
                     </TooltipContent>

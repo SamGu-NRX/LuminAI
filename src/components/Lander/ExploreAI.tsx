@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { fadeUp } from '@/animations/gsap';
+import { useEffect, useRef } from "react";
+import { fadeUp } from "@/animations/gsap";
 
 export default function ExploreAISection() {
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -12,15 +12,15 @@ export default function ExploreAISection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         exploreRef.current,
-        { delay: 0.1 }
+        { delay: 0.1 },
       );
     }
   }, []);
 
   return (
-    <section ref={exploreRef} className="text-center mt-12 p-4">
+    <section ref={exploreRef} className="mt-12 p-4 text-center">
       <h2
-        className="text-3xl font-bold mb-4"
+        className="mb-4 text-3xl font-bold"
         ref={(el) => {
           if (el) elementsRef.current[1] = el;
         }}

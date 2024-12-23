@@ -27,7 +27,7 @@ const Orb: React.FC<OrbProps> = ({
         "absolute rounded-full blur-xl",
         positionClasses,
         sizeClass,
-        colorClass
+        colorClass,
       )}
       initial={animationVariants.initial}
       animate={animationVariants.animate}

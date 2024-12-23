@@ -49,16 +49,16 @@ export default function TestimonialsSection() {
     <FadeInWhenVisible
       as="section"
       variants={containerVariants}
-      className="p-4 mt-8 max-w-5xl mx-auto"
+      className="mx-auto mt-8 max-w-5xl p-4"
     >
       <motion.h2
         variants={itemVariants}
-        className="text-3xl font-bold text-center mb-12 text-gray-800"
+        className="mb-12 text-center text-3xl font-bold text-gray-800"
       >
         What Our Participants Say
       </motion.h2>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid gap-8 md:grid-cols-2">
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={index}
@@ -68,23 +68,23 @@ export default function TestimonialsSection() {
               boxShadow: "0 10px 20px rgba(59, 130, 246, 0.15)",
               transition: { duration: 0.3, ease: "easeInOut" },
             }}
-            className="bg-white rounded-2xl border border-gray-100 p-6 relative overflow-hidden"
+            className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6"
           >
-            <div className="flex items-center mb-4 relative z-10">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                <span className="text-blue-600 font-semibold text-xl">
+            <div className="relative z-10 mb-4 flex items-center">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
+                <span className="text-xl font-semibold text-blue-600">
                   {testimonial.initials}
                 </span>
               </div>
               <div>
-                <p className="font-semibold text-lg text-gray-800">
+                <p className="text-lg font-semibold text-gray-800">
                   {testimonial.name}
                 </p>
                 <p className="text-gray-600">{testimonial.role}</p>
               </div>
             </div>
 
-            <p className="text-gray-700 relative z-10">
+            <p className="relative z-10 text-gray-700">
               {testimonial.testimonial}
             </p>
           </motion.div>

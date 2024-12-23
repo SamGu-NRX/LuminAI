@@ -16,10 +16,10 @@ const ApplyButton = React.forwardRef<
 
   return (
     <div
-      className="text-center mt-8 z-10 flex items-center justify-center"
+      className="z-10 mt-8 flex items-center justify-center text-center"
       ref={ref}
     >
-      <ShimmerButton className="shadow-2xl text-white" onClick={openModal}>
+      <ShimmerButton className="text-white shadow-2xl" onClick={openModal}>
         <span className="z-20 whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
           Join our AI Revolution
         </span>

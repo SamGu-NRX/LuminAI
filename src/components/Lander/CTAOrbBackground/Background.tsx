@@ -134,7 +134,7 @@ const OrbBackground: React.FC = () => {
       },
       // Add more orbs
     ],
-    []
+    [],
   );
 
   return (

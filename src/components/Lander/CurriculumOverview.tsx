@@ -72,19 +72,19 @@ export default function AICurriculumSection() {
     <FadeInWhenVisible
       as="section"
       transition={containerVariants}
-      className="p-4 max-w-6xl mx-auto my-8"
+      className="mx-auto my-8 max-w-6xl p-4"
     >
       <motion.div
         variants={itemVariants}
-        className="bg-white/20 rounded-2xl shadow-2xl border border-black/10 overflow-hidden"
+        className="overflow-hidden rounded-2xl border border-black/10 bg-white/20 shadow-2xl"
       >
         {/* Header */}
         <motion.div
           whileHover={{ backgroundColor: "rgba(59, 130, 246, 0.05)" }}
-          className="px-6 py-5 flex items-center justify-between cursor-pointer group"
+          className="group flex cursor-pointer items-center justify-between px-6 py-5"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <h2 className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+          <h2 className="text-2xl font-bold text-gray-800 transition-colors group-hover:text-blue-600">
             AI Curriculum Overview
           </h2>
           <motion.div
@@ -95,7 +95,7 @@ export default function AICurriculumSection() {
               <ChevronUp className="text-blue-600" size={24} />
             ) : (
               <ChevronDown
-                className="text-gray-600 group-hover:text-blue-600 transition-colors"
+                className="text-gray-600 transition-colors group-hover:text-blue-600"
                 size={24}
               />
             )}
@@ -121,12 +121,12 @@ export default function AICurriculumSection() {
                 height: 0,
                 transition: { duration: 0.2 },
               }}
-              className="px-6 py-6 bg-gray-50"
+              className="bg-gray-50 px-6 py-6"
             >
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-gray-700 mb-6"
+                className="mb-6 text-gray-700"
               >
                 Our comprehensive AI curriculum covers both programming
                 frameworks and mathematical foundations essential for AI
@@ -141,7 +141,7 @@ export default function AICurriculumSection() {
                   transition={{ delay: sectionIndex * 0.2, duration: 0.5 }}
                   className="mb-6"
                 >
-                  <h3 className="text-xl font-semibold text-blue-700 mb-3">
+                  <h3 className="mb-3 text-xl font-semibold text-blue-700">
                     {section.title}
                   </h3>
                   <ul className="space-y-2">
@@ -153,7 +153,7 @@ export default function AICurriculumSection() {
                         transition={{ delay: itemIndex * 0.1, duration: 0.3 }}
                         className="flex items-center space-x-3 text-gray-700"
                       >
-                        <div className="w-2 h-2 bg-blue-500 rounded-full shrink-0" />
+                        <div className="h-2 w-2 shrink-0 rounded-full bg-blue-500" />
                         <span>{item}</span>
                       </motion.li>
                     ))}
@@ -165,9 +165,7 @@ export default function AICurriculumSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => router.push("/programs")} // Navigate to /programs
-                className="mt-4 w-full py-3 bg-blue-500 text-white rounded-xl
-                           hover:bg-blue-600 transition-colors duration-300
-                           flex items-center justify-center space-x-2"
+                className="mt-4 flex w-full items-center justify-center space-x-2 rounded-xl bg-blue-500 py-3 text-white transition-colors duration-300 hover:bg-blue-600"
               >
                 <span>Explore Full Curriculum</span>
               </motion.button>

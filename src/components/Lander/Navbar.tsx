@@ -89,7 +89,7 @@ const Navigation = () => {
   // Mobile Navigation Render
   const renderMobileNavigation = () => (
     <div
-      className="fixed top-4 right-4 z-50"
+      className="fixed right-4 top-4 z-50"
       style={{ marginTop: bannerHeight + 32 }} // Default margin when no banner
     >
       {/* Mobile Menu Toggle */}
@@ -151,13 +151,13 @@ const Navigation = () => {
                       <TransitionLink
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className={`flex items-center py-3 px-4 rounded-xl transition-all duration-300 ${
+                        className={`flex items-center rounded-xl px-4 py-3 transition-all duration-300 ${
                           isItemActive(item.href)
                             ? "bg-teal-500/10 text-teal-600 dark:text-teal-400"
                             : "hover:bg-teal-500/5 hover:text-teal-500 dark:hover:text-teal-400"
                         }`}
                       >
-                        <item.icon className="h-5 w-5 mr-3" strokeWidth={2} />
+                        <item.icon className="mr-3 h-5 w-5" strokeWidth={2} />
                         {item.label}
                       </TransitionLink>
                     </motion.li>
@@ -197,14 +197,11 @@ const Navigation = () => {
           layout
           // 1) Add transition classes: transition-colors (or transition-all) and duration
           // 2) Conditionally switch from transparent to your opaque styles
-          className={`flex space-x-2 rounded-2xl p-2
-          transition duration-300
-          ${
+          className={`flex space-x-2 rounded-2xl p-2 transition duration-300 ${
             isNavVisible
               ? "bg-white shadow-2xl ring-1 ring-zinc-900/5 dark:bg-zinc-800/70 dark:ring-white/10"
               : "bg-transparent shadow-none ring-0 backdrop-blur-none"
-          }
-        `}
+          } `}
         >
           {navItems.map((item) => (
             <motion.li
@@ -215,13 +212,11 @@ const Navigation = () => {
             >
               <TransitionLink
                 href={item.href}
-                className={`flex items-center px-4 py-2 rounded-xl transition-all duration-300 relative
-                ${
+                className={`relative flex items-center rounded-xl px-4 py-2 transition-all duration-300 ${
                   isItemActive(item.href)
-                    ? "text-white bg-teal-500 dark:text-zinc-100"
-                    : "hover:bg-teal-500/10 text-zinc-600 dark:text-zinc-300 hover:text-teal-600 dark:hover:text-teal-400"
-                }
-              `}
+                    ? "bg-teal-500 text-white dark:text-zinc-100"
+                    : "text-zinc-600 hover:bg-teal-500/10 hover:text-teal-600 dark:text-zinc-300 dark:hover:text-teal-400"
+                } `}
                 aria-current={isItemActive(item.href) ? "page" : undefined}
               >
                 <item.icon className="mr-2 h-5 w-5" strokeWidth={2} />

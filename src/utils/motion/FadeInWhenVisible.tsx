@@ -13,7 +13,7 @@ interface FadeInWhenVisibleProps<T extends keyof JSX.IntrinsicElements = "div">
 
 // Create the FadeInWhenVisible component with a generic type
 export default function FadeInWhenVisible<
-  T extends keyof JSX.IntrinsicElements = "div"
+  T extends keyof JSX.IntrinsicElements = "div",
 >({
   children,
   className,

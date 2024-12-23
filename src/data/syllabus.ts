@@ -7,9 +7,9 @@ export const syllabusData: WeekModule[] = [
     title: "Introduction to Artificial Intelligence and Neural Networks",
     wittyTitle: "AI 101: From 'Hello World' to 'Hello, AI'",
     subtitle: "Foundations of Modern AI",
-    wittySubtitle: "Spoiler: It's Not About Teaching Robots to Love",
+    wittySubtitle: "Spoiler: It’s Not About Teaching Robots to Love (Yet!)",
     description:
-      "A comprehensive introduction to the fundamentals of AI, covering basic concepts of machine learning, neural networks, and their practical applications.",
+      "Get ready to unravel the mysteries of machine learning and neural networks in a fun, hands-on way. We’ll cover the groundwork that’s powering everything from your smartphone’s face recognition to Netflix’s recommendations—no Skynet required!",
     duration: "20 hours",
     learningObjectives: [
       {
@@ -65,7 +65,7 @@ export const syllabusData: WeekModule[] = [
     project: {
       title: "Build Your First Neural Network",
       description:
-        "Create a simple neural network from scratch using Python and NumPy to classify handwritten digits",
+        "Create a simple neural network from scratch using Python and NumPy to classify handwritten digits—say hello to your first AI creation!",
       objectives: [
         "Implement forward propagation",
         "Calculate loss functions",
@@ -74,7 +74,7 @@ export const syllabusData: WeekModule[] = [
         "Evaluate model performance",
       ],
       technologies: ["Python", "NumPy", "Matplotlib", "Jupyter Notebook"],
-      difficulty: "beginner",
+      difficulty: "Beginner",
     },
     resources: [
       {
@@ -101,12 +101,12 @@ export const syllabusData: WeekModule[] = [
     id: 2,
     week: 2,
     title: "Convolutional Neural Networks and Computer Vision",
-    wittyTitle:
-      "Teaching Computers to See: From 'Where's Waldo?' to 'Where's NOT Waldo?'",
+    wittyTitle: "Teaching Computers to See",
     subtitle: "Advanced Deep Learning Architectures",
-    wittySubtitle: "Making Machines Judge Your Selfies (Scientifically)",
+    wittySubtitle:
+      "Making Machines Judge Your Selfies (So You Can Blame the Algorithm)",
     description:
-      "Deep dive into CNNs and their applications in computer vision tasks, comparing different neural network architectures and exploring advanced concepts.",
+      "Dive deep into the neural nets that power image recognition, selfie filters, and more. We’ll compare different architectures, train our model to spot objects, and ensure it can find your friend who always hides when it’s time to take a group photo.",
     duration: "25 hours",
     learningObjectives: [
       {
@@ -149,7 +149,7 @@ export const syllabusData: WeekModule[] = [
     project: {
       title: "Build an Image Classification System",
       description:
-        "Implement a CNN-based image classification system using PyTorch",
+        "Implement a CNN-based image classification system using PyTorch to (somewhat) accurately label images, so your computer can finally tell cats and dogs apart.",
       objectives: [
         "Set up a PyTorch environment",
         "Implement a CNN architecture",
@@ -158,7 +158,7 @@ export const syllabusData: WeekModule[] = [
         "Evaluate and improve model performance",
       ],
       technologies: ["Python", "PyTorch", "torchvision", "NumPy", "Matplotlib"],
-      difficulty: "intermediate",
+      difficulty: "Intermediate",
     },
     resources: [
       {
@@ -187,11 +187,11 @@ export const syllabusData: WeekModule[] = [
     id: 3,
     week: 3,
     title: "Object Detection with YOLOv8",
-    wittyTitle: "YOLO: You Only Look Once (But the AI Looks Twice)",
+    wittyTitle: "YOLO: You Only Look Once (But the AI is Always Watching)",
     subtitle: "Real-time Object Detection",
-    wittySubtitle: "Teaching AI to Find Your Keys Faster Than You Can",
+    wittySubtitle: "Finally, An AI That Can Help You Find Your Keys (Probably)",
     description:
-      "Explore the cutting-edge YOLOv8 algorithm for real-time object detection and its practical applications in various fields.",
+      "Learn how YOLOv8 spots and labels objects in real time with near-magical accuracy. Perfect for everything from self-driving cars to security cams—and yes, maybe even finding your missing stuff.",
     duration: "22 hours",
     learningObjectives: [
       {
@@ -232,7 +232,7 @@ export const syllabusData: WeekModule[] = [
     project: {
       title: "Real-time Car Detection and Speed Estimation",
       description:
-        "Develop a system using YOLOv8 and OpenCV to detect cars and estimate their speed in video streams",
+        "Develop a system using YOLOv8 and OpenCV to detect cars and estimate their speed. Because who doesn’t want to know how fast the pizza delivery guy is going?",
       objectives: [
         "Set up YOLOv8 environment",
         "Prepare and annotate a car dataset",
@@ -242,7 +242,7 @@ export const syllabusData: WeekModule[] = [
         "Create a user interface for the detection system",
       ],
       technologies: ["Python", "YOLOv8", "OpenCV", "Ultralytics", "NumPy"],
-      difficulty: "advanced",
+      difficulty: "Advanced",
     },
     resources: [
       {
@@ -271,12 +271,12 @@ export const syllabusData: WeekModule[] = [
     id: 4,
     week: 4,
     title: "Audio Classification and Processing",
-    wittyTitle: "Can You Hear Me Now? Teaching AI to Be All Ears",
+    wittyTitle: "Bionic Ears: Teaching AI to Listen (When Nobody Else Does)",
     subtitle: "Sound Analysis and Classification",
     wittySubtitle:
       "Making Machines Understand Your Mumbling Better Than Your Friends Do",
     description:
-      "Dive into the world of audio processing and classification, exploring techniques to analyze and categorize sound data using machine learning.",
+      "Ever wonder how Siri or Alexa figures out what you just yelled across the room? In this module, we’ll break down how machines process audio signals and learn to classify everything from music genres to random noises.",
     duration: "24 hours",
     learningObjectives: [
       {
@@ -317,7 +317,7 @@ export const syllabusData: WeekModule[] = [
     project: {
       title: "Multi-class Audio Event Detection System",
       description:
-        "Develop a system that can classify various environmental sounds in real-time",
+        "Create a model that recognizes multiple environmental sounds in real time. Finally, an AI that knows when someone is crunching chips too loudly in the library!",
       objectives: [
         "Prepare a diverse environmental sound dataset",
         "Implement audio preprocessing and feature extraction",
@@ -327,7 +327,7 @@ export const syllabusData: WeekModule[] = [
         "Evaluate and analyze model performance",
       ],
       technologies: ["Python", "librosa", "TensorFlow", "Keras", "PyAudio"],
-      difficulty: "intermediate",
+      difficulty: "Intermediate",
     },
     resources: [
       {
@@ -365,13 +365,12 @@ export const syllabusData: WeekModule[] = [
     week: "5-6",
     title:
       "Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG)",
-    wittyTitle:
-      "AI Chatbots: From 'Awkward Small Talk' to 'Deep Philosophical Debates'",
+    wittyTitle: "Beyond ‘U Up?’: AI Chatbots That Are Actually Interesting",
     subtitle: "Advanced Natural Language Processing",
     wittySubtitle:
       "Teaching Machines to Write Your Essays (But Don't Tell Your Professor)",
     description:
-      "Explore the cutting-edge world of Large Language Models and learn how to enhance their capabilities with Retrieval-Augmented Generation techniques.",
+      "Step into the realm of chatbots and advanced language models that can write poems, debate philosophy, and cite references—just don’t let them do your entire homework unless you want to watch them flex more knowledge than you asked for.",
     duration: "40 hours",
     learningObjectives: [
       {
@@ -412,7 +411,7 @@ export const syllabusData: WeekModule[] = [
     project: {
       title: "Intelligent Document Q&A System",
       description:
-        "Develop a RAG-enhanced question-answering system capable of answering queries based on a large corpus of documents",
+        "Develop a question-answering system that references huge piles of documents—like having your very own AI research assistant on speed dial.",
       objectives: [
         "Set up a vector database for document storage",
         "Implement document ingestion and embedding generation",
@@ -428,7 +427,7 @@ export const syllabusData: WeekModule[] = [
         "FAISS",
         "Streamlit",
       ],
-      difficulty: "advanced",
+      difficulty: "Advanced",
     },
     resources: [
       {
@@ -464,12 +463,13 @@ export const syllabusData: WeekModule[] = [
     id: 6,
     week: 7,
     title: "Project Mentorship and Final Presentations",
-    wittyTitle: "The Grand Finale: From 'It's Alive!' to 'It's Hired!'",
+    wittyTitle:
+      "Final Boss Level: From ‘It’s Alive!’ to ‘I Should Patent This!’",
     subtitle: "Applying Your Skills in Real-World Projects",
     wittySubtitle:
-      "Showcasing Your AI Creation (Without World Domination Plans)",
+      "Time to Flaunt Your AI Skills (No World Dominations Plans Allowed)",
     description:
-      "Culminate your AI journey with personalized project mentorship and showcase your skills through a final project presentation.",
+      "Capstone time! Bring everything you’ve learned together to solve a real-world problem and show off your creation. Whether it’s a chatbot that complains about Mondays or an app that detects sarcasm (good luck), we’re here to mentor you through it.",
     duration: "30 hours",
     learningObjectives: [
       {
@@ -510,7 +510,7 @@ export const syllabusData: WeekModule[] = [
     project: {
       title: "Capstone AI Project",
       description:
-        "Develop and present a comprehensive AI project that solves a real-world problem",
+        "Identify a real-world problem, solve it with AI, and present your solution like a pro. If your project doesn’t cure boredom or feed your dog, at least it’ll polish your résumé!",
       objectives: [
         "Identify a significant problem that can be addressed with AI",
         "Design and implement an AI solution using appropriate techniques",
@@ -526,7 +526,7 @@ export const syllabusData: WeekModule[] = [
         "Data Visualization Tools",
         "Version Control (Git)",
       ],
-      difficulty: "advanced",
+      difficulty: "Advanced",
     },
     resources: [
       {

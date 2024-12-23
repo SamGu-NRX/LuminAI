@@ -16,6 +16,7 @@ import ExploreAISection from "@/components/Lander/ExploreAI";
 import ContactUsSection from "@/components/Lander/ContactUs";
 import "@/styles/App.scss";
 import BootcampModuleShowcase from "@/components/Lander/BootcampShowcase";
+import Timeline from "@/components/Lander/Timeline";
 
 export default function Home() {
   return (
@@ -24,9 +25,9 @@ export default function Home() {
         text="Last-minute call for our 2024 summer application!"
         link="https://forms.gle/RaW38zynf2p515Ua8"
       /> */}
-      <div className="relative bg-white min-h-screen">
+      <div className="relative min-h-screen bg-white">
         <AuroraBackground>
-          <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full">
+          <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-4">
             <Navigation />
             <div>
               {/* <motion.div
@@ -39,10 +40,11 @@ export default function Home() {
                 }}
                 className="w-full mx-auto pb-12"
               > */}
-              <div className="w-full mx-auto pb-12">
+              <div className="mx-auto mb-20 w-full pb-12">
                 <HeroSection />
                 <FeaturesSection />
                 <AICurriculumSection />
+                <Timeline />
                 <BootcampModuleShowcase />
                 <TestimonialsSection />
                 <CTASection />

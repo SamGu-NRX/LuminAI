@@ -35,20 +35,12 @@ const Navigation: React.FC<NavProps> = ({
   };
 
   return (
-    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-30 flex justify-between items-center px-8 bg-transparent">
+    <div className="absolute inset-x-0 top-1/2 z-30 flex -translate-y-1/2 items-center justify-between bg-transparent px-8">
       {/* Previous Button */}
       <motion.button
-        className="
-          group relative overflow-hidden
-          w-16 h-16 rounded-full
-          bg-white/10 backdrop-blur-md
-          flex items-center justify-center
-          border border-white/20
-          transition-all duration-150
-          focus:outline-none focus:ring-2 focus:ring-white/30
-        "
+        className="group relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-white/30"
         onClick={onPrevious}
-      //   disabled={currentIndex === 0}
+        //   disabled={currentIndex === 0}
         variants={glowVariants}
         initial="initial"
         whileHover="hover"
@@ -67,37 +59,16 @@ const Navigation: React.FC<NavProps> = ({
         }}
       >
         {/* Subtle hover effect layer */}
-        <motion.div
-          className="
-            absolute inset-0
-            bg-white/5 opacity-0
-            group-hover:opacity-20
-            transition-opacity duration-300
-          "
-        />
+        <motion.div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
 
-        <ChevronLeft
-          className="
-            w-8 h-8 text-white/80
-            group-hover:text-white
-            transition-colors duration-300
-          "
-        />
+        <ChevronLeft className="h-8 w-8 text-white/80 transition-colors duration-300 group-hover:text-white" />
       </motion.button>
 
       {/* Next Button */}
       <motion.button
-        className="
-          group relative overflow-hidden
-          w-16 h-16 rounded-full
-          bg-white/10 backdrop-blur-md
-          flex items-center justify-center
-          border border-white/20
-          transition-all duration-300
-          focus:outline-none focus:ring-2 focus:ring-white/30
-        "
+        className="group relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/30"
         onClick={onNext}
-      //   disabled={currentIndex === totalItems - 1}
+        //   disabled={currentIndex === totalItems - 1}
         variants={glowVariants}
         initial="initial"
         whileHover="hover"
@@ -116,22 +87,9 @@ const Navigation: React.FC<NavProps> = ({
         }}
       >
         {/* Subtle hover effect layer */}
-        <motion.div
-          className="
-            absolute inset-0
-            bg-white/5 opacity-0
-            group-hover:opacity-20
-            transition-opacity duration-300
-          "
-        />
+        <motion.div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-20" />
 
-        <ChevronRight
-          className="
-            w-8 h-8 text-white/80
-            group-hover:text-white
-            transition-colors duration-300
-          "
-        />
+        <ChevronRight className="h-8 w-8 text-white/80 transition-colors duration-300 group-hover:text-white" />
       </motion.button>
     </div>
   );

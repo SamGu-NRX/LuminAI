@@ -63,17 +63,17 @@ const BootcampModuleShowcase: React.FC = () => {
   const prevModule = () => {
     setCurrentModuleIndex(
       (prev) =>
-        (prev - 1 + bootcampModulesData.length) % bootcampModulesData.length
+        (prev - 1 + bootcampModulesData.length) % bootcampModulesData.length,
     );
   };
 
   const currentModule = bootcampModulesData[currentModuleIndex];
 
   return (
-    <section className="flex flex-col items-center justify-center p-4 my-8">
-      <div className="w-full max-w-6xl mx-auto px-4 relative">
+    <section className="my-8 flex flex-col items-center justify-center p-4">
+      <div className="relative mx-auto w-full max-w-6xl px-4">
         <motion.div
-          className="relative w-full min-h-[700px] rounded-3xl overflow-hidden flex justify-center items-center"
+          className="relative flex min-h-[700px] w-full items-center justify-center overflow-hidden rounded-3xl"
           initial={{ opacity: 0, scale: 0.95, y: 40 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           transition={{
@@ -87,20 +87,20 @@ const BootcampModuleShowcase: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentModule.id}
-              className="absolute bg-black inset-0 rounded-3xl overflow-hidden"
+              className="absolute inset-0 overflow-hidden rounded-3xl bg-black"
               initial={{ opacity: 0, scale: 1.05 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <div className="relative block w-full h-full max-h-[700px] rounded-3xl overflow-hidden">
+              <div className="relative block h-full max-h-[700px] w-full overflow-hidden rounded-3xl">
                 <Image
                   src={currentModule.imageUrl}
                   alt={currentModule.title}
                   fill
                   quality={90}
                   priority
-                  className="object-cover w-full h-full opacity-30 blur-sm rounded-3xl"
+                  className="h-full w-full rounded-3xl object-cover opacity-30 blur-sm"
                 />
               </div>
             </motion.div>
@@ -118,9 +118,9 @@ const BootcampModuleShowcase: React.FC = () => {
                 className="space-y-6"
               >
                 {/* Title and Difficulty */}
-                <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <div className="flex flex-col space-y-2 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
                   <motion.h2
-                    className="text-4xl sm:text-5xl font-bold tracking-tight leading-none flex items-center"
+                    className="flex items-center text-4xl font-bold leading-none tracking-tight sm:text-5xl"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
@@ -128,12 +128,12 @@ const BootcampModuleShowcase: React.FC = () => {
                     {currentModule.title}
                   </motion.h2>
                   <motion.span
-                    className={`relative flex items-center justify-center px-3 py-1 rounded-full text-sm font-semibold w-fit ${
+                    className={`relative flex w-fit items-center justify-center rounded-full px-3 py-1 text-sm font-semibold ${
                       currentModule.difficulty === "Beginner"
                         ? "bg-green-500/20 text-green-300"
                         : currentModule.difficulty === "Intermediate"
-                        ? "bg-yellow-500/20 text-yellow-300"
-                        : "bg-red-500/20 text-red-300"
+                          ? "bg-yellow-500/20 text-yellow-300"
+                          : "bg-red-500/20 text-red-300"
                     }`}
                     style={{ top: "5px" }} // Adjust vertical alignment since the h2 component is not vertically centered
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -146,7 +146,7 @@ const BootcampModuleShowcase: React.FC = () => {
 
                 {/* Description */}
                 <motion.p
-                  className="text-xl max-w-2xl text-white/80"
+                  className="max-w-2xl text-xl text-white/80"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
@@ -156,7 +156,7 @@ const BootcampModuleShowcase: React.FC = () => {
 
                 {/* Topics */}
                 <motion.div
-                  className="flex flex-wrap gap-2 mt-4"
+                  className="mt-4 flex flex-wrap gap-2"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5, duration: 0.5 }}
@@ -164,7 +164,7 @@ const BootcampModuleShowcase: React.FC = () => {
                   {currentModule.topics.map((topic) => (
                     <span
                       key={topic}
-                      className="bg-white/10 px-3 py-1 rounded-full text-sm"
+                      className="rounded-full bg-white/10 px-3 py-1 text-sm"
                     >
                       {topic}
                     </span>
@@ -173,7 +173,7 @@ const BootcampModuleShowcase: React.FC = () => {
 
                 {/* Action Buttons */}
                 <motion.div
-                  className="flex space-x-4 mt-8"
+                  className="mt-8 flex space-x-4"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.5 }}
@@ -181,12 +181,12 @@ const BootcampModuleShowcase: React.FC = () => {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all duration-300"
+                    className="rounded-full bg-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/20"
                     onClick={() => {
                       /* Start Module Logic */
                     }}
                   >
-                    <Play className="w-6 h-6" />
+                    <Play className="h-6 w-6" />
                     <span className="sr-only">Start Module</span>
                   </Button>
                 </motion.div>

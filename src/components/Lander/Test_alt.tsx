@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         testimonialsRef.current,
-        { delay: 0.3 }
+        { delay: 0.3 },
       );
     }
   }, []);
@@ -40,9 +40,9 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section ref={testimonialsRef} className="p-4 mt-8">
+    <section ref={testimonialsRef} className="mt-8 p-4">
       <h2
-        className="text-3xl font-bold text-center mb-6"
+        className="mb-6 text-center text-3xl font-bold"
         ref={(el) => {
           if (el) elementsRef.current.push(el);
         }}
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="max-w-sm p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+            className="max-w-sm transform rounded-lg p-6 shadow-lg transition-transform hover:scale-105"
             ref={(el) => {
               if (el) elementsRef.current.push(el);
             }}
@@ -63,14 +63,14 @@ export default function TestimonialsSection() {
               border: "1px solid rgba(255, 255, 255, 0.6)",
             }}
           >
-            <div className="flex items-center mb-4">
+            <div className="mb-4 flex items-center">
               {testimonial.image && typeof testimonial.image === "string" && (
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
                   width={48}
                   height={48}
-                  className="rounded-full mr-4"
+                  className="mr-4 rounded-full"
                 />
               )}
               <div>
@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
                 <p className="text-slate-800">{testimonial.role}</p>
               </div>
             </div>
-            <p className="text-slate-900 mb-4">{testimonial.testimonial}</p>
+            <p className="mb-4 text-slate-900">{testimonial.testimonial}</p>
             <div className="flex items-center text-yellow-400">
               {/* Display 5-star rating */}
               {[...Array(5)].map((_, i) => (

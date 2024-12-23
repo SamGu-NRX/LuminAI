@@ -21,11 +21,10 @@ const ScrollArrow = () => {
     }
   };
 
-
   return (
     <motion.div
       // TODO: I have fucking no idea why you need to subtract 16px (50% of the width)
-      className="absolute bottom-10 p-0 left-[calc(50%-16px)] -translate-x-[calc(50%+16px)] cursor-pointer z-10"
+      className="absolute bottom-10 left-[calc(50%-16px)] z-10 -translate-x-[calc(50%+16px)] cursor-pointer p-0"
       animate={{
         y: [0, 10, 0],
       }}
@@ -36,7 +35,7 @@ const ScrollArrow = () => {
       }}
       onClick={scrollToNextSection}
     >
-      <ChevronDown className="w-8 h-8 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors" />
+      <ChevronDown className="h-8 w-8 text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white" />
     </motion.div>
   );
 };

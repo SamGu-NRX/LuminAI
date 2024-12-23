@@ -31,10 +31,10 @@ export default function ContactUsSection() {
     <FadeInWhenVisible
       as="section"
       variants={containerVariants}
-      className="p-4 max-w-3xl w-full mx-auto my-8"
+      className="mx-auto my-8 w-full max-w-3xl p-4"
     >
       <motion.div
-        className="relative z-10 p-8 rounded-2xl shadow-xl overflow-hidden border border-black/20"
+        className="relative z-10 overflow-hidden rounded-2xl border border-black/20 p-8 shadow-xl"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
       >
@@ -43,13 +43,13 @@ export default function ContactUsSection() {
         <div className="px-6 py-8 text-center">
           <motion.h2
             variants={itemVariants}
-            className="text-4xl font-extrabold text-gray-800 mb-4"
+            className="mb-4 text-4xl font-extrabold text-gray-800"
           >
             Contact Us
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-700 max-w-2xl mx-auto"
+            className="mx-auto max-w-2xl text-lg text-gray-700"
           >
             We&apos;re excited to hear from you. Let&apos;s collaborate and
             innovate together.
@@ -59,10 +59,10 @@ export default function ContactUsSection() {
         {/* Content */}
         <motion.div variants={itemVariants} className="px-6 py-6 text-center">
           <motion.div variants={itemVariants} className="mb-6">
-            <h3 className="text-2xl font-semibold text-blue-700 mb-3">
+            <h3 className="mb-3 text-2xl font-semibold text-blue-700">
               Business Inquiry
             </h3>
-            <p className="text-gray-700 max-w-xl mx-auto">
+            <p className="mx-auto max-w-xl text-gray-700">
               Transform the future of AI education with us. Whether you&apos;re
               a student, educator, or business owner, we&apos;re here to help.
               We collaborate with all who believe in the education of our next
@@ -74,20 +74,11 @@ export default function ContactUsSection() {
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-8 py-4
-            bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400
-          text-white font-semibold
-            transition-all duration-300 flex items-center
-            justify-center mx-auto space-x-3 rounded-full
-            hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-blue-600
-            hover:shadow-xl" // TODO: transition colors doesn't work
+            className="group relative mx-auto flex items-center justify-center space-x-3 rounded-full bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 hover:shadow-xl" // TODO: transition colors doesn't work
           >
-            <Send className="w-5 h-5 text-white" />
+            <Send className="h-5 w-5 text-white" />
             <span>Get In Touch</span>
-            <ArrowRight
-              className="w-5 h-5 text-white transition-transform
-                         group-hover:translate-x-1"
-            />
+            <ArrowRight className="h-5 w-5 text-white transition-transform group-hover:translate-x-1" />
           </motion.button>
         </motion.div>
       </motion.div>

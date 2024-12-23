@@ -10,7 +10,7 @@ export interface Project {
   description: string;
   objectives: string[];
   technologies: string[];
-  difficulty: "beginner" | "intermediate" | "advanced";
+  difficulty: "Beginner" | "Intermediate" | "Advanced";
 }
 
 export interface LearningObjective {
@@ -35,9 +35,9 @@ export interface WeekModule {
 }
 
 export const DIFFICULTY_COLORS = {
-  beginner: "text-green-500",
-  intermediate: "text-yellow-500",
-  advanced: "text-red-500",
+  Beginner: "text-green-500",
+  Intermediate: "text-yellow-500",
+  Advanced: "text-red-500",
 } as const;
 
 export const RESOURCE_ICONS = {

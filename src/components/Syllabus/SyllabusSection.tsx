@@ -3,7 +3,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { cn } from "@/lib/shadcn/utils";
-import { WeekModule, DIFFICULTY_COLORS, RESOURCE_ICONS } from "@/data/syllabus-types";
+import {
+  LearningObjective,
+  Project,
+  Resource,
+  WeekModule,
+  DIFFICULTY_COLORS,
+  RESOURCE_ICONS,
+} from "@/data/syllabus-types";
 import { syllabusData } from "@/data/syllabus";
 import {
   Tooltip,
@@ -37,23 +44,23 @@ const ModuleSelector = ({ module, isActive, onClick }: ModuleSelectorProps) => (
   <motion.button
     onClick={onClick}
     className={cn(
-      "w-full text-left p-6 rounded-lg transition-all border",
+      "w-full rounded-lg border p-6 text-left transition-all",
       isActive
-        ? "bg-white shadow-lg border-gray-200"
-        : "hover:bg-gray-50 border-transparent"
+        ? "border-gray-200 bg-white shadow-lg"
+        : "border-transparent hover:bg-gray-50",
     )}
     whileHover={{ scale: 1.02, y: -2 }}
     whileTap={{ scale: 0.98 }}
   >
-    <span className="block text-sm text-gray-500 mb-1">Week {module.week}</span>
+    <span className="mb-1 block text-sm text-gray-500">Week {module.week}</span>
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <span className="block font-medium text-gray-900 mb-2">
+          <span className="mb-2 block font-medium text-gray-900">
             {module.title}
           </span>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent side="right" align="center">
           <p className="text-sm italic">{module.wittyTitle}</p>
         </TooltipContent>
       </Tooltip>
@@ -84,7 +91,7 @@ const LearningObjectiveCard = ({
                 transition={{ delay: index * 0.1 }}
                 className="flex items-center gap-2"
               >
-                <Icons.CheckCircle className="w-4 h-4 text-green-500" />
+                <Icons.CheckCircle className="h-4 w-4 text-green-500" />
                 <span className="text-sm text-gray-600">{topic}</span>
               </motion.li>
             ))}
@@ -92,10 +99,15 @@ const LearningObjectiveCard = ({
         </CardContent>
       </Card>
     </HoverCardTrigger>
-    <HoverCardContent className="w-80">
+    <HoverCardContent
+      side="right"
+      align="center"
+      sideOffset={-400}
+      className="w-80"
+    >
       <div className="space-y-2">
         <h4 className="text-sm font-semibold">Key Learning Points</h4>
-        <ul className="text-xs text-gray-500 list-disc list-inside">
+        <ul className="list-inside list-disc text-xs text-gray-500">
           {objective.topics.slice(0, 3).map((topic, index) => (
             <li key={index}>{topic}</li>
           ))}
@@ -109,23 +121,23 @@ export default function SyllabusSection() {
   const [activeModule, setActiveModule] = useState<WeekModule>(syllabusData[0]);
 
   return (
-    <FadeInWhenVisible as="section" className="min-h-screen w-full bg-gray-50/50 px-4 py-16">
+    <section className="min-h-screen w-full rounded-2xl bg-gray-50/10 px-4 py-16 shadow-sm backdrop-blur-md mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-7xl mx-auto"
+        className="mx-auto max-w-7xl"
       >
-        <header className="text-center mb-16">
+        <header className="mb-16 text-center">
           <motion.h1
-            className="text-6xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-purple-700/60 via-blue-700/60 to-pink-700/60 bg-clip-text text-6xl font-bold text-transparent"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            AI Bootcamp Syllabus
+            AI Innovate Scholars Syllabus (2024)
           </motion.h1>
           <motion.p
-            className="mt-4 text-gray-600 text-lg"
+            className="mt-4 text-lg text-gray-600"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -134,7 +146,7 @@ export default function SyllabusSection() {
           </motion.p>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Module selector */}
           <div className="space-y-4">
             {syllabusData.map((module) => (
@@ -159,24 +171,30 @@ export default function SyllabusSection() {
                 className="space-y-8"
               >
                 {/* Module overview */}
-                <Card>
+                <Card className="bg-gray-50/80">
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
-                            <CardTitle className="text-2xl cursor-help">
+                            <CardTitle className="cursor-help text-2xl">
                               {activeModule.wittyTitle}
                             </CardTitle>
                           </TooltipTrigger>
-                          <TooltipContent>
+                          <TooltipContent
+                            className="bg-white/80"
+                            side="top"
+                            align="center"
+                          >
                             <p className="text-sm italic">
                               {activeModule.wittySubtitle}
                             </p>
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
-                      <Badge variant="outline">{activeModule.duration}</Badge>
+                      <Badge variant="outline" className="bg-white">
+                        {activeModule.duration}
+                      </Badge>
                     </div>
                     <CardDescription>
                       {activeModule.description}
@@ -222,7 +240,7 @@ export default function SyllabusSection() {
                   <CardContent>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="text-sm font-medium mb-2">
+                        <h4 className="mb-2 text-sm font-medium">
                           Technologies
                         </h4>
                         <div className="flex flex-wrap gap-2">
@@ -231,17 +249,17 @@ export default function SyllabusSection() {
                               <Badge key={index} variant="outline">
                                 {tech}
                               </Badge>
-                            )
+                            ),
                           )}
                         </div>
                       </div>
                       <div>
-                        <h4 className="text-sm font-medium mb-2">Objectives</h4>
-                        <ul className="list-disc list-inside text-sm text-gray-600">
+                        <h4 className="mb-2 text-sm font-medium">Objectives</h4>
+                        <ul className="list-inside list-disc text-sm text-gray-600">
                           {activeModule.project.objectives.map(
                             (objective, index) => (
                               <li key={index}>{objective}</li>
-                            )
+                            ),
                           )}
                         </ul>
                       </div>
@@ -251,32 +269,31 @@ export default function SyllabusSection() {
 
                 {/* Resources */}
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="mb-4 text-xl font-semibold text-gray-900">
                     Resources
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {activeModule.resources.map((resource, index) => {
-                      const IconComponent =
-                        Icons[
-                          RESOURCE_ICONS[resource.type] as keyof typeof Icons
-                        ];
+                      const IconComponent = Icons[
+                        RESOURCE_ICONS[resource.type] as keyof typeof Icons
+                      ] as React.ElementType;
                       return (
                         <Card key={index}>
                           <CardHeader>
-                            <CardTitle className="text-lg flex items-center gap-2">
-                              <IconComponent className="w-5 h-5" />
+                            <CardTitle className="flex items-center gap-2 text-lg">
+                              <IconComponent className="h-5 w-5" />
                               {resource.title}
                             </CardTitle>
                           </CardHeader>
                           <CardContent>
-                            <p className="text-sm text-gray-600 mb-2">
+                            <p className="mb-2 text-sm text-gray-600">
                               {resource.description}
                             </p>
                             <a
                               href={resource.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-blue-600 hover:underline text-sm"
+                              className="text-sm text-blue-600 hover:underline"
                             >
                               View Resource
                             </a>
@@ -291,6 +308,6 @@ export default function SyllabusSection() {
           </div>
         </div>
       </motion.div>
-    </FadeInWhenVisible>
+    </section>
   );
 }

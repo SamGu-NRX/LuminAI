@@ -17,8 +17,9 @@ import ContactUsSection from "@/components/Lander/ContactUs";
 import "@/styles/App.scss";
 import BootcampModuleShowcase from "@/components/Lander/BootcampShowcase";
 
-import SyllabusCard from "@/components/Syllabus/SyllabusCard";
-import Timeline from "@/components/Syllabus/Timeline";
+import SyllabusCard from "@/components/Syllabus/SyllabusSection";
+import Timeline from "@/components/Lander/Timeline";
+import SyllabusSection from "@/components/Syllabus/SyllabusSection";
 
 export default function StaffPage() {
   return (
@@ -27,9 +28,9 @@ export default function StaffPage() {
         text="Last-minute call for our 2024 summer application!"
         link="https://forms.gle/RaW38zynf2p515Ua8"
       /> */}
-      <div className="relative bg-white min-h-screen w-full">
+      <div className="relative min-h-screen w-full bg-white">
         <AuroraBackground className="z-1">
-          <div className="flex flex-col gap-4 items-center justify-center px-4 min-h-screen w-full z-10">
+          <div className="z-10 flex min-h-screen w-full flex-col items-center justify-center gap-4 px-4">
             <Navigation />
             <div>
               <motion.div
@@ -40,17 +41,9 @@ export default function StaffPage() {
                   duration: 0.8,
                   ease: "easeInOut",
                 }}
-                className="w-full pb-12"
+                className="mx-auto w-full pb-12"
               >
-                <h1 className="text-4xl font-bold text-black text-center mb-8 animate-fade-in-down">
-                  Bootcamp Syllabus
-                </h1>
-                <p className="text-xl text-black text-center mb-12 animate-fade-in-up">
-                  Discover our comprehensive curriculum designed to turn you
-                  into an AI innovator.
-                </p>
-                <SyllabusCard />
-                <Timeline />
+                <SyllabusSection />
               </motion.div>
             </div>
           </div>

@@ -49,7 +49,7 @@ export default function HeroSection() {
       fadeUp(
         elementsRef.current.filter((el) => el !== null),
         heroRef.current,
-        { delay: 0.05 }
+        { delay: 0.05 },
       );
     }
 
@@ -70,13 +70,13 @@ export default function HeroSection() {
         staggerChildren: 0.05,
       }}
       ref={heroRef}
-      className="flex-container p-4 w-full items-center relative min-h-screen"
+      className="flex-container relative min-h-screen w-full items-center p-4"
     >
       <div
-        className="overflow-hidden flex flex-col items-center justify-center text-center w-full mx-auto"
+        className="mx-auto flex w-full flex-col items-center justify-center overflow-hidden text-center"
         style={{ animation: "textPopIn 0.7s ease-in-out" }}
       >
-        <div className="text-4xl md:text-6xl font-bold dark:text-white text-center p-4 max-w-5xl">
+        <div className="max-w-5xl p-4 text-center text-4xl font-bold dark:text-white md:text-6xl">
           Meet{" "}
           <span
             className="text-blue-600"
@@ -104,7 +104,7 @@ export default function HeroSection() {
           </span>
         </div>
         <div
-          className="transition-shadow text-xl mt-3 mb-1 font-extralight font md:text-3xl dark:text-neutral-200 p-4 max-w-4xl"
+          className="font mb-1 mt-3 max-w-4xl p-4 text-xl font-extralight transition-shadow dark:text-neutral-200 md:text-3xl"
           ref={(el) => {
             if (el) elementsRef.current[2] = el;
           }}
@@ -117,7 +117,7 @@ export default function HeroSection() {
             next generation
           </motion.span>{" "}
           of AI innovators through{" "}
-          <span className="font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text font-bold text-transparent">
             free and comprehensive
           </span>{" "}
           bootcamps.
