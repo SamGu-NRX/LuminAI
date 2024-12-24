@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { fadeUp } from "@/animations/gsap";
+import { fadeUp } from "@/utils/animations/gsap";
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 

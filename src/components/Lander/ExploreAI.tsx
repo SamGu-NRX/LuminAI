@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { fadeUp } from "@/animations/gsap";
+import { fadeUp } from "@/utils/animations/gsap";
 
 export default function ExploreAISection() {
   const exploreRef = useRef<HTMLDivElement>(null);

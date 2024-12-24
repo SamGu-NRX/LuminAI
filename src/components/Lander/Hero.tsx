@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import ApplyButton from "./ApplyButton";
-import { fadeUp } from "@/animations/gsap";
+import { fadeUp } from "@/utils/animations/gsap";
 import ScrollArrow from "./ScrollArrow";
 
 export default function HeroSection() {

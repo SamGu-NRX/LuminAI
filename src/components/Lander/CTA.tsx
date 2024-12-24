@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
+import NumberTicker from "../ui/number-ticker";
 
 const CTAContent = {
   headline: "From Zero to AI Hero",
@@ -22,20 +23,22 @@ const CTAContent = {
   stats: [
     {
       label: "Completion Rate",
-      value: "80+%", // TODO: add ticking number effect, separate "%" and value (font size much larger)
+      value: 80, // TODO: add ticking number effect, separate "%" and value (font size much larger)
+      valueLabel: "%",
       tooltip: "No quitters yet… but hey, there's always tomorrow!",
     },
     {
       label: "Success Stories",
-      value: "89%",
+      value: 89,
+      valueLabel: "%",
       tooltip:
         "The other 11%? They launched their own startups. Maybe you’ll hire us someday.",
     },
     {
       label: "First Cohort Attendees",
-      value: "200+",
-      tooltip:
-        "Good stuff right here",
+      value: 200,
+      valueLabel: "+",
+      tooltip: "Good stuff right here",
     },
     // {
     //   label: "Average Salary",
@@ -159,13 +162,17 @@ const CTASection = () => {
               >
                 {CTAContent.stats.map((stat, index) => (
                   <Tooltip key={index}>
-                    {/* TooltipTrigger wraps the element that will trigger the tooltip */}
                     <TooltipTrigger asChild>
-                      <div className="relative p-4">
-                        <div className="mb-1 text-2xl font-bold text-black">
-                          {stat.value}
+                      <div className="relative p-6 text-center">
+                        <div className="mb-2 flex items-baseline justify-center">
+                          <p className="bg-gradient-to-tr from-purple-400/75 via-pink-500/75 to-red-500/75 bg-clip-text backdrop-blur-lg text-5xl font-bold tracking-[-0.12em] text-transparent dark:from-blue-400/75 dark:via-teal-500/75 dark:to-green-500/75">
+                            <NumberTicker value={stat.value} />
+                          </p>
+                          <span className="ml-1 text-2xl font-medium text-gray-600 dark:text-gray-400">
+                            {stat.valueLabel}
+                          </span>
                         </div>
-                        <div className="text-sm text-gray-800">
+                        <div className="text-sm text-gray-700 dark:text-gray-300">
                           {stat.label}
                         </div>
                       </div>

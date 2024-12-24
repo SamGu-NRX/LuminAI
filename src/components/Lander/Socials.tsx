@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { fadeUp } from "@/animations/gsap";
+import { fadeUp } from "@/utils/animations/gsap";
 import Image from "next/image";
 
 export default function SocialsSection() {
