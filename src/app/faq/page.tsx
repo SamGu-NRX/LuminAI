@@ -7,8 +7,7 @@ import Navigation from "@/components/Lander/Navbar";
 import Footer from "@/components/Footer";
 import ApplicationBanner from "@/components/ApplicationBanner/ApplicationBanner";
 import "@/styles/App.scss";
-
-import StaffSection from "@/components/Staff";
+import FAQ from "@/components/FAQ";
 
 export default function StaffPage() {
   return (
@@ -22,7 +21,7 @@ export default function StaffPage() {
           <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-4">
             <Navigation />
             <div className="mx-auto mt-12 w-full pb-12">
-              <StaffSection />
+              <FAQ />
             </div>
           </div>
         </AuroraBackground>

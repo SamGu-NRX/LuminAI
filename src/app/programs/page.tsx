@@ -17,9 +17,9 @@ import ContactUsSection from "@/components/Lander/ContactUs";
 import "@/styles/App.scss";
 import BootcampModuleShowcase from "@/components/Lander/BootcampShowcase";
 
-import SyllabusCard from "@/components/Syllabus/SyllabusSection";
+import SyllabusCard from "@/components/Syllabus";
 import Timeline from "@/components/Lander/Timeline";
-import SyllabusSection from "@/components/Syllabus/SyllabusSection";
+import SyllabusSection from "@/components/Syllabus";
 
 export default function StaffPage() {
   return (

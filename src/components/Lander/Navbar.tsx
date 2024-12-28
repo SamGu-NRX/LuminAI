@@ -52,11 +52,11 @@ const Navigation = () => {
     //   href: "/contact",
     //   icon: Phone,
     // },
-    // {
-    //   label: "FAQ",
-    //   href: "/faq",
-    //   icon: MessageCircleQuestion,
-    // },
+    {
+      label: "FAQ",
+      href: "/faq",
+      icon: MessageCircleQuestion,
+    },
   ];
 
   // Determine if a nav item is active based on current pathname

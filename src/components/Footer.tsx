@@ -7,6 +7,7 @@ import Link from "next/link";
 import { IconType } from "react-icons";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useMemo, useEffect, useState } from "react";
+import { TransitionLink } from "@/utils/TransitionLink";
 
 interface FooterLink {
   name: string;
@@ -23,7 +24,7 @@ export const Content: React.FC = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Programs", href: "/programs" },
-    { name: "Contact", href: "/contact" },
+    // { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
   ];
 
@@ -53,14 +54,14 @@ export const Content: React.FC = () => {
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center md:justify-end space-x-6">
             {footerLinks.map((link) => (
-              <Link
+              <TransitionLink
                 key={link.href}
                 href={link.href}
                 className="hover:text-blue-400 transition-colors group relative font-medium duration-300"
               >
                 <span className="relative z-10">{link.name}</span>
                 <span className="absolute left-0 top-full h-[2px] w-full bg-current origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 pointer-events-none"></span>
-              </Link>
+              </TransitionLink>
             ))}
           </div>
         </div>
