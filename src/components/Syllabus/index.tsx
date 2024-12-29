@@ -17,7 +17,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/custom/tooltip";
 import {
   Card,
   CardContent,
@@ -121,7 +121,7 @@ export default function SyllabusSection() {
   const [activeModule, setActiveModule] = useState<WeekModule>(syllabusData[0]);
 
   return (
-    <section className="min-h-screen w-full rounded-2xl bg-gray-50/10 px-4 py-16 shadow-sm backdrop-blur-md mt-24">
+    <section className="mt-24 min-h-screen w-full rounded-2xl bg-gray-50/10 px-4 py-16 shadow-sm backdrop-blur-md">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

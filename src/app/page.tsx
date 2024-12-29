@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+import { AuroraBackground } from "@/components/ui/custom/aurora-background";
 import Navigation from "@/components/Lander/Navbar";
 import Footer from "@/components/Footer";
 import ApplicationBanner from "@/components/ApplicationBanner/ApplicationBanner";
@@ -25,7 +25,7 @@ export default function Home() {
         text="Last-minute call for our 2024 summer application!"
         link="https://forms.gle/RaW38zynf2p515Ua8"
       /> */}
-      <div className="relative min-h-screen bg-white mb-[249px]">
+      <div className="relative mb-[249px] min-h-screen bg-white">
         <AuroraBackground>
           <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 px-4">
             <Navigation />

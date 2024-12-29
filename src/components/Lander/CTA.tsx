@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import OrbBackground from "./CTAOrbBackground/Background";
-import { HoverBorderGradient } from "../ui/hover-border-gradient";
+import { HoverBorderGradient } from "../ui/custom/hover-border-gradient";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/custom/tooltip";
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 import NumberTicker from "../ui/number-ticker";
 
@@ -165,7 +165,7 @@ const CTASection = () => {
                     <TooltipTrigger asChild>
                       <div className="relative p-6 text-center">
                         <div className="mb-2 flex items-baseline justify-center">
-                          <p className="bg-gradient-to-tr from-purple-400/75 via-pink-500/75 to-red-500/75 bg-clip-text backdrop-blur-lg text-5xl font-bold tracking-[-0.12em] text-transparent dark:from-blue-400/75 dark:via-teal-500/75 dark:to-green-500/75">
+                          <p className="bg-gradient-to-tr from-purple-400/75 via-pink-500/75 to-red-500/75 bg-clip-text text-5xl font-bold tracking-[-0.12em] text-transparent backdrop-blur-lg dark:from-blue-400/75 dark:via-teal-500/75 dark:to-green-500/75">
                             <NumberTicker value={stat.value} />
                           </p>
                           <span className="ml-1 text-2xl font-medium text-gray-600 dark:text-gray-400">

@@ -97,7 +97,7 @@ const Navigation = () => {
         type="button"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         whileTap={{ scale: 0.95 }}
-        className="group flex items-center rounded-full bg-white/80 px-3 py-2 text-sm font-medium text-zinc-800 shadow-xl backdrop-blur-md dark:bg-zinc-800/80 dark:text-zinc-200"
+        className="group flex items-center rounded-full bg-white/80 px-3 py-2 text-sm font-medium text-zinc-800 shadow-xl backdrop-blur-md dark:bg-zinc-800/80 dark:text-zinc-200 z-20"
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMenuOpen}
       >

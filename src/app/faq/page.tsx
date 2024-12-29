@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+import { AuroraBackground } from "@/components/ui/custom/aurora-background";
 import Navigation from "@/components/Lander/Navbar";
 import Footer from "@/components/Footer";
 import ApplicationBanner from "@/components/ApplicationBanner/ApplicationBanner";
