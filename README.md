@@ -22,9 +22,6 @@
 - [🌟 How It's Made](#-how-its-made)
 - [🔗 Technologies Used](#-technologies-used)
 - [🤝 Join Our Community](#-join-our-community)
-- [📖 Learning Management System (LMS)](#-learning-management-system-lms)
-  - [**Features**](#features)
-  - [**Future Enhancements**](#future-enhancements)
 
 ---
 
@@ -36,7 +33,7 @@ LuminAI is a **nonprofit organization** dedicated to making AI education accessi
 
 ### 🧠 **Why Join Us?**
 
-Are you a high school student passionate about AI? Do you aspire to develop technical expertise and build AI models using **TensorFlow** and **PyTorch**? Join the **AI Innovate Scholars Bootcamp**, hosted in partnership with **RAY4Students**!
+Are you a high school student passionate about AI? Do you aspire to develop technical expertise and build AI models using **TensorFlow** and **PyTorch**? Join the **AI Innovate Scholars Bootcamp** now!
 
 - **🛠️ Hands-on Experience**: Program AI models with the latest tools.
 - **🎓 Expert Mentorship**: Learn from AI professionals and researchers.
@@ -91,25 +88,6 @@ Stay connected and be a part of our growing community!
 - **Twitter**: [@LuminAI_Bootcamps](https://twitter.com/LuminAI_Bootcamps)
 - **LinkedIn**: [LuminAI Bootcamps](https://linkedin.com/company/luminai-bootcamps)
 
----
-
-## 📖 Learning Management System (LMS)
-
-We are developing a fully integrated **Learning Management System (LMS)** for asynchronous learning. Here’s what you can expect:
-
-### **Features**
-
-- **📚 Interactive Modules**: Self-paced learning with quizzes, coding exercises, and video tutorials.
-- **📈 Progress Tracking**: Monitor your learning journey with real-time analytics.
-- **📝 Project Submissions**: Upload your projects and receive personalized feedback from mentors.
-- **💬 Community Forum**: Engage with peers and instructors, collaborate on projects, and discuss AI concepts.
-- **📂 Resource Library**: Access comprehensive study materials, research papers, and toolkits for building AI models.
-
-### **Future Enhancements**
-
-- [ ] 🤖 AI-powered personalized learning paths based on student progress (asynchronous courses)
-- [ ] 🏅 Certification programs upon course completion
-- [ ] 📱 Mobile app support for learning on the go
 
 ---
 
