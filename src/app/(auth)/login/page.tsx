@@ -1,16 +1,21 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase/client";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -24,19 +29,19 @@ export default function LoginPage() {
       });
 
       if (error) throw error;
-      router.push('/dashboard');
+      router.push("/dashboard");
     } catch (error) {
-      console.error('Error logging in:', error);
+      console.error("Error logging in:", error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary">
+    <div className="to-secondary flex min-h-screen items-center justify-center bg-gradient-to-b from-background">
       <Card className="w-[400px]">
         <CardHeader>
-          <h2 className="text-2xl font-bold text-center">Welcome Back</h2>
+          <h2 className="text-center text-2xl font-bold">Welcome Back</h2>
         </CardHeader>
         <form onSubmit={handleLogin}>
           <CardContent className="space-y-4">
@@ -61,7 +66,7 @@ export default function LoginPage() {
           </CardContent>
           <CardFooter>
             <Button className="w-full" type="submit" disabled={loading}>
-              {loading ? 'Signing in...' : 'Sign In'}
+              {loading ? "Signing in..." : "Sign In"}
             </Button>
           </CardFooter>
         </form>

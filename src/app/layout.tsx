@@ -12,7 +12,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { ReactLenis } from "@/utils/lenis";
 
-
 // URGENT TODO: https://fonts.google.com/specimen/Merriweather
 
 // Load Google Fonts

@@ -29,4 +29,3 @@ export interface StaffMember {
   quote: string;
   imageUrl: string;
 }
-

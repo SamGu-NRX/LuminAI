@@ -31,7 +31,6 @@
 //   return context;
 // };
 
-
 // // AuthProvider component
 // export const AuthProvider = ({ children }: AuthProviderProps) => {
 //   const [user, setUser] = useState<any>(null);

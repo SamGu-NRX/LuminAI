@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { supabase } from '@/lib/supabase/client';
-import type { Assignment } from '@/lib/supabase/types';
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { supabase } from "@/lib/supabase/client";
+import type { Assignment } from "@/lib/supabase/types";
 
 interface AssignmentViewProps {
   assignment: Assignment;
 }
 
 export function AssignmentView({ assignment }: AssignmentViewProps) {
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
-      const { error } = await supabase.from('submissions').insert({
+      const { error } = await supabase.from("submissions").insert({
         assignment_id: assignment.id,
         content,
       });
@@ -26,7 +26,7 @@ export function AssignmentView({ assignment }: AssignmentViewProps) {
       if (error) throw error;
       // Handle successful submission
     } catch (error) {
-      console.error('Error submitting assignment:', error);
+      console.error("Error submitting assignment:", error);
     } finally {
       setSubmitting(false);
     }
@@ -39,7 +39,7 @@ export function AssignmentView({ assignment }: AssignmentViewProps) {
       </CardHeader>
       <CardContent className="space-y-4">
         {assignment.description && (
-          <div className="prose max-w-none dark:prose-invert">
+          <div className="prose dark:prose-invert max-w-none">
             {assignment.description}
           </div>
         )}
@@ -51,7 +51,7 @@ export function AssignmentView({ assignment }: AssignmentViewProps) {
             className="min-h-[200px]"
           />
           <Button onClick={handleSubmit} disabled={submitting}>
-            {submitting ? 'Submitting...' : 'Submit Assignment'}
+            {submitting ? "Submitting..." : "Submit Assignment"}
           </Button>
         </div>
       </CardContent>

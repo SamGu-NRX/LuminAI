@@ -5,7 +5,7 @@ import { CardStack } from "@/components/ui/card-stack";
 import { cn } from "@/lib/shadcn/utils";
 export function CardStackDemo() {
   return (
-    <div className="h-[40rem] flex items-center justify-center w-full">
+    <div className="flex h-[40rem] w-full items-center justify-center">
       <CardStack items={CARDS} />
     </div>
   );
@@ -22,8 +22,8 @@ export const Highlight = ({
   return (
     <span
       className={cn(
-        "font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
-        className
+        "bg-emerald-100 px-1 py-0.5 font-bold text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500",
+        className,
       )}
     >
       {children}

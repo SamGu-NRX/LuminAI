@@ -37,7 +37,7 @@ const timelineData = [
 const Timeline = () => {
   return (
     // ↓ 1) Make the container’s padding smaller
-    <FadeInWhenVisible as="section" className="rounded-2xl pt-12 pb-6">
+    <FadeInWhenVisible as="section" className="rounded-2xl pb-6 pt-12">
       <div className="mx-auto max-w-6xl px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -86,8 +86,10 @@ const TimelineItem = ({
         {/* Content Card */}
         <div className="w-5/12">
           <motion.div
-            className={cn("rounded-2xl bg-gradient-to-br from-white to-gray-50 p-6 shadow-[0_0_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_0_50px_-15px_rgba(0,0,0,0.15)]",
-              index !== 0 ? "md:mt-[-6rem]" : "")}
+            className={cn(
+              "rounded-2xl bg-gradient-to-br from-white to-gray-50 p-6 shadow-[0_0_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 hover:shadow-[0_0_50px_-15px_rgba(0,0,0,0.15)]",
+              index !== 0 ? "md:mt-[-6rem]" : "",
+            )}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >

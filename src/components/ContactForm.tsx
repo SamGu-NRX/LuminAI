@@ -96,7 +96,6 @@
 //             {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 //         </div>
 
-
 //         <div>
 //             <label className="block text-gray-700">How did you hear about us?</label>
 
@@ -155,7 +154,6 @@
 //             </select>
 //         </div>
 
-
 //         <div>
 //         {formData.questionType === 'course/camp' && (
 //             <div>
@@ -185,14 +183,12 @@
 //         )}
 //         </div>
 
-
 //         <div>
 //             <label className="block mb-1">
 //                 Message
 //             </label>
 //             <textarea required type="text" name="message" className={inputClassNames('message')} placeholder="Enter your message" />
 //         </div>
-
 
 //         <div>
 //             <button type="submit" className="button bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">

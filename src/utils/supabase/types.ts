@@ -1,7 +1,7 @@
 export type UserRole = {
   id: string;
   user_id: string;
-  role: 'teacher' | 'student';
+  role: "teacher" | "student";
   created_at: string;
 };
 

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useUserRole } from '@/lib/hooks/use-user-role';
-import { Sidebar } from '@/components/dashboard/sidebar';
-import { Header } from '@/components/dashboard/header';
+import { useUserRole } from "@/lib/hooks/use-user-role";
+import { Sidebar } from "@/components/dashboard/sidebar";
+import { Header } from "@/components/dashboard/header";
 
 export default function DashboardLayout({
   children,
@@ -20,9 +20,7 @@ export default function DashboardLayout({
       <Header role={role} />
       <div className="flex h-[calc(100vh-4rem)]">
         <Sidebar role={role} />
-        <main className="flex-1 overflow-y-auto p-6">
-          {children}
-        </main>
+        <main className="flex-1 overflow-y-auto p-6">{children}</main>
       </div>
     </div>
   );

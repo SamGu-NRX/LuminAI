@@ -50,18 +50,16 @@ const ApplicationBanner: React.FC<ApplicationBannerProps> = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.5 }}
-          className="fixed top-0 left-0 w-full bg-gradient-to-r from-blue-500 to-purple-500 backdrop-blur-md text-white py-2 px-4 z-50 flex items-center justify-between max-w-7xl mx-auto"
+          className="fixed left-0 top-0 z-50 mx-auto flex w-full max-w-7xl items-center justify-between bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 text-white backdrop-blur-md"
         >
           {/* Main Content */}
-          <div className="flex items-center space-x-4 flex-1 justify-center">
-            <span className="font-bold text-center">{text}</span>
+          <div className="flex flex-1 items-center justify-center space-x-4">
+            <span className="text-center font-bold">{text}</span>
             {link && (
               <button
                 onClick={() => (window.location.href = link)}
                 aria-label="Apply Now"
-                className="inline-flex h-8 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#343b45,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-100
-                          focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
-                          backdrop-blur-sm hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.15)] bg-white/[0.2] text-sm transition duration-200"
+                className="inline-flex h-8 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-white/[0.2] bg-[linear-gradient(110deg,#000103,45%,#343b45,55%,#000103)] bg-[length:200%_100%] px-6 text-sm font-medium text-slate-100 backdrop-blur-sm transition duration-200 hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.15)] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
               >
                 Apply Now
               </button>
@@ -70,7 +68,7 @@ const ApplicationBanner: React.FC<ApplicationBannerProps> = ({
 
           {/* Close Button, dont ask me why mt-[-1] fixes the button positioning*/}
           <button
-            className="ml-4 inline-flex -mt-1 items-center justify-center rounded-md bg-transparent p-1 text-white text-xl font-bold hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
+            className="-mt-1 ml-4 inline-flex items-center justify-center rounded-md bg-transparent p-1 text-xl font-bold text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
             aria-label="Close"
             onClick={handleClose}
           >

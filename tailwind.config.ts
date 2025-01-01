@@ -21,15 +21,15 @@ const config: Config = {
     "./src/**/*.{css,js,jsx,ts,tsx}",
   ],
   variants: {
-	extend: {
-		fontWeight: ["responsive", "hover", "focus"],
+    extend: {
+      fontWeight: ["responsive", "hover", "focus"],
       opacity: ["hover"],
       borderColor: ["hover", "focus"],
       margin: ["first", "last"],
       backgroundColor: ["odd", "even"],
       scale: ["hover", "active", "group-hover"],
-		transform: ["hover", "group-hover"],
-	},
+      transform: ["hover", "group-hover"],
+    },
   },
   theme: {
     extend: {
@@ -127,7 +127,7 @@ const config: Config = {
 function addVariablesForColors({ addBase, theme }: any) {
   const allColors = flattenColorPalette(theme("colors"));
   const newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
   );
 
   addBase({

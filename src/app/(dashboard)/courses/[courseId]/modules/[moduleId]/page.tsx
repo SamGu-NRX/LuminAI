@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
-import { LectureView } from '@/components/courses/lecture-view';
-import { AssignmentView } from '@/components/courses/assignment-view';
-import { Loading } from '@/components/dashboard/loading';
-import type { Lecture, Assignment } from '@/lib/supabase/types';
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { supabase } from "@/lib/supabase/client";
+import { LectureView } from "@/components/courses/lecture-view";
+import { AssignmentView } from "@/components/courses/assignment-view";
+import { Loading } from "@/components/dashboard/loading";
+import type { Lecture, Assignment } from "@/lib/supabase/types";
 
 export default function ModulePage() {
   const { moduleId } = useParams();
@@ -19,15 +19,15 @@ export default function ModulePage() {
       try {
         const [lecturesResponse, assignmentsResponse] = await Promise.all([
           supabase
-            .from('lectures')
-            .select('*')
-            .eq('module_id', moduleId)
-            .order('order'),
+            .from("lectures")
+            .select("*")
+            .eq("module_id", moduleId)
+            .order("order"),
           supabase
-            .from('assignments')
-            .select('*')
-            .eq('module_id', moduleId)
-            .order('created_at'),
+            .from("assignments")
+            .select("*")
+            .eq("module_id", moduleId)
+            .order("created_at"),
         ]);
 
         if (lecturesResponse.error) throw lecturesResponse.error;
@@ -36,7 +36,7 @@ export default function ModulePage() {
         setLectures(lecturesResponse.data);
         setAssignments(assignmentsResponse.data);
       } catch (error) {
-        console.error('Error fetching module content:', error);
+        console.error("Error fetching module content:", error);
       } finally {
         setLoading(false);
       }

@@ -17,10 +17,10 @@ function TodoList() {
   ];
 
   return (
-    <aside className="w-80 bg-gray-800 p-4 overflow-y-auto">
-      <div className="flex justify-between items-center mb-4">
+    <aside className="w-80 overflow-y-auto bg-gray-800 p-4">
+      <div className="mb-4 flex items-center justify-between">
         <h2 className="text-xl font-semibold">To Do</h2>
-        <button className="bg-blue-500 p-1 rounded-full">
+        <button className="rounded-full bg-blue-500 p-1">
           <PlusIcon className="h-5 w-5" />
         </button>
       </div>
@@ -41,7 +41,7 @@ interface TodoItemProps {
 
 function TodoItem({ name, course, dueDate }: TodoItemProps) {
   return (
-    <div className="mb-4 bg-gray-700 p-3 rounded-lg">
+    <div className="mb-4 rounded-lg bg-gray-700 p-3">
       <h3 className="font-semibold">{name}</h3>
       <p className="text-sm text-gray-400">{course}</p>
       <p className="text-sm text-red-400">{dueDate}</p>
@@ -52,8 +52,8 @@ function TodoItem({ name, course, dueDate }: TodoItemProps) {
 function Announcements() {
   return (
     <div className="mt-6">
-      <h2 className="text-xl font-semibold mb-4">Announcements</h2>
-      <div className="bg-gray-700 p-3 rounded-lg">
+      <h2 className="mb-4 text-xl font-semibold">Announcements</h2>
+      <div className="rounded-lg bg-gray-700 p-3">
         <h3 className="font-semibold">WEEK 6 (7/1 - 7/3) ANNOUNCEMENT</h3>
         <p className="text-sm text-gray-400">LIS Summer 24</p>
         <p className="text-sm text-gray-400">Jul 1 at 9:07 (3 days ago)</p>
@@ -65,7 +65,7 @@ function Announcements() {
 function RecentFeedback() {
   return (
     <div className="mt-6">
-      <h2 className="text-xl font-semibold mb-4">Recent Feedback</h2>
+      <h2 className="mb-4 text-xl font-semibold">Recent Feedback</h2>
       <p className="text-blue-400">Activity: Something</p>
     </div>
   );

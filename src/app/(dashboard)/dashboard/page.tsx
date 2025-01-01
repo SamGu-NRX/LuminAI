@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useUserRole } from '@/lib/hooks/use-user-role';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { supabase } from '@/lib/supabase/client';
-import type { Course } from '@/lib/supabase/types';
+import { useEffect, useState } from "react";
+import { useUserRole } from "@/lib/hooks/use-user-role";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { supabase } from "@/lib/supabase/client";
+import type { Course } from "@/lib/supabase/types";
 
 export default function DashboardPage() {
   const { role, loading: roleLoading } = useUserRole();
@@ -15,11 +15,11 @@ export default function DashboardPage() {
   useEffect(() => {
     async function fetchCourses() {
       const { data: coursesData, error } = await supabase
-        .from('courses')
-        .select('*');
+        .from("courses")
+        .select("*");
 
       if (error) {
-        console.error('Error fetching courses:', error);
+        console.error("Error fetching courses:", error);
         return;
       }
 
@@ -39,7 +39,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       <section>
-        <h2 className="text-3xl font-bold mb-4">Welcome Back</h2>
+        <h2 className="mb-4 text-3xl font-bold">Welcome Back</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
             <Card key={course.id}>
@@ -48,7 +48,7 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <Progress value={33} className="mb-2" />
-                <p className="text-sm text-muted-foreground">33% Complete</p>
+                <p className="text-muted-foreground text-sm">33% Complete</p>
               </CardContent>
             </Card>
           ))}

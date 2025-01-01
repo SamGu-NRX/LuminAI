@@ -7,7 +7,7 @@ import {
   ClockIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/solid";
-import Image from 'next/image';
+import Image from "next/image";
 
 function Sidebar() {
   const menuItems = [
@@ -32,7 +32,7 @@ function Sidebar() {
       </div>
       {menuItems.map((item, index) => (
         <div key={index} className="mb-6 text-center">
-          <item.icon className="h-6 w-6 mx-auto mb-1" />
+          <item.icon className="mx-auto mb-1 h-6 w-6" />
           <span className="text-xs">{item.label}</span>
         </div>
       ))}

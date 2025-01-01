@@ -24,7 +24,6 @@
 //         audienceId: 'ed288a7a-23ef-4f32-a2f1-3dc887da7a1c'
 //     })
 
-
 // }
 // // Send password reset token to user
 // export const sendPasswordResetEmail = async (

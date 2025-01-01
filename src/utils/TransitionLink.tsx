@@ -22,7 +22,7 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
   const router = useRouter();
 
   const handleTransition = async (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
     e.preventDefault();
     const body = document.querySelector("body");
@@ -42,7 +42,12 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
   };
 
   return (
-    <Link {...props} href={href} onClick={handleTransition} className={className}>
+    <Link
+      {...props}
+      href={href}
+      onClick={handleTransition}
+      className={className}
+    >
       {children}
     </Link>
   );

@@ -89,7 +89,7 @@ const AuthForm = ({ mode, schema, children, csrfToken }: AuthFormProps) => {
           toast.error(result.error);
         } else {
           toast.success(
-            "Registration successful, please check your email to verify your account."
+            "Registration successful, please check your email to verify your account.",
           );
           // email?
         }
@@ -160,7 +160,7 @@ const AuthForm = ({ mode, schema, children, csrfToken }: AuthFormProps) => {
 
   return (
     <div
-      className="to bg-purple-500 font-Inter flex min-h-screen items-center justify-center bg-gradient-to-r from-cyan-500 via-blue-500 p-4"
+      className="to font-Inter flex min-h-screen items-center justify-center bg-purple-500 bg-gradient-to-r from-cyan-500 via-blue-500 p-4"
       style={{ animation: "bounceIn 1s ease-in-out" }}
     >
       <m.div
@@ -173,8 +173,8 @@ const AuthForm = ({ mode, schema, children, csrfToken }: AuthFormProps) => {
           {mode === "signin"
             ? "Sign In"
             : mode === "signup"
-            ? "Sign Up"
-            : "Reset Password"}
+              ? "Sign Up"
+              : "Reset Password"}
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

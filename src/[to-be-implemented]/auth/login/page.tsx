@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import AuthForm from '@/components/auth/AuthForm';
-import { LoginSchema } from '@/schema';
+import React from "react";
+import AuthForm from "@/components/auth/AuthForm";
+import { LoginSchema } from "@/schema";
 
 const SignInPage = () => {
   return (
@@ -17,7 +17,7 @@ const SignInPage = () => {
       </div>
       <div className="mt-4 text-center">
         <span className="text-sm text-gray-600">
-          Don&apos;t have an account?{' '}
+          Don&apos;t have an account?{" "}
         </span>
         <a
           href="/auth/register"

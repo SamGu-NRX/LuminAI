@@ -9,7 +9,7 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 py-16 mt-10">
+      <div className="mx-auto mt-10 max-w-6xl px-4 py-16">
         <div className="mb-16 text-center">
           <h1 className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-bold text-transparent">
             Frequently Asked Questions

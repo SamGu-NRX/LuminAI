@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { Bell, LogOut } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { supabase } from '@/lib/supabase/client';
+import { Bell, LogOut } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { supabase } from "@/lib/supabase/client";
 
 interface HeaderProps {
-  role: 'teacher' | 'student' | null;
+  role: "teacher" | "student" | null;
 }
 
 export function Header({ role }: HeaderProps) {
@@ -14,7 +14,7 @@ export function Header({ role }: HeaderProps) {
   };
 
   return (
-    <header className="h-16 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 h-16 border-b backdrop-blur">
       <div className="container flex h-full items-center justify-between">
         <h1 className="text-2xl font-bold">AI BootCamp LMS</h1>
         <div className="flex items-center gap-4">

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase/client';
-import type { UserProgress } from '@/lib/supabase/types';
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase/client";
+import type { UserProgress } from "@/lib/supabase/types";
 
 export function useCourseProgress(courseId: string, userId: string) {
   const [progress, setProgress] = useState<UserProgress[]>([]);
@@ -12,14 +12,14 @@ export function useCourseProgress(courseId: string, userId: string) {
     async function fetchProgress() {
       try {
         const { data, error } = await supabase
-          .from('user_progress')
-          .select('*')
-          .eq('user_id', userId);
+          .from("user_progress")
+          .select("*")
+          .eq("user_id", userId);
 
         if (error) throw error;
         setProgress(data);
       } catch (error) {
-        console.error('Error fetching progress:', error);
+        console.error("Error fetching progress:", error);
       } finally {
         setLoading(false);
       }

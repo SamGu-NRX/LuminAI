@@ -1,13 +1,12 @@
 // components/Dashboard.jsx
 import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
 
-
 function Dashboard() {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
-      <div className="bg-gray-800 rounded-lg p-4 mb-6">
-        <div className="flex justify-between items-center mb-4">
+      <h1 className="mb-6 text-2xl font-bold">Dashboard</h1>
+      <div className="mb-6 rounded-lg bg-gray-800 p-4">
+        <div className="mb-4 flex items-center justify-between">
           <div>
             <h2 className="text-xl font-semibold">
               LuminAI Innovate Scholars (Summer 2024)
@@ -16,13 +15,13 @@ function Dashboard() {
           </div>
           <EllipsisVerticalIcon className="h-6 w-6" />
         </div>
-        <div className="w-full bg-gray-700 rounded-full h-2.5">
+        <div className="h-2.5 w-full rounded-full bg-gray-700">
           <div
-            className="bg-blue-600 h-2.5 rounded-full"
+            className="h-2.5 rounded-full bg-blue-600"
             style={{ width: "93%" }}
           ></div>
         </div>
-        <p className="text-right mt-2">93%</p>
+        <p className="mt-2 text-right">93%</p>
       </div>
       <DueSection />
     </div>
@@ -39,9 +38,9 @@ function DueSection() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">Due</h2>
+      <h2 className="mb-4 text-xl font-semibold">Due</h2>
       {dueItems.map((item, index) => (
-        <div key={index} className="flex justify-between items-center mb-2">
+        <div key={index} className="mb-2 flex items-center justify-between">
           <span>{item.name}</span>
           <span className="text-gray-400">in {item.dueIn}</span>
         </div>

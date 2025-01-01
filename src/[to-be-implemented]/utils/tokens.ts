@@ -3,7 +3,6 @@
 // import { v4 as uuidv4 } from 'uuid';
 // import { getPasswordResetTokenByEmail } from '@/data/password-reset-token';
 
-
 // export const generateVerificationToken = async (email: string) => {
 //     // Generate Verification Token
 //     const token = uuidv4();

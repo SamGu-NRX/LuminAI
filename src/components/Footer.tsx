@@ -39,10 +39,10 @@ export const Content: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#4E4E5A] bottom-0 w-full text-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <div className="bottom-0 w-full bg-[#4E4E5A] text-white">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row md:justify-between items-center space-y-6 md:space-y-0">
+        <div className="flex flex-col items-center space-y-6 md:flex-row md:justify-between md:space-y-0">
           {/* Logo and Description */}
           <div className="text-center md:text-left">
             <h2 className="text-2xl font-bold">LuminAI Bootcamps</h2>
@@ -52,25 +52,25 @@ export const Content: React.FC = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex flex-wrap justify-center md:justify-end space-x-6">
+          <div className="flex flex-wrap justify-center space-x-6 md:justify-end">
             {footerLinks.map((link) => (
               <TransitionLink
                 key={link.href}
                 href={link.href}
-                className="hover:text-blue-400 transition-colors group relative font-medium duration-300"
+                className="group relative font-medium transition-colors duration-300 hover:text-blue-400"
               >
                 <span className="relative z-10">{link.name}</span>
-                <span className="absolute left-0 top-full h-[2px] w-full bg-current origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 pointer-events-none"></span>
+                <span className="pointer-events-none absolute left-0 top-full h-[2px] w-full origin-left scale-x-0 bg-current transition-transform duration-300 group-hover:scale-x-100"></span>
               </TransitionLink>
             ))}
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-300 my-8"></div>
+        <div className="my-8 border-t border-gray-300"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row md:justify-between items-center space-y-6 md:space-y-0">
+        <div className="flex flex-col items-center space-y-6 md:flex-row md:justify-between md:space-y-0">
           {/* Social Media Links */}
           <div className="flex space-x-6">
             {socialLinks.map((social) => {
@@ -81,16 +81,16 @@ export const Content: React.FC = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-400 transition-colors"
+                  className="transition-colors hover:text-blue-400"
                 >
-                  <Icon className="w-6 h-6" />
+                  <Icon className="h-6 w-6" />
                 </a>
               );
             })}
           </div>
 
           {/* Copyright */}
-          <p className="text-sm text-center md:text-right">
+          <p className="text-center text-sm md:text-right">
             &copy; {new Date().getFullYear()} LuminAI Bootcamps. All rights
             reserved.
           </p>
