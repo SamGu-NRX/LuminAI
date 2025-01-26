@@ -27,17 +27,17 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
     e.preventDefault();
     const body = document.querySelector("body");
 
-    console.log("[TransitionLink] Adding .page-transition class");
+    // console.log("[TransitionLink] Adding .page-transition class");
     body?.classList.add("page-transition");
 
     await sleep(500);
 
-    console.log("[TransitionLink] Before router.push");
+    // console.log("[TransitionLink] Before router.push");
     router.push(href);
 
     await sleep(500);
 
-    console.log("[TransitionLink] Removing .page-transition class");
+    // console.log("[TransitionLink] Removing .page-transition class");
     body?.classList.remove("page-transition");
   };
 
