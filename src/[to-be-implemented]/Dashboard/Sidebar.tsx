@@ -23,7 +23,7 @@ function Sidebar() {
     <aside className="w-20 bg-gray-800 p-4">
       <div className="mb-8">
         <Image
-          src="/path-to-avatar.png"
+          src="/gradient-luminai-logo.svg"
           alt="Account"
           width={48}
           height={48}
