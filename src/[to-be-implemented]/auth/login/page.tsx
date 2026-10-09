@@ -4,6 +4,14 @@ import React from 'react';
 import AuthForm from '@/components/auth/AuthForm';
 import { LoginSchema } from '@/schema';
 
+/**
+ * Sign-in page. Renders <AuthForm mode="signin" schema={LoginSchema}> — AuthForm
+ * from '@/components/auth/AuthForm' and LoginSchema from '@/schema' — which submits
+ * via next-auth signIn("credentials", { redirect: false }) (AuthForm.tsx:65-76) and,
+ * on success, redirects to /onboarding or /dashboard (AuthForm.tsx:144-148).
+ * Children link to /auth/reset-password ("Forgot password?") and /auth/register ("Sign up").
+ * NOT routed: src/app defines no auth pages; this file sits in the parked src/[to-be-implemented] tree.
+ */
 const SignInPage = () => {
   return (
     <AuthForm mode="signin" schema={LoginSchema}>
