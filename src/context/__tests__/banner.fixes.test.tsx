@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { render, act } from "@testing-library/react";
 import { BannerProvider, useBanner } from "@/context/BannerContext";
 
@@ -48,9 +48,13 @@ describe("BannerContext bug fixes", () => {
     }
     function Harness() {
       const [, force] = useState(0);
+      // Stable child element: the consumer must not be re-rendered by its
+      // owner, so the ONLY thing that can re-render it is context
+      // propagation.
+      const stableChild = useMemo(() => <CountingProbe />, []);
       return (
         <BannerProvider>
-          <CountingProbe />
+          {stableChild}
           <button onClick={() => force((n) => n + 1)}>force</button>
         </BannerProvider>
       );
