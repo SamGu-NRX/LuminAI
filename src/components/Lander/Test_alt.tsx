@@ -5,6 +5,14 @@ import { fadeUp } from "@/utils/animations/gsap";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa"; // Import star icon
 
+/**
+ * Alternate testimonial section using GSAP scroll-triggered fadeUp instead of
+ * framer-motion: placeholder names, glassmorphism cards, five-star rows, and
+ * optional (currently disabled) avatar images. Takes no props.
+ *
+ * Not imported anywhere at the base commit — kept as an unused variant of
+ * Testimonials.tsx; both files export the same TestimonialsSection symbol.
+ */
 export default function TestimonialsSection() {
   const testimonialsRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<HTMLElement[]>([]);

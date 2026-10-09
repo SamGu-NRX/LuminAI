@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/shadcn/utils";
-import FadeInFromLeft from "@/utils/motion/FadeInFromLeft";
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 const timelineData = [
@@ -34,6 +33,12 @@ const timelineData = [
   },
 ];
 
+/**
+ * Alternating "Your AI Journey" week-by-week timeline for the landing page.
+ * Renders the hardcoded four-week timelineData down a central line via
+ * TimelineItem rows whose cards slide in from alternating sides once scrolled
+ * into view (react-intersection-observer). Takes no props.
+ */
 const Timeline = () => {
   return (
     // ↓ 1) Make the container’s padding smaller

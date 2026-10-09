@@ -26,6 +26,11 @@ const itemVariants = {
   },
 };
 
+/**
+ * "Contact Us" section: a centered card with a Business Inquiry blurb and a
+ * gradient "Get In Touch" button. The button is display-only — no click
+ * handler or mailto link yet. Takes no props.
+ */
 export default function ContactUsSection() {
   return (
     <FadeInWhenVisible

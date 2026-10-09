@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { fadeUp } from "@/utils/animations/gsap";
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
@@ -28,6 +27,16 @@ const itemVariants = {
   },
 };
 
+/**
+ * Expandable "AI Curriculum Overview" accordion for the landing page. The
+ * header row toggles an animated panel listing curriculum topics (hardcoded
+ * inline below, not sourced from src/data/syllabus) plus a button that routes
+ * to /programs through next/navigation's router. Takes no props.
+ *
+ * The GSAP fadeUp entrance planned at the TODO below was superseded by
+ * framer-motion variants; the fadeUp import and commented hook stubs remain
+ * from that abandoned approach.
+ */
 export default function AICurriculumSection() {
   const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter(); // Initialize router

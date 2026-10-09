@@ -38,6 +38,11 @@ const Orb: React.FC<OrbProps> = ({
 
 export default Orb;
 
+/**
+ * Shared framer-motion transition OrbBackground spreads into every animated
+ * property of every orb: ease-in-out easing, repeating forever, and reversing
+ * direction on each repeat so orbs swing back and forth.
+ */
 export const baseTransition = {
   ease: "easeInOut",
   repeat: Infinity,

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import OrbBackground from "./CTAOrbBackground/Background";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
@@ -75,6 +75,14 @@ const variants = {
   },
 };
 
+/**
+ * Final call-to-action card of the landing page. Renders marketing copy from
+ * the module-level CTAContent object inside a HoverBorderGradient frame,
+ * layered over the animated orb backdrop, with staggered framer-motion
+ * entrances, hover-morphing button text, and a three-stat grid whose numbers
+ * tick up via NumberTicker and show a tooltip on hover. The CTA button itself
+ * has no click handler or link yet. Takes no props.
+ */
 const CTASection = () => {
   return (
     <FadeInWhenVisible

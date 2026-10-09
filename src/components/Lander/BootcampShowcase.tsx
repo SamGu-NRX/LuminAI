@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import Navigation from "./ShowcaseNav";
 import { Button } from "@/components/ui/button";
-import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 //TODO: add shadow to everything (not just this)
 
@@ -53,6 +52,14 @@ const bootcampModulesData: BootcampModule[] = [
   },
 ];
 
+/**
+ * Client-side carousel of sample bootcamp modules rendered on the landing
+ * page. Cycles a hardcoded list of three module cards (title, difficulty
+ * badge, description, topic chips) over a blurred cover image, cross-fading
+ * with framer-motion's AnimatePresence. Prev/next controls come from the
+ * sibling ShowcaseNav component. Takes no props and always starts on the
+ * first module; the play button is a no-op placeholder.
+ */
 const BootcampModuleShowcase: React.FC = () => {
   const [currentModuleIndex, setCurrentModuleIndex] = useState(0);
 

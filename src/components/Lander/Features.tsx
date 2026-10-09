@@ -6,7 +6,6 @@ import {
   FaGraduationCap,
   FaHeart,
   FaLayerGroup,
-  FaRobot,
 } from "react-icons/fa";
 import { IoBuild } from "react-icons/io5";
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
@@ -143,6 +142,12 @@ const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({
   );
 };
 
+/**
+ * Bento-style feature grid for the landing page. Maps the hardcoded features
+ * array onto FeatureCard tiles (asymmetric column spans on md/lg screens via
+ * getColSpanClass) and finishes with a centered CTA button that currently has
+ * no click handler or link. Takes no props.
+ */
 const LuminAIFeatures = () => {
   return (
     <FadeInWhenVisible

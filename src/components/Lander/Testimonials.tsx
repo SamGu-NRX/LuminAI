@@ -1,8 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 import FadeInWhenVisible from "@/utils/motion/FadeInWhenVisible";
 
 // Shared Variants for Animations
@@ -27,6 +25,11 @@ const itemVariants = {
   },
 };
 
+/**
+ * "What Our Participants Say" grid of two hardcoded testimonial cards with
+ * initials avatars, staggered in by a FadeInWhenVisible container. Takes no
+ * props; testimonial copy lives inline in the component body.
+ */
 export default function TestimonialsSection() {
   const testimonials = [
     {

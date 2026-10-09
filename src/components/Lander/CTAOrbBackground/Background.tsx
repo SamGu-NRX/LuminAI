@@ -14,6 +14,13 @@ interface OrbConfig {
   transition: Record<string, any>;
 }
 
+/**
+ * Decorative backdrop of three blurred, drifting color orbs positioned behind
+ * the CTA card content. Orb geometry, colors, and keyframe paths are fixed in
+ * a memoized config array; each orb's animation properties get independent
+ * random start delays (0-5s) so the three loops drift apart. Renders nothing
+ * interactive and takes no props.
+ */
 const OrbBackground: React.FC = () => {
   // Helper function to generate random delays rounded to two decimal places
   const getRandomDelay = () => parseFloat((Math.random() * 5).toFixed(2));
