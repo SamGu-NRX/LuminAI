@@ -20,7 +20,7 @@ function TodoList() {
     <aside className="w-80 bg-gray-800 p-4 overflow-y-auto">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">To Do</h2>
-        <button className="bg-blue-500 p-1 rounded-full">
+        <button aria-label="Add to-do" className="bg-blue-500 p-1 rounded-full">
           <PlusIcon className="h-5 w-5" />
         </button>
       </div>
